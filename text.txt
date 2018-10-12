@@ -1,0 +1,194 @@
+Why Constructivism Must be Radical1
+Ernst von Glasersfeld
+During the 20th century, Jean Piaget was in the forefront of the development of
+constructivism and the struggle to overcome conventional ideas about the acquisition of
+knowledge. In the course of Western history, most philosophers tackled the following
+epistemological questions: ”What is knowledge? How does one come to know? Can
+knowledge be certain?” They arrived at their answers using a logic they considered to be
+universal and independent of human subjects. Piaget broke with this tradition by raising a
+question which appeared to be simpler and more pragmatic: “How does a child manage to
+acquire what goes by the name of knowledge?”
+In the eyes of his philosophical contemporaries, Piaget‟s theory of knowledge involves
+the “genetic fallacy” and is tainted with the sin of “psychologism”. The philosophical
+establishment therefore feels justified in ignoring the work of that “Genevan dilettante”. For the
+general public, given Piaget‟s interest in children, genetic epistemology is merely a somewhat
+abstract theory for explaining cognitive development — an offshoot of child psychology.
+This initial misunderstanding was compounded when Piaget‟s term “constructivism”
+began to be discussed in educational circles. It gave rise to statements such as: “It‟s obvious,
+after all, the children don‟t simply swallow all adult knowledge whole, they have to construct
+it!”. Even today, a good many authors are convinced that they are constructivists, yet they
+have never put traditional epistemology in question. It was their naive interpretation that
+prompted me to add the qualifier “radical” to constructivism.
+It was, indeed, radical to break away from the traditional way of thinking according to
+which all human knowledge ought or can approach a more or less “true” representation of an
+independently existing, or ontological reality. In place of this notion of representation, radical
+constructivism introduces a new, more tangible relationship between knowledge and reality,
+which I have called a relationship of “viability”. Simply put, the notion of viability means that an
+action, operation, conceptual structure, or even a theory, is considered “viable” as long as it is
+useful in accomplishing a task or in achieving a goal that one has set for oneself. Thus,
+instead of claiming that knowledge is capable of representing a world outside of our
+experience, we would say, as did the pragmatists, that knowledge is a tool within the realm of
+experience. Piaget (1967) expressed this by saying that knowledge does not attempt to
+produce a copy of reality but, instead, serves the purposes of adaptation.
+In this connection, it is important to point out that in the case of a cognitive organism,
+adaptation proceeds on two levels. On the biological level, adaptation is aimed at survival; on
+the conceptual level, adaptation is aimed at producing coherent, non-contradictory structures.
+I have explained elsewhere the reasons which appear to me to support such a
+radicalization, first in the domain of history of philosophy (Glasersfeld, 1978, 1985), then in
+connection with the functioning of natural languages (Glasersfeld, 1983, 1990) and then again
+on the field of cybernetics {Glasersfeld, 1979, 1981). For the purposes of this presentation, I
+will only take up a few basic points.
+To understand constructivism, it is above all necessary to be constantly aware of the
+ambiguity in the ordinary use of the term “reality”. On the one hand, it refers to an ontological
+reality, that lies beyond all knowing; this reality is analogous to Kant‟s Ding an sich, which he
+qualified as a heuristic fiction (Kant, 1787, p. 307ff; 1881-1884, p. 572ff). On the other hand,
+there is the lived, tangible reality of our experience, from which we derive all that we call
+“knowledge”, i.e. not only the conceptual structures, the actions and the mentalmoperations
+which are considered viable, but also the patterns of action and thought that have failed.
+The term “experience” is difficult to define because it requires consciousness — and at
+the present we do not have a viable model for that phenomenon. It would be tempting to say
+that everything which reaches our consciousness becomes experience, but of course such a
+definition would be too narrow. Under hypnosis, for example, it is possible to locate traces of
+sensations and even ideas of which we had been totally unaware until then. Nevertheless, I
+have decided to proceed with a working hypothesis, according to which experience is made up
+of sensations and the empirical and reflective abstractions of which we are aware.2
+Second, the cognitive subject operates within the realm of experience, and this
+experience is always segmented and ordered as a result of the sequential mode of functioning
+that is inherent in the process of attention. Segmentation is basically the product of sensory
+and motor organs, but then it is shaped by the concepts the individual subject has already
+constructed. Hence, experience is always subjective. Nevertheless, it is important to point out
+that this elementary sort of subjectivity in no way hinders the development of “intersubjectivity”
+over the course of interactions which may be termed “social”.. 3
+Third, rational knowledge always relates to the realm of experience and to the
+abstractions (concepts, relations, theories, models) which have been constructed in the
+attempt to create a more or less regular, predictable world. This quest for models with
+predictive capacity is based on the belief that future experience will be similar to past
+experience, at least as far as the regularities which have proven viable until now are
+concerned (Hume, 1758).
+Giambattista Vico was the first philosopher to speak explicitly of reason as a human
+activity that constructs scientific knowledge (Vico, 1710). Radical constructivism builds on his
+insights and makes a clear distinction between this knowledge and the intuitions of poets,
+artists in general, and mystics. Essentially, it is the same distinction that Cardinal Bellarmin
+suggested in order to save Galileo from an indictment of heresy. Galileo, he said, could
+simply present his theories as models designed to work out his predictions, but he was never
+to claim that they were a true description of an absolute reality, a reality to which only the
+Church had access though revelation.
+Fourth, from the constructivist perspective, scientific knowledge is made up of
+theoretical models which have proved viable within a given area of experience. Even if a
+particular scientific model is the best available at the moment, it should never be viewed as the
+only possibility of solving the problems for which it was designed. Furthermore, whenever
+several solutions have been found, one of them may be preferred for reasons of economy,
+simplicity or “elegance”, but not because it is “true” in an ontological sense. Instead of “truth”,
+constructivism speaks of viability and compatibility with previously constructed models. In other
+words, scientific models are tools.
+Obviously a tool that works in a dozen different situations is worth more than a dozen
+different tools that work in only one.. However, this unification of models has not always been
+achieved. At the present time, the most striking example of this difficulty is the nature of light.
+Physicist have to approach the diverse phenomena of light with the help to two conceptually
+incompatible models, one based on the concept of wave and the other on the concept of
+particle.
+My last and perhaps most important point concerns language. Once again, the
+constructivist point of view is diametrically opposed to the tradition according to which linguistic
+communication is a means of “conveying” knowledge. In that view, speaking suffices to
+transfer ideas and knowledge — that is, conceptual structures — from one person to another.
+It takes but a moment of reflection to realize that this notion of transmission is illusory.
+Perhaps the illusion arises from the fact that language seems to work quite well in practical,
+concrete situations. Therefore one does not raise the question, how the contents of a piece of
+language (which necessarily is the product of an individual consciousness) can be
+successfully transferred from one consciousness to another. To get a handle on this question,
+it will be necessary to examine closely how the process called “communication” actually
+functions.
+When you are engaged, as you are now, in reading what I have written, it can be said
+that communication is taking place. To be more precise, you are in the position of a receiver.
+Let‟s take a moment to observe what goes on. To begin with, you have to be able to perceive
+a series of black marks printed on the page and to identify these marks, first as letters and
+then as combinations of letters forming words of a language with which you are familiar. You
+are familiar with a language whenever the meanings of most of its words hold some
+association for you. At that point, the perception of words calls up meanings in your head and
+you attempt to link these meanings together in order to develop larger conceptual structures
+that are related to the sentences of the text. If you succeed and manage to produce structures
+that appear reasonable to you, you feel that you have understood what the author intended to
+say.
+Described in this way, the process would appear to be quite simple. Indeed, it seems
+obvious, because we are so very accustomed to it. As a rule, however, it involves an invalid
+hypothesis, namely that the meanings which the author associated with the words of his text
+are tacitly assumed to be the same that are now called up by these words in the reader‟s
+head.. This is an unwarranted assumption. The meanings of word s— and this also applies to
+every sign and every symbol — must be constructed by each user of the language individually,
+and this construction is based solely on the subjective experience of the particular parson.
+Hence it stands to reason that the interpretation of a word or a text will always remain an
+essentially subjective operation.
+Of course, when children are learning their mother tongue through their interactions
+with the users of that language, they are led to modify their word-meanings so that they end
+up being more or less compatible with other people‟s usage. This creates the impression that
+meanings are “shared”, but it cannot be emphasized strongly enough that the compatibility
+that is necessary to communicate satisfactorily in everyday life, always remains at some
+remove from an exact correspondence. Moreover, we can never verify if the meaning which is
+associated by a given person to a particular word is absolutely the same as the meaning we
+associated with it. We can only say that so far it has apparently worked. This feeling of
+apparent compatibility of meaning, however, is always based on the experience of a limited
+number of situations.
+With these remarks on communication, I believe I am touching on one of the most
+sensitive issues of teaching. If knowledge cannot be transmitted, but must instead be
+constructed by each student individually, this does not imply that teaching must dispense with
+language. It implies only that the role of language must be conceived of differently. We can no
+longer justify the intention of conveying our ideas to receivers (as though ideas could be
+wrapped in little packages by means of words). Rather, we will have to speak in such a way as
+to “orient” students‟ efforts at construction4. However, in order to orient someone, you have to
+have a starting-point. Even six-year-olds have something inside their heads. They have lived,
+made experiments, and they have developed ways of coping. They can interpret the actions
+and words of their teacher only according to the empirical and operative abstractions which
+they have worked out previously. This means that it is absolutely necessary for teachers to
+have some notion of their students‟ conceptual networks. We call this a model. Obviously such
+models are and always remain hypothetical because it is impossible to get inside someone
+else‟s head. But with experience and informed intuition, a teacher can come to make more or
+more useful assessments about what is occurring in the heads of students. This ability
+separates individuals who are gifted for teaching from those to whom it is merely a rulegoverned job like so many others.
+A certain degree of interest and sympathyIn are neede order to develop your own
+mental model of another person. Unfortunately, the spirit prevailing in most schools springs
+from the notion of “transmitting” the knowledge outlined in course programs, as though it were
+actually possible to funnel knowledge „as is‟ into the receptacle-like heads of students who are
+all the same. . It is this misguided illusion of passive learning which prevents teachers from
+taking students‟ thinking into account. If a teacher is preoccupied with “correct” answers, he or
+she is unlikely to provide students with the possibility of explaining the conceptual route which
+they took to solve the given problem. Yet, analysis of the process which led a student to
+answer in a particular way is one of the best means available towards an understanding of his
+or her concepts and mental operations.
+A last point. If we repeatedly tell children that their solutions to problems are wrong, we
+should not be surprised that their enthusiasm for tasks involving numbers dries up. If, instead,
+we ask children, “How did you go about getting this answer?”, we discover that in many cases
+they are capable of seeing for themselves that something did go wrong. At that point, children
+become aware that it is they who are capable of constructing solutions to problems and that
+they themselves can decide whether something works or does not. This is the beginning of
+self-regulation, of a feeling of autonomy, and, as a result, the start of a potentially active
+learning process.
+My practical experience with applying constructivist ideas in classes is limited almost
+entirely to arithmetic in the first few grades of primary school. However, I have the impression
+that the general conclusions I have drawn from work in this area are relevant also for teaching
+physics and other school subjects. I am all the more convinced of this because our general
+approach is not a new idea. The notion of self-regulation was implemented by Maria
+Montessori, and it was stunningly illustrated in the book written by Ashton-Warner (1983), who
+described her work in a school in New Zealand. Indeed, some extraordinary teachers have
+always managed to foster their students‟ active understanding rather than making do with the
+repetition of “correct” answers. In order to achieve this, however, they had to rely on their
+intuition. Radical constructivism offers a theory of knowledge, communication, and the learning
+process, which could serve as a point of departure for all teachers who have not been blessed
+with the gift of exceptional intuition.
+Notes
+1. I would like to thank the students in the science teaching program whom I met during my
+stay at Laval University in the fall of 1991. It was their questions and preoccupations that
+prompted me to write this article. It was written in French and corrected by Françoise Ruel .
+The present text is an approximate translation.
+2. This definition, however, poses yet another problem: the work that combines and
+transforms elements of sensation and which, as a result, creates objects of perception,
+processes and events, is work of which we are usually not conscious. Thus, each time a
+cognitive organism accomplishes this work in the face of its environment, I consider this as
+coming within the realm of experience.
+3. For a constructivist this “intersubjectivity” is obviously devoid of objectivity or absoluteness.
+It is again the construction of an observer, that is based on the personal observations
+which he or she has made within the world of his or her own experience. In my opinion, this
+is what constitutes the major difference between radical constructivism and the recent
+current that goes under the name of “social constructionism”.
+4. I borrowed the term “orientation” from Humberto Maturana, who was the first to introduce
+the notion of orientation in his analysis of linguistic interaction (see, in particular, Maturana
+and Varela, 1980).
