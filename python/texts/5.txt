@@ -1,0 +1,157 @@
+In: T. Husen & T. N. Postlethwaite, (eds.) (1989) The International
+Encyclopedia of Education, Supplement Vol.1. Oxford/New York:
+Pergamon Press, 162–163.
+
+114
+
+Constructivism in Education
+Constructivism is a theory of knowledge with roots in philosophy, psychology, and
+cybernetics. It asserts two main principles whose application has far-reaching
+consequences for the study of cognitive development and learning as well as for the
+practice of teaching, psychotherapy, and interpersonal management in general. The
+two principles are:
+(1) knowledge is not passively received but actively built up by the cognizing
+subject;
+(2) the function of cognition is adaptive and serves the organization of the
+experiential world, not the discovery of ontological reality.
+To accept only the first principle is considered trivial Constructivism by those
+who accept both, because that principle has been known since Socrates and, without
+the help of the second, runs into all the perennial problems of Western epistemology.
+The present flourishing of Constructivism owes much to physics and the
+philosophy of science (Hanson, Kuhn, Lakatos, Barnes) and the concomitant interest
+in the sceptical core of 18th-century empiricism. Constructivism has as yet only an
+implicit relation with the constructivist approach to the foundations of mathematics
+(Lorenzen, Brouwer, Heyting).
+The first explicit formulation of a constructivist theory of knowledge was
+proposed by Giambattista VICO in his little-known Latin treatise De antiquissima
+Italorum sapientia (1710). He coined the phrase “verum est ipsum factum” and
+explained that to know something means to know what parts it is made of and how
+they have been put together. Objective, ontological reality, therefore, may be known to
+God, who constructed it, but not to a human who has access only to subjective
+experience. “God,” Vico wrote, “is the artificer of nature, man the god of artifacts”
+(1710/1858; p. 122).
+In modern psychology, the notion of cognitive construction was first forged into
+a major component of developmental theory by James Mark BALDWIN (1861–1934)
+and Jean PIAGET (1896–1980). Almost certainly unaware of Vico’s treatise, they set
+out from a Kantian position and endeavored to map the procedures and operations by
+means of which the human subject, having access only to sensation and to the
+operations of the mind, constructs a relatively stable experiential world.
+“L’intelligence organise le monde en s’organisant elle-même” (Piaget 1937, p. 311).
+Both Baldwin and Piaget could draw on a source that had not been available to
+Kant and Vico—the theory of evolution. Already William JAMES (1880) and Georg
+Ernst von Glasersfeld (1989) Constructivism in Education
+
+1
+
+SIMMEL (1895) had forcefully suggested that the function of the cognitive capability
+was adaptive, i.e., it was not to produce a ‘true’ picture of the ‘real’ world, but rather to
+enhance the organism’s management of experience. This enabled them to avoid Kant’s
+assumption of a priori categories: “... also the forms of thought, that create our
+conception of the world, result from the practical con-sequences and reactions which
+shape our mental constitution, just like our physical one, according to evolutionary
+requirements” (Simmel 1895, p. 45).
+The revolutionary aspect of Constructivism lies in the assertion that knowledge
+cannot and need not be ‘true’ in the sense that it matches ontological reality, it only
+has to be ‘viable’ in the sense that it fits within the experiential constraints that limit
+the cognizing organism’s possibilities of acting and thinking.
+Cybernetics and control theory, being concerned with self-regulating systems,
+have developed a similar approach to cognition according to which adaptation to the
+environment and a viable conception of the world must and can be constructed from
+input of ‘information’. (Maturana & Varela 1980; von Foerster 1985)
+Another source of Constructivism was the analysis of communication and
+language stimulated by computer science. SHANNON’s mathematical theory (1948)
+confirmed that only directives of choice and combination could travel between
+communicators, but not the meanings that have to be selected and combined to
+interpret a message. Language users, therefore, build up their meanings on the basis
+of their individual experience, and the meanings remain subjective, no matter how
+much they become modified and homogenized through the subject’s interactions with
+other language users. From the constructivist point of view, meanings are conceptual
+structures and, as such, to a large extent influence the individual’s construction and
+organization of his or her experiential reality.
+At present the constructivist approach has had most impact on psychotherapy
+and the empirical study of literature. Among family therapists, for instance, the notion
+that every individual constructs his or her own experiential reality has led to the
+realization that, in order to eliminate interactional conflicts, subjective constructs
+must be modified, rather than elements of an ‘objective’ situation. (Elkaïm, 1983;
+Keeney, 1983)
+In literary studies, the realization that meanings are not materially inherent in
+words or texts but have to be supplied by readers from their individual stores of
+experiential abstractions has drawn attention to the fact that interpretations are
+necessarily subjective and that the source of interpersonal agreement concerning an
+author’s intentions must be found in the construction of a consensual domain.
+(Schmidt 1983)
+The students’ subjective interpretation of texts and teachers’ discourse, and thus
+the subjective view of linguistically presented problems is increasingly being taken
+into account in educational practice and research. Such a constructivist perspective
+has noteworthy consequences (von Glasersfeld 1983):
+(1) There will be a radical separation between educational procedures that aim at
+generating understanding (‘teaching’) and those that merely aim at the repetition of
+behaviors (‘training’).
+
+Ernst von Glasersfeld (1989) Constructivism in Education
+
+2
+
+(2) The researcher’s and to some extent also the educator’s interest will be
+focused on what can be inferred to be going on inside the student’s head, rather than
+on overt ‘responses’.
+(3) The teacher will realize that knowledge cannot be transferred to the student
+by linguistic communication but that language can be used as a tool in a process of
+guiding the student’s construction.
+(4) The teacher will try to maintain the view that students are attempting to
+make sense in their experiential world. Hence he or she will be interested in students’
+‘errors’ and, indeed, in every instance where students deviate from the teacher’s
+expected path because it is these deviations that throw light on how the students, at
+that point in their development, are organizing their experiential world.
+(5) This last point is crucial also for educational research and has led to the
+development of the Teaching Experiment, an extension of Piaget’s clinical method,
+that aims not only at inferring the student’s conceptual structures and operations but
+also at finding ways and means of modifying them. (Steffe 1983)
+
+References
+Baldwin J M 1902 Development and evolution. Macmilan, London.
+Baldwin J M 1906-1911 Thought and things or genetic logic (3 vols.) Macmillan, New
+York.
+Elkaïm M 1983 Psychothérapie et reconstruction du réel. Editions Universitaires,
+Bruxelles.
+Foerster H v. 1985 Entdecken oder erfinden—wie läßt sich Verstehen verstehen? In H
+Gumin & A Mohler (Eds.) Einführung in den Konstruktivismus. (27-68)
+Oldenbourg, München.
+Glasersfeld E v. 1983 Learning as a constructive activity. In Proceedings of PME-NA,
+Montreal, Canada. (Reprinted in C Janvier (Ed.) 1987, Problems of representation
+in the teaching and learning of mathematics (3-17). Lawrence Erlbaum, Hillsdale,
+N.J.)
+Gumin H & Mohler A (Eds.) 1985 Einführung in den Konstruktivismus. Oldenbourg,
+München.
+James W 1880 Great men, great thoughts, and the environment. Atlantic Monthly, 46,
+441-459.
+Keeney B P 1983 Aesthetics of change. Guilford Press, New York.
+Maturana H R & Varela F J 1980 Autopoiesis and cognition. Reidel, Dordrecht,
+Holland.
+Piaget J 1937 La construction du réel chez l’enfant. Delachaux et Niestle, Neuchatel.
+Schmidt S J 1983 The empirical science of literature: A new paradigm. Poetics, 12, 1934.
+Shannon C E 1948 The mathematical theory of communication. Bell Systems
+Technical Journal, 27, 379-423, 623-656.
+Simmel G 1895 Ueber eine Beziehung der Selectionslehre zur Erkenntnistheorie.
+Archiv für systematische Philosophie, 1, 34-45.
+Steffe L P 1983 The teaching experiment methodology in a constructivist research
+program. In M Zweng et al. (Eds.) Proceedings of 4th International Congress on
+Mathematical Education. Birkhäuser, Boston.
+Ernst von Glasersfeld (1989) Constructivism in Education
+
+3
+
+Vico, G.-B 1710 De antiquissima Italorum sapientia. Stamperia de Classici Latini,
+Naples, 1858.
+
+This paper was downloaded from the Ernst von Glasersfeld Homepage, maintained by Alexander Riegler.
+It is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/2.0/ or
+send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, CA 94305, USA.
+Preprint version of 15 Feb 2006
+
+Ernst von Glasersfeld (1989) Constructivism in Education
+
+4
+
+

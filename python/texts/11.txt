@@ -1,0 +1,633 @@
+In: M. K. Pearsall (Ed.), Scope, sequence, and coordination of secondary
+school science, Vol. II: Relevant research, (169–182). Washington, D.C.:
+The National Science Teachers Association (Final Draft, August 1991).
+
+151
+
+Questions and Answers
+about Radical Constructivism
+Introductory Remark
+The questions I try to answer in the pages that follow were raised after talks I gave at
+the NARST Meeting in Atlanta (April 1990) and at an AAAS Symposium in
+Washington (February 1991). Given the limitation of time at both occasions, I could
+deal only with a small selection. Reviewing the whole collection at a later date, I found
+that it could be roughly divided into three subject areas and this is how I have
+arranged them here. I begin with the specifically epistemological ones, then take those
+that concern the problem of social interaction, and end with some implications the
+constructivist orientation might have for teachers and the philosophy of instruction.
+Since the answers I give are not derived from an established dogma but spring from
+my subjective point of view, the reader will find a certain amount of overlap between
+the three sections. I like to claim that this is inevitable because, in my experience, once
+one shifts to the constructivist orientation, everything one thinks and does changes in
+a way that seems remarkably similar and coherent. But let me emphasize a point I
+have made in many of my papers: Constructivism, as far as I am concerned, is one
+possible way of thinking. It is a model—and models, no matter how useful they might
+prove, must never be claimed to be “true.”
+
+Epistemology
+(A14) Is C. primarily an epistemology or a pedagogy?
+Constructivism deals with questions of knowledge—what knowledge is and where it
+comes from. It can therefore be considered an exercise in epistemology. The idea that
+knowledge is constructed by the knower is as old as Western philosophy. The PreSocratics in the 6th and 5th century B.C. were already aware of the fact that not
+everything they knew could be said to come from sensation and that the mind, the
+specifically human mind, was to a large extent responsible for shaping human
+knowledge. Some of them also noticed that there was a serious problem about the
+claim that knowledge could and should faithfully reflect a world held to be
+independent of the knower. They had realised that there is no way of checking
+
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+1
+
+knowledge against what it was supposed to represent. One can compare knowledge
+only with other knowledge. The later sceptics have never tired of reiterating this
+irrefutable argument.
+Recently, the reviewer of a paper of mine said that constructivism was “postepistemological,” and she was quite right (Nel Noddings in Constructivist views on
+the teaching and learning of mathematics, JRME Monograph #4, edited by Bob
+Davis, Carolyn Maher & Nel Noddings, NCTM, 1990). Indeed, the constructivist
+theory does not fit into the conceptual patterns of traditional epistemology, precisely
+because it posits a different relation between knowledge and that “real” outside world.
+Because it changes that important relation, I prefer to call it a theory of knowing
+rather than a theory of knowledge. (Please note that constructivism does not deny an
+outside world; it merely […]
+< About 8 lines are missing >
+“Social constructionism” is a recent development, started by some who claim radical
+C. does not take into account the role of social interaction in the construction of
+knowledge. The claim, as I see it, is partly justified by the fact that neither Piaget nor
+any more recent constructivist has actually specified a detailed model of how social
+interaction works from the C. point of view. On the other hand, Piaget and all of us
+who have derived our impetus from him, have always maintained that social
+interaction is a powerful influence in the construction of knowledge. But we were busy
+devising models for all the elementary constructing that has to be done before a
+cognitive organism can begin to know and interact with others. As far as I know, the
+social constructionists tend to take society as a given, and a radical constructivist
+cannot accept this. From my point of view, “society” must be analysed as a conceptual
+construct, before its role in the further construction of concepts can be explained and
+properly assessed.
+(A28) What are the differences between C. and idealism? Is the distinction a
+qualitative one?
+Idealism holds that the mind and its constructs are the only reality. C. holds that we
+can know only what our minds construct, but that its constructing is not free (ad lib):
+just as some ways of acting “work” and others do not, so some of our conceptual
+constructs and theories work and others do not. For C., the fact that something works
+(is “viable”) does not mean that it therefore is a representation of that “real” world
+that prevents other things from working. The “real” world remains unknowable no
+matter how well we manage in the domain of our experience. (This, by the way, also
+differentiates C. from pragmatism with which it has much in common.)
+(A38) Was Descartes revealing his constructivist view when he said “I think
+therefore I am?”
+Descartes was a very complex thinker and not averse to the notion of construction.
+Analytic geometry, one of his major achievements, is an explicit example of cognitive
+construction. But I would not interpret his famous “cogito” phrase as a constructivist
+statement about the self. The mind was very much an ontological given for D. He
+called it res cogitans (the thinking thing) and he saw it as an entity separate from a
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+2
+
+world that exists in its own right (res extensa) and about which the knower can find
+out some things, not through the senses but by logical reasoning.
+(W8) What is the role of truth in your model?
+Constructivism is an attempt to cut loose from the philosophical tradition and
+specifically from the philosophical tradition that knowledge has to be a representation
+of reality. Where reality is spelled with a capital and what is meant by it is a world
+prior to having been experienced. Truth in constructivism, as I keep repeating, is
+replaced by viability. That is a stark step to take. I’ve given many philosophical
+arguments (or excuses, if you will) for taking this step in a number of papers. Here let
+me just mention one thing, because it seems the most important in this context. If we
+want to talk in terms of “Truth” and mean by this that what we say and what we think
+should be a replica of the world as it is, we have to believe that we can visualize or
+imagine what that “real” world is like. We have to conceive of that world in terms of
+existence in the sense that it exists by itself prior to our noticing, perceiving, and
+thinking about it. Now, I claim that we cannot put any meaning to the expression “to
+exist” outside our sphere of experience. To us, “to exist” means by and large to have a
+location in space and in time. But if space and time, as Kant said, are forms of our
+experiencing and do not actually belong to the ontological reality beyond our
+experience, we have no way of visualizing things without space and time. And for me
+that is a good reason for giving up the notion that we have to know or imagine what
+the world is like before we experience it. Rather we must try to develop a theory that
+provides a relatively coherent explanation for how we come to have the kind of
+knowledge we use in our living.
+(A2) Is knowledge something to be presented to a learner or is it an activity?
+Knowledge is always the result of a constructive activity and, therefore, it cannot be
+transferred to a passive receiver. It has to be actively built up by every single knower.
+A teacher, however, can orient a learner in a general direction, and constraints can be
+set up that prevent the learner from constructing in directions that seem unsuitable to
+the teacher.
+(A4) Does the fact that we can predict physical phenomena with a great deal of
+accuracy not mean that the picture of reality we have constructed is congruent with
+the ‘real’ world outside?
+No. This question goes to a key element of C. Predictions we make, whether we are
+physicists or ordinary human beings, predict experiences, that is to say things we
+perceive, feel, and think. What we perceive, feel, and think is necessarily the result of
+our ways and means of carrying out these activities. The results can never be said to be
+like, let alone “congruent,” with an ontological reality; all we may conclude is that this
+“real world” allows us to perceive and think certain things. If a prediction turns out to
+be right, a C. can only say that the knowledge from which the prediction was derived,
+proved viable under the particular circumstances of the case.
+
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+3
+
+(A34) Some concepts seem to be based on a physical stimulus, e.g., “chair.” Others
+seem more abstract, e.g., “I.Q.” Is there a continuum from those triggered by some
+external stimulus to those that are more abstract?
+When we say “physical stimulus,” we say more than we know. All we actually know, is
+that we have had, or are having, a perceptual or, as Piaget would say, a sensory-motor
+experience (see preceding answer). To conclude that, because we have a perceptual
+experience which we call “chair,” there must be a chair in the “real” world, is to
+commit the realist fallacy. We have no way of knowing what is or could be beyond our
+experiential interface. If we can reliably repeat the chair-experience, we can only
+conclude that, under the particular circumstances, it is a viable construct.
+Something like “I.Q.” is not a sensory-motor experience but, like any
+measurement, the result of a number of abstractions. In Piaget’s terms, it would be an
+“operative” concept, because it is derived from operations we have to carry out. The
+terms “concrete” and “abstract” are not useful in C., because conceptual analysis
+shows that there are many levels of abstraction. The first level would be abstraction
+from sensory-motor experiences. Once such an abstraction has been made, its result
+can immediately be taken as material for a further abstraction, and so on. Thus, there
+is a continuum of levels of abstraction.
+(A39) Are there physical scientists who disagree with C.? If so, name one or two and
+indicate where they disagree with what you have said.
+Among the great physicists, most have said and written things that imply a
+constructivist position. Nearly all these statements were anticipated by Hermann von
+Helmholtz, who wrote in 1881: “The principle of causality is in fact nothing but the
+presupposition of the law-likeness of all of the appearances of nature” (von Helmholtz,
+Epistemological writings, Dordrecht: Reidel, 1977; p.180). I feel, however, that
+contemporary physicists are in tacit agreement with Popper, who admits that the
+sceptics’ arguments are irrefutable and that an “instrumentalist” view of knowledge is
+quite reasonable, but goes on to say that it is better for scientists to continue to believe
+that they are getting closer to understanding the “real” world. Needless to say, I do not
+share this double standard.
+From the limited experience I have had in the last few years with physics
+instruction, I would say that most physics teachers have little sympathy for C. They
+prefer to talk as though they were describing an absolute reality. If pushed a little, they
+may say “Well, of course, we don’t know for sure,” or “students don’t like uncertainty,
+they want to know how things really are.”
+(A17) Is there a concept of progress in radical C., or no change, or is all change
+random?
+Constructivists would be rather foolish to deny that we know more today than did,
+say, the Pre-Socratics or even Newton. But the growth of knowledge concerns
+knowledge of how to do things. The fact that we can “send a man to the moon” and
+can have a phone conversation from our moving car, does not mean that the
+conceptual structures and action programs we have developed are any more a
+representation of ontological reality. We have learned a great deal about how to set up
+and manage useful regularities in our experiential world. We know many more things
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+4
+
+the world allows us to do. We have, after all, learned even how to demolish our
+experiential world irrevocably. But for C. it is an illusion to believe that what we can
+do gives a picture of the “real” world. It describes our experiential reality as we happen
+to be experiencing it. And what we experience is necessarily shaped and co-ordinated
+according to the concepts and conceptual relations we are using at the moment.
+(A29) Is truth then an act of faith?
+Yes. C. does not deal with the traditional conception of “Truth,” which would require
+that one knows, or at least believes, that an idea, a theory, or any conceptual construct
+is an accurate representation or duplication of something beyond our experiential
+field. Truth in that sense may be felt (perhaps acquired) by following the mystics, but
+it is not a rational procedure that leads to it. Note that I am in no way disparaging or
+discounting what the mystics tell us—I am merely saying don’t try to explain it
+rationally.
+C. replaces the notion of truth with that of viability, which does not refer to
+anything outside the experiential field. This is analogous to pragmatism; but
+pragmatists formulated the slogan “true is what works,” and their use of the word
+“true” is, to my mind, misleading.
+(A22) If we cannot know reality, can we understand, test, and evaluate others’
+constructed realities? How can we test another’s scientific hypothesis and have valid
+grounds for rejecting or accepting it?
+Scientific hypotheses are “tested” in the experiential world where they either do or do
+not what they are claimed to do. Experiential worlds belong to individuals, but in the
+course of social interaction these individual worlds become adapted to one another
+and come to form a consensual domain, i.e. an area where the interactors’ mutual
+expectations are more or less regularly realized (see section on the “social”). The
+consensual domain of the scientific subculture, because of its many specific
+constraints, is particularly homogeneous and new hypotheses are “tested” against that
+(relatively) homogeneous background. If the new hypothesis makes too many new
+assumptions, it will usually be discarded regardless of whether it works or not (e.g.
+Wegener’s hypothesis of “continental drift,” proposed at a time when the notion of
+floating continents was considered preposterous by the entire scientific community. It
+took a lot of new experiential “evidence” to become acceptable.)
+(A15) Does reality exist aside from one’s construction of reality? How do you know?
+I don’t. As far as logic is concerned, I could be one of Leibniz’ monads, i.e. a closed,
+impermeable entity whose “experience” is like a movie that automatically runs its
+preordained course. But this is not a particularly useful model. I prefer the model built
+on the notion of viability within the space left free between constraints whose origin I
+can never tell.
+The main difficulty of the question arises from the word “exist.” In our human
+usage, it means to have some location in space, time, or both. But since space and time
+are our experiential constructs, the word “to exist” has no meaning outside the field of
+our experience, and whatever an independent ontological reality may do, it is not
+something we can visualize or understand.
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+5
+
+(A10) Shouldn’t there be a new label for reality as it exists, to distinguish it from
+subjective reality?
+Yes. But a label is not much use if one can never demonstrate what it stands for. I try
+to say “experiential reality” as often as I can and, in contrast, put that other mystical
+“reality” in quotation marks (see Q29). In German there are two convenient words,
+“Wirklichkeit” the reality due to one’s actions, and “Realität” which can be used for
+the other.
+(A21) What harm is there in remaining a realist? What do I have to gain by thinking
+as a radical constructivist?
+No harm at all, as long as you don’t tell others that the reality you have constructed is
+the one they ought to, or worse, must believe in. In everyday interactions, we all go on
+as though our experiential reality were the same obligatory reality for everyone. But if
+one gets into psychology or education, taking account of the subjective nature of
+experiential realities becomes a matter of honesty.
+(A9) How does C. escape the ‘hermeneutic circle’: “Is C. an adequate view of
+knowledge and the world despite the fact that all knowledge is held to be relative?”
+Hermeneutics searches for the “true” interpretation, constructivism does not.
+Constructivism is deliberately circular and never claims “objectivity.” We cannot look
+at our experiential worlds from the outside. We construct them from the inside and
+have usually lived a good many years in them, before we begin to wonder where they
+came from and what they “really” are. It would be more than a little presumptuous to
+believe that we could “know” the world that has produced us and our ways and means
+of thinking. It would require what Hilary Putnam has called “the God’s-eye view.” In
+contrast, we can always decide whether a way of acting or thinking is “adequate,”
+because it either does what we expect of it, or it does not.
+(A11) Is C. a belief?
+If you call it “belief” when one has constructed a model and finds it the most adequate
+one has so far developed, then I would say yes. But it is certainly not belief in an
+absolute “truth” or revelation. To me, it simply seems to be the most viable view at the
+moment.
+(A12) You alluded to the existence of an all-knowing ‘real’ God. How can you
+reconcile the belief in C. with the belief in a real God?
+“Alluding to God” is not the same as believing in one. Vico, the first explicit
+constructivist, said “A human being can know only what humans have made, God can
+know the world because He created it.” This is not even an hypothesis but merely a
+conjecture—it might be the case and it might not be the case. A mystic may “know,”
+but that knowledge would not be rational knowledge. This is not a statement of value
+but a statement of methodology. I have the greatest respect for mystics although I
+know nothing about how they operate.
+
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+6
+
+(A6) How do you hold up C. for scrutiny?
+By letting people see whether it works, where “to work” means to be as consistent as
+possible and to cover as much ground as possible. The assessment has to be in terms
+of viability not in terms of “truth.”
+(A13) Is realism typically a Western philosophy? If so, would you say something
+about Eastern philosophy.
+Our textbooks and television (even NOVA programs) are all too often manifestations
+of Scientism, a pseudo-philosophy that I would call the most recent Western religion
+precisely because it claims to have found objective “truth.” The realism the scientistic
+religion entails is certainly characteristic of the West.
+The little I have learned about Eastern philosophy does not make me competent
+to answer the second part of the question. I have the impression that Buddhism and
+Taoism tend to take rational knowledge and commonsense reality less seriously than
+we do, and the teaching of Zen seems to aim precisely at weaning the student from the
+frantic attachment to naive realism.
+
+Role of the Social
+(A16) How does C. view a body of common knowledge, such as in a textbook or field?
+It is an illusion that there is knowledge in textbooks or documents. They contain
+language, that is strings of words, put into them by authors. The words have meaning
+for both the authors and the readers and interpreters, each one of whom has built up
+his or her subjective meanings according to his or her individual experience. Though
+these individual meanings are constructs that have been through a certain amount of
+social adaptation (because their users have socially interacted with others), they
+remain subjective and to some extent idiosyncratic—which never fails to come to the
+surface in a serious discussion. Texts contain neither meaning or knowledge—they are
+a scaffolding on which readers can build their interpretation (see Q3, below).
+(W5) Where and how is language taught?
+I would say that the foundation of language is not taught at all. Children learn that by
+themselves. You can’t teach language to a two-year old or a three-year old. You may
+occasionally be able to show them the use of a new word, but even this often does not
+work too well. Later, specific interaction can focus on specific linguistic difficulties.
+That is why teaching language at a later stage—by correcting what children say—is
+enormously important. Unfortunately this seems to have gone by the board, because
+parents no longer have many extensive conversations with their children.
+Conversation has been replaced by television, and television, being a money-making
+enterprise keyed to the lowest levels of literacy, rarely provides a model for good
+language.
+But then, you might say, a lot of language can be learned from dictionaries.
+Dictionaries, however, contain definitions that are simply other words, they do not
+provide the experience from which meanings are abstracted. They do not give us new
+cognitive elements, but only new combinations of elements that we already possess.
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+7
+
+In general, language is learned in the course of interaction with other speakers,
+because speaking is a form of interacting, and we modify our use of words and
+utterances when they do not yield the expected results. Insofar as a classroom is
+interactive it contributes to the students’ linguistic development and also provides
+them with opportunities to witness the use of words in the context of the experiences
+to which they refer. That is why it is so very important to provide to students the
+experiences about which they are to learn.
+(A3) What is the role of ‘social instruction?’
+I take it this refers to “group learning,” and there is a lot to be said about this.
+(1) Students who work at a problem together with other students have to
+verbalize how they see the problem and what they want to do about it. This is one way
+of generating reflection, which requires awareness of what one is thinking and doing.
+This, in turn, provides occasions for active abstraction (repeating, writing down, and
+learning by heart what a teacher says, does none of this).
+(2) Explaining something to a peer usually leads to seeing things more clearly
+and often to spotting inconsistencies in one’s own thoughts. And when a small group
+explains its “solution” (irrespective of whether it happens to be viable or not) to the
+whole class, this provides a wonderful opportunity for learning (cf. the work of Paul
+Cobb, Ken Tobin, Grayson Wheatley, Jack Lochhead, and others).
+(3) Knowing that those you work with have no ready-made answer increases
+everyone’s courage to try and find one.
+(4) If one of the group finds an answer, this more often than not generates
+motivation to try a new problem.
+(5) To have an inconsistency or “error” explained by a peer is far less painful than
+have the teacher tell you that you are wrong. Etc., etc.
+(W6) Please give examples how social interaction would promote understanding.
+Once again my examples will have to be simplistic. The 1st kind of example would be
+the failure to get what one asks for or what one is trying to get—or to get the wrong
+thing. I’m talking about very young children and their acquisition of linguistic
+knowledge. Anyone who has attentively observed a child’s language acquisition knows
+the situation where the child uses a word because it wants something, but the word is
+inappropriate and therefore does not do what the child expects. The adult
+misunderstands, gives the wrong thing, and the child gets very irritated. Such
+moments of failure and perturbation may lead to a change. The child may try another
+word or the parent may suggest one. Then their child may try the new word the next
+time—and if it works, the child will have learned. It’s a very simple inductive
+procedure. You hang on to the schemes, the gambits, and the methods that have
+worked in the past. We all do this, not only in the area of language but in all areas of
+learning. And this principle has an important corollary that I have often mentioned:
+We have no reason whatsoever to change what we are doing as long as it produces the
+desired result.
+Which links with the notice of misconceptions in physics or in other teachings. If
+those conceptions have satisfied what the students demanded of them up to now, the
+students have no earthly reason to change it. The love of truth will not make them
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+8
+
+change it. You have to show them that their conception has limitations and that there
+are situations where that conception doesn’t work. That is one way of getting them
+interested in learning a new conception, because they all want to widen the range of
+application of whatever schemes or ideas they have.
+(A3) How do we reach shared meanings?
+The expression “shared meaning” is misleading. Your meaning and another’s are at
+best compatible. Which is to say, in a given situation, neither reacts in a way that the
+other could not expect. One only has to get into a discussion of philosophy to realize
+just how tenuous this compatibility is on the level of abstract concepts. It usually takes
+a long evening and a good deal of patience before one gets even a dim idea of what the
+other is trying to say. In a research team, for example, it can take well over a year to
+establish a workable compatibility with regard to the main terms that are being used.
+This is what we have called the generation of a consensual domain.
+(A33) How can we teach the tentativeness and personal nature of knowledge, yet not
+undermine the cultural, social reality we have arrived at?
+We can not. But, as a constructivist, I feel it is one’s duty to proclaim the
+“tentativeness” of everything one teaches and to warn the students that most, if not
+all, the “facts” one presents will be seen in a different light two or three decades later.
+What matters is the process of construction and the fact that this process yields results
+which seem to be viable at the moment. The cultural and social reality would be a far
+more liveable and fruitful one if we could do away with the notion that we have the
+Truth and others had better believe it.
+(W7) What is the point of talking or lecturing?
+Well, in a way, I think, I have answered this. The point is to foster new combinations
+of concepts. By talking to an audience, I cannot give people any new concepts, but I
+can prod them to combine in different ways the concepts that they have associated
+with the words I am using. I can propose combinations they may not have thought of
+before or had no occasion to use before. And I can perhaps generate some
+perturbation about conceptual structures that have been used unthinkingly merely
+because they felt familiar. If I am not causing some conceptual change, my talking—or
+writing—is useless. But in saying this, I am already in the topic of teaching.
+
+Instruction
+(A23,30,32) Implications of C. for a theory of instruction?
+There are many. Here I can mention only a few that can be stated briefly.
+(1) If we assume that students have to build up their own knowledge, we have to
+consider that they are not “blank slates.” Even 1st-graders have lived for a few years
+and found many viable ways of dealing with their experiential environment. The
+knowledge they have, is the only basis on which they can build more. Hence it is
+crucial for the teacher to get some idea of where they are (what concepts they seem to
+have and how they relate them).
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+9
+
+(2) Whatever a student says in answer to a question (or “problem”) is what
+makes sense to the student at that moment. It has to be taken seriously as such,
+regardless of how odd or “wrong” it might seem to the teacher. For the student, to be
+told that it is wrong, is most discouraging and inhibiting. Besides, given the way the
+student interpreted the question, the answer may actually be a good one.
+(3) If teachers want to modify a student’s concepts and conceptual structures,
+they have to try and build up a model of the particular student’s own thinking. Models
+of students’ thinking can of course be generalized, but before assuming that a student
+fits the general pattern one should have some solid evidence that this is a viable
+assumption in the particular case. It should never be assumed that students’ ways of
+thinking are simple or transparent.
+(4) Asking students how they got to the answer they gave, is a good way of
+discovering something about their thinking and opens the way to explaining why a
+particular answer may not be useful under different circumstances.
+(5) If you want to foster students’ motivation to delve further into questions
+which, at first are of no particular interest from the students’ point of view, you will
+have to create situations where the students have an opportunity to experience the
+pleasure inherent in solving a problem. Simply being told that an answer is “correct”
+does not do anything for the student’s conceptual development if he or she was not
+interested in the question.
+(6) Successful thinking is far more important than “correct” answers. Successful
+thinking should be rewarded even if it was based on unacceptable premises.
+(7) To understand and appreciate students’ thinking, the teacher must have an
+almost infinitely flexible mind (because students sometimes start from premises that
+seem inconceivable to teachers).
+(8) The constructivist teachers can never justify what they teach by claiming that
+is “true.” In mathematics they can show that it derives from certain conventional
+operations; in science, they can not say more than that it is the best way of conceiving
+the situation because, at the moment, it’s the most effective way of dealing with it.
+(A36) How do you activate the mind to construct knowledge?
+By letting students struggle with problems of their own choice, helping them (as Maria
+Montessori said a long time ago) only when they ask for help. At best, the teacher can
+orient the students’ constructing in a fruitful direction, he can never force it. This is, of
+course, time-consuming; but after they have experienced once or twice the pleasure of
+finding a solution by their own thinking, they will be quite ready to work on problems
+suggested by the teacher.
+(W2) What is the role of training interactions? Can episodes of training be used to
+solicitate episodes of teaching?
+My presentation was very condensed, and there are many things I had no time to say.
+Making the distinction between training and teaching does not mean that there is no
+place for training. I am convinced that some training is very useful, but in itself it is
+not conducive to understanding. However, there are many experiences for which one
+needs to be proficient in certain routines. Routines are necessary. You are not going to
+be a mathematician unless you have automated some of the elementary operations;
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+10
+
+but if you have automated them without having grasped their conceptual
+underpinnings, you are not going to be a mathematician either. Training and teaching
+have to go hand in hand. If I mostly emphasize teaching, it is because training is
+common practice in schools anyway.
+(A1) How does C. influence problem solving?
+By letting the students discover that it can be fun to solve problems. It will not be fun,
+if the teacher constantly watches that they take the “right” path to the “right” solution.
+Students often take wholly unexpected, unconventional paths to a solution that is
+quite viable but perhaps limited in its applicability. If the teachers don’t respect this,
+they merely demonstrate that they are unaware of the history that has led to the
+present state of the art. That is why, especially in science, I consider it indispensable
+that students be given a feeling for the long history of magnificent failures.
+(W9) Is knowledge really only built from existing pieces? And does meaning only
+come from prior knowledge?
+I think I have already answered this—at least in my way. Knowledge is often built up
+by combining and recombining available concepts or by trying out new conceptual
+relations. After the child has acquired a certain level of language, language can be used
+to suggest and to stimulate new combinations, and so on. And a similar succession of
+levels can be seen in reflection and abstraction, the processes that generate
+mathematics and other abstract realms.
+(A5) Are the implications of C. the same for mathematics and science education?
+Most are, but some are not (see point 8 in the first answer under “Instruction”). In
+mathematics, for instance, the teacher should explain that the step in calculus that
+leads from infinitesimal bits to continuity is a conceptual decision, not a logical
+consequence; just as the decimal system with all its consequences and implications is
+a conceptual system, not a God-given characteristic of an external “reality.” In science,
+on the other hand, the first thing to make clear is that scientists do not “unveil” the
+objective order of a pre-existing universe, but invent viable ways of co-ordinating and
+managing experiences—where the range of experiences is always limited by the
+particular interests of the given period. The history of science is full of examples that
+show how theories are superseded when new experiences enter the field of
+exploration. Old theories, as a rule, are not proven to be “wrong”; they merely turn out
+to be inadequate in an expanded domain of experience or in the pursuit of new goals.
+Above all, the constructivist teacher should never present a solution as the only one.
+(A7) How can we structure a teacher education program that allows students to
+construct an understanding of science, teaching, and learners that is consistent with
+C.?
+By making clear that education pursues two goals. First, to foster thinking that does
+not involve conceptual contradictions and leads to internally consistent results.
+Second, to introduce students to the consensual domain that governs the discipline at
+the moment. The “science” of today is, after all, what the scientists of today believe
+they agree on. But to a constructivist, “agreement” does not entail that the concepts
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+11
+
+and conceptual relations used by the people who “agree” are identical; it merely
+means that, under the given circumstances, they seem compatible (which, to repeat
+myself, indicates no more than that one is unable to discover discrepancies in one’s
+own and the other’s way of speaking and acting).
+(A27) If we adopt the radical C. view of knowledge, what changes in the way science
+teachers talk about the world will be required (i.e., language, terminology)?
+Little beyond the fact that what is being talked about is a particular view of the world,
+not the world as such. It is a way of ordering and co-ordinating experience that seems
+useful and consistent at the moment.
+(W2) Technical terms are intensively employed in the teaching and learning of
+science; what is the status of technical terms (which are rigidly defined) in scientific
+understanding? Technical terms are memorized, right?
+That is very good question. Technical terms are somewhat different from the ordinary
+words that children learn in the first three or four years of their lives. The reason why
+they are different is that there usually is a good operational definition for technical
+terms, and the student can be shown or guided to do what is necessary to construct
+the referent. The operations to produce a viable referent may be physical or they may
+be conceptual—and in the second case, teaching the term will be more difficult. The
+physicists’ notion of ‘energy’ is a good example. For the last two years I have been
+involved with people who do research on physics teaching. As a non-physicist I was at
+first astonished to see that physics teachers and physicists quite often begin to argue
+about what energy actually is and that there does not seem to be a definition that
+satisfies everyone. Of course there are definitions in the textbooks, but the physicists
+tend to say that these definitions reflect a very naive way of thinking about energy. So
+there are, indeed, difficulties and a non-physicist is not in a position to solve them. All
+I would say is this: It is no use presenting students with a verbal definition unless they
+have an opportunity to have some kind of relevant experience. In a laboratory one can
+show all sorts of simple experiments in which a construct such as energy becomes, if
+not obvious, at least quite plausible. So much for technical terms.
+(A24) Does C. favour divergent instructional strategies? Or is it consistent with a
+teacher having an agenda?
+The “agenda,” I would say, is the attainment of the two-fold goal (see Q7 above);
+instructional strategies may be suggested but not prescribed. Every inspired teacher
+will develop his or her own. Teaching, after all, is something of an art. It requires not
+only acquaintance with techniques but also intuition.
+(W1) If understanding is in the individual, does the teacher then abdicate any
+evaluative function?
+My answer is no. In fact, the teacher cannot help evaluating what students do and say.
+Teachers must show the student what they consider inadequate, and they must show
+why it does not work. The constructivist teacher is not concerned with “truth” but
+with successful operating. It is no use simply telling students that they are wrong. This
+only decimates such motivation as they may have. To change their way of acting or
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+12
+
+thinking, they have to see in their own experience that what they did was not the most
+successful way of operating.
+(A35) Whose construction is to be accepted in a school setting?
+The first criterion to decide the acceptability of a “construction” is its viability, that is
+to say, whether it does or does not what it is supposed to do. If it is viable, one can
+introduce other criteria, such as simplicity, economy, elegance, convention, etc.
+(A18, 37) What are the implications of C. for how we assess student learning?
+This is the most difficult question. Before it could be answered satisfactorily, one
+would have to decide what one wants to teach. As long as evaluation is based on
+“performance,” where performance means the ability to reproduce answers that were
+part of the instructional process, we are not assessing what would be the important
+“learning” from a constructivist point of view, i.e., the ability to solve new problems.
+We have to decide whether we want students to develop their ability to think or simply
+to handle standard procedures and to give standard answers in a limited set of
+situations. Given sufficient authority, the second can be achieved by rote learning and
+does not involve the students’ conceptual ability. If they pass this kind of test, they
+may find the satisfaction of holding a job and they will have to discover other ways of
+attaining intellectual satisfaction. Much research is going on in the area of
+“assessment of cognitive skills” and some new methods may be found. At the moment,
+all I can think of is this: present the students with a problem they have not
+encountered before (in the sense that it is conceptually different); observe (infer) how
+they conceptualize it, and judge what they do to solve it. It is the student’s approach
+that is far more important than the particular solution. By observing the conceptual
+tools the student is using, one can usually get some inkling as to how far he or she is
+on the way towards a viable conceptual network for the particular area. Best of all,
+give them a problem to which there is not yet a standard solution. I realize full well
+that this is not a satisfactory answer. But then, according to the statistics we read
+these days, the tests used at present are not satisfactory either.
+(A31) Would a constructivist approach to science cause more students to be “better”
+scientists?
+To answer this question, we should first have to agree what it means to be a “better”
+scientist. From my point of view, I would say yes—but to me a scientist is better if he
+never forgets that science cannot reveal “objective truth,” is forever fallible, and is not
+the most important thing in the field of human experience. A constructivist attitude is,
+I believe, a safeguard against the pseudo-religious faith that the search for “truth”
+justifies all means and can wash its hands of the possible consequences.
+Constructivists cannot but remain aware of the fact that they themselves are
+responsible for the way in which they see the world and thus for everything that may
+follow from their particular way of seeing. Their way of seeing is, in the last analysis,
+never more than one viable way of seeing.
+
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+13
+
+(W10) In a largely positivist world, how do you suggest that constructivism can
+make a Bridgehead in teacher education?
+By having actual and prospective teachers experience that the constructivist approach
+works. This is not an easy task. But where it has been put into practice (at the
+University of Georgia, at Purdue University, at Florida State in Tallahassee, and also
+at my own institute at the University of Massachusetts), our initial fears and doubts
+have been allayed. At the beginning I was inclined to think that teachers who have
+taught whatever they teach for 15 or 20 years would be extremely reluctant to change
+in their approach to teaching. But practice has proved otherwise. If one succeeds in
+getting teachers to make a serious effort to apply some of the constructivist
+methodology, even if they don’t believe in it, they become enthralled after five or six
+weeks, not because the results in the children are so wonderful, but because the
+atmosphere in the classroom has changed. The relation between the children and
+between the children and the teacher becomes radically different—it turns into a
+productive relation.
+It is an overwhelming experience to come into a classroom of six- or seven-year
+olds who are all intensely occupied, all doing things that are relevant to what they are
+supposed to be doing, and it quickly becomes evident that they are enjoying it. Most
+elementary school teachers find this such a relief that they are very ready to continue.
+In other words, it is the success that convinces them. But there are difficulties
+nevertheless. It takes an enormous amount of stamina to bring about a change of
+mind in School Boards, in principals, and others in authority. It does not happen in a
+few weeks. Yet after a year or so, the radical change in the attitude of the children and
+therefore in the mood of the schoolroom has its effect. If then it can be shown, as is
+the case now, that after two years the understanding generated in the constructivist
+classrooms is significantly greater than in traditional schools, more than half the
+battle has been won.
+This paper was downloaded from the Ernst von Glasersfeld Homepage, maintained by Alexander Riegler.
+It is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/2.0/ or
+send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, CA 94305, USA.
+Preprint version of 13 Feb 2006
+
+Ernst von Glasersfeld (1991) Questions and Answers about Radical Constructivism
+
+14
+
+

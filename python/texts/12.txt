@@ -1,0 +1,250 @@
+In: L. Streefland (Ed.) Proceedings of the 9th International Conference
+on Psychology of Mathematics Education, Vol. 1. Utrecht, The
+Netherlands: State University Utrecht, 484–489. 1985.
+
+091
+
+Representation and Deduction
+Abstract: Re-presentation, designating a re-play of conceptual structures,
+is contrasted with the popular idea of mental images of external things. The
+author claims that all deductive procedures require re-play of sensorymotor content as well as operational routines and demonstrates this in the
+classical syllogism and an example of simple addition. He concludes that
+the generation of deductive abilities in both logic and mathematics must be
+based on the practise of inductive inference.
+...for the roses had the look
+of flowers that are looked at
+T. S. Eliot1
+The epigraph was chosen from a poet, to make clear from the outset that my paper is
+intended as a contemplative stroll through theory and not as a report on empirical
+research. We are all concerned with teaching, and poets, I’m sure you will agree, have
+had some success in that area. They may have achieved it unintentionally, but their
+lack of didactic ambition does not seem to have impeded the learning of those who
+wanted to learn, nor has it diminished their desire to learn. I have no statistical
+evidence for these assertions, but I nevertheless intend to push further in the direction
+they indicate. Poets know, perhaps better than others, that readers or listeners cannot
+be given ready-made thoughts, images, and ideas. They can only be given words.
+Being given words, however, they will inevitably bring forth thoughts and images of
+their own; and by presenting particular combinations of words, one can, at least to a
+modest extent, guide the conceptual construction of the meaning which, eventually,
+the readers or listeners will believe to have found in the text.
+Poets also know (only too well) that it is no use trying to tell a listener or reader
+that his or her interpretation is “wrong.” Paul Valéry said:
+Once published, a text is like an appliance of which anyone can make use
+the way he likes and according to his means; it is not sure that the builder
+could use it better than others. Besides, he knows well what he wanted to
+make, and that knowledge always interferes with his perception of what he
+has made.2
+
+Ernst von Glasersfeld (1985) Representation and Deduction
+
+1
+
+Since teachers of mathematics, as a rule, know well what they are explaining,
+that knowledge invariably interferes with their own perception of their explanation.
+Consciously or unconsciously they take for granted that certain things are “selfevident,” and they forget that what seems evident in mathematics is always contingent
+upon the habit of performing specific mathematical operations.
+As seasoned users of language, we all tend to develop an unwarranted faith in the
+efficacy of linguistic communication. We act as though it could be taken for granted
+that the words we utter will automatically call forth in the listener the particular
+concepts and relations we intend to “express.” We cling to the illusion that speech
+“conveys” ideas or mental representations. But words, be they spoken or written, do
+not convey anything. They can only call forth what is already there, and they can
+stimulate new combinations. This should become clear every time we test the
+representations our words have called forth in a listener; but we don’t see it because of
+our unwarranted presuppositions concerning the process of “communication.”
+One misapprehension stems from the general notion of “representation.” As that
+term is used in psychology and cognitive development, it is ambiguous in more than
+one way. First, like many words ending in “-ion,” “representation” can indicate either
+an activity or its result. This ambiguity rarely creates difficulties. Far more serious is
+the epistemological ambiguity to which the word gives rise. It creates an unwholesome
+conceptual confusion.
+The distinction I want to make clear concerns two concepts which, for instance in
+German, are expressed by two words, Darstellung and Vorstellung; both are usually
+rendered in English by “representation.” The first designates an item that corresponds
+in an iconic sense to another item, an “original” to which it refers. The second
+designates a conceptual construct that has no explicit reference to something else of
+which it could be considered a replica or picture. (In fact, Vorstellung would be better
+translated into English as “idea” or “conception.”)
+Thus, if one uses the word in the second sense, it would help to spell it “representation.” The hyphenated “re” could be taken to indicate repetition of something
+one has experienced before. This would lessen the illusion that mental representations are replicas or images of objects in some “real” world. It would help to
+focus attention on the fact that what one re-presents to oneself is never an
+independent external entity but rather the re-play of a conceptual item one has
+derived from experience by means of some sort of abstraction.3
+The ability to re-present to oneself prior constructs is an essential part of all
+cognitive activities. It comes into play when you ask yourself whether the soufflé you
+are eating now is really as exquisite as the one you had in Dijon twenty years ago.
+Whenever you compare sensory experiences, and one of them is not in your actual
+perceptual field, that experience must be re-presented. As one gets older, one realizes
+that the memory from which one re-plays such past sensory experiences cannot
+always be trusted. Soufflés (and other sinful experiences) from one’s distant past tend
+to seem sweeter than present ones. But this nostalgic tendency is not what I want to
+discuss here.
+The ability to re-present is just as crucial in the use of symbols. The so-called
+“semantic nexus” that ties a symbol to what it is supposed to stand for, ceases to
+function when the symbol user is not able to re-present the symbol’s meaning.
+
+Ernst von Glasersfeld (1985) Representation and Deduction
+
+2
+
+Memory, clearly, plays no less a part in the symbolic domain than in that of sensory
+experience.
+Irrespective of the particular position you may have adopted concerning the
+foundations of mathematics, you will all agree that symbols such as “+,” “–,” “x,” and
+“:” refer to operations and can, in fact, be interpreted as imperatives (add!, subtract!,
+multiply!, divide!). To obey any such imperative, one must not only “know” the
+operation it refers to, but also how to carry it out; one must know how to re-play the
+symbolized operation with whatever material happens to be at hand. That is to say, if
+operator-signs are to function as symbols, the operations to which they refer must
+have been abstracted by the symbol user from the sensory-motor material with which
+they were implemented in that symbol user’s own prior experience. (There are, of
+course, several levels of abstraction, but at the bottom there has to be sensory-motor
+material.)
+The semantic nexus between an operator-symbol and the abstracted operation it
+designates is no less indispensable in logic than it is in mathematics. Quine speaks of
+“the inseparability of the truths of logic from the meanings of the logical vocabulary.”4
+Logical truth, of course, refers to the reliability of deductive inferences that can be
+derived from the chosen premises; it does not pertain to the experiential foundation of
+either premises or conclusions. If a syllogism were formed with the premises “All
+socialists are evil” and “Snoopy is a socialist” it would as logically lead to the
+conclusion that “Snoopy is evil” as the traditional syllogism leads to the conclusion
+that Socrates is mortal. The logical “truth” of a deduction is not impaired by the
+experiential falseness of the premises. Although the logic of the syllogism is in no way
+tied to what seems likely or unlikely in the thinker’s experiential world, following the
+rules and carrying out the operations that are called forth by the use of words
+belonging to the “logical vocabulary” is nevertheless an activity and, as such, requires
+an active, thinking agent. Hume saw this, and concluded that deduction, because it
+involved a psychological process, could not be as infallible as classical logicians like to
+believe.5 If this introduction of doubt were legitimate, doubt would eventually infest
+also the realm of mathematical operations. To discuss it may therefore not be an idle
+exercise—especially if, as I believe, Hume’s notion can be tied to the theory of
+representation.
+As far as deductive logic is concerned, what the premises say should always be
+explicitly posited rather than taken as statements of fact. Their relation to the
+experiential world is irrelevant. What matters is that they be taken as though they
+were unquestionable, as hypotheses which one accepts for the time being, and that
+their hypothetical status should always be carried over to the conclusion. In other
+words, we should always explicitly say:
+IF all men are mortal,
+and IF Socrates is a man,
+Then Socrates is mortal.
+This emphasizes two things: first, that one is dealing with assumptions whose
+experiential validity one has decided not to question for the moment; and, second,
+that the logical certainty one attributes to the conclusion pertains to the operations
+that are called forth by the logical terms “if,” “all,” “and,” and “then.” These two
+aspects are the basis of our faith in the infallibility of deductive procedures.
+
+Ernst von Glasersfeld (1985) Representation and Deduction
+
+3
+
+John Stuart Mill, in an attempt to subvert faith in the syllogism, argued that, in
+order truthfully to formulate the premise that all men are mortal, one should have to
+examine all members of the class called “men” with respect to their mortality. If,
+having done this, no exception to the rule had been found, one would know that
+Socrates is mortal, because, being a man, he must have been tested for mortality. If,
+on the other hand, he had not been tested, this could only mean that either he was not
+considered a “man,” or that the use of the term “all” in the premise is unwarranted.
+This is a neat argument, but it shows that Mill did not see the premises of the
+syllogism as deliberate assumptions but as statements of experiential fact. Once this is
+understood, the argument no longer goes against the syllogism but against the
+misconception that deductive inferences should automatically be “true” in the
+experiential domain.
+There may, however, be other problems. If the premises of syllogisms are
+understood as deliberately hypothetical conceptual structures (which one agrees not
+to question), one may still want to examine the deductive procedure, a procedure that
+involves several steps. Having constructed the premises, one must call up the logical
+operations designated by the tokens of the logical vocabulary and re-play these
+operations with the re-presentations of the premised conceptual structures. That is to
+say, in order to come to a conclusion, the conceptual construct created for the major
+premise must have been maintained unchanged, at least long enough to be available
+for re-presentation when one has created the conceptual construct for the minor
+premise and is ready to proceed with the logical operations that relate the two
+premises so as to produce the conclusion.
+Whether or not one believes with Kant that the deductive operations called forth
+by logical terms are part of the inherent, a priori repertoire of the human mind, it
+seems plausible that, rather than being created each time anew, they are re-played,
+much like preprogrammed subroutines, when the associated symbol or sequence of
+symbols gains the agent’s attention in an appropriate context.6 If this is the case, some
+form of memory would be required for the performing of logical operations, and since
+memory would have to be considered a psychological phenomenon, one might be
+tempted to invoke Hume’s doubt.
+The question of memory arises even more clearly in connection with the
+hypothetical conceptual structures that are generated in response to the not
+specifically logical components of the premises, i.e., the hypothetical conceptual
+structures to which the logical operations must be applied. All deductive procedures
+require that we trust our ability to maintain, and re-present as they were, the
+conceptual structures and the operational routines we intend to use. If we doubt this
+ability, all logic goes by the board. We are not inclined that way. It would be as
+disruptive as doubting the reliability of memory and all the other electronic devices in
+a computer.
+However, we may still question how we acquire logical operations. Professional
+philosophers usually dismiss any consideration of the developmental aspects of
+thought as “genetic fallacy” and pretend that logicians and other users of logical
+operations do not have to construct the required procedures but have them readymade in their minds even if they do not always use them. Like Piaget, I find this an
+absurd contention. Instead, I would suggest that it is precisely the experiential success
+
+Ernst von Glasersfeld (1985) Representation and Deduction
+
+4
+
+of inductively derived rules that provides both the occasions and the motivation for
+the abstraction of the specific logical operations that are then associated with symbols
+and used without reference to experience.
+From that perspective, it seems clear that, in the construction of the syllogistic
+procedure, the components of the premises that are not the specifically logical terms
+must be interpretable by the active agent in a way that makes sense in the context of
+that agent’s experience. It seems likely that we come to make the necessary reflective
+abstractions when we apply rules that work, rather than rules that are countermanded
+by experience. If we have never formulated a tentative rule of the kind “all roses I have
+seen, smelled sweet,” we would not be tempted to say: “this flower looks like a rose—
+therefore it will smell sweet.” In other words, if we have had no success with inductive
+inferences, we are unlikely to proceed to deductive ones.
+To conclude, let me try to apply this line of thought to the basic understanding of
+numbers and how they interact. A child can no doubt learn by heart expressions such
+as “5 + 8 = 13.” However, in order to understand them, she must be able to re-present
+the meanings of the involved symbols. As in the syllogism, the parts of such numerical
+expressions involve assumptions. “5” means that one assumes a plurality of countable
+items which, if they were counted (i.e. if number words were coordinated with them
+one-to-one), they would use up the number words from “one” to “five.” The “+,” then,
+signifies that a second plurality of items which, by itself, would use up the number
+words from “one” to “eight,” is to be counted with the number words that follow upon
+“five.”7 Children may re-present these pluralities and the counting activity in many
+different ways. The sensory-motor material they use to implement the abstracted
+patterns is irrelevant. What matters is that they have abstracted these patterns and
+can re-play them in whatever context they might be needed. For I would claim that
+only if they have acquired a solid facility in the generation of this kind of
+representation can they possibly enter into the garden of mathematical delights.
+
+Footnotes
+1. Eliot, T. S. Burnt Norton, London: Faber & Faber, 1914; p.10.
+2. Valery, P. Au sujet du cimetiere marin (1933). In: Oeuvres de Paul Valery, Paris:
+Galimard, La Pleiade, 1957; p.1507 (my translation).
+3. Piaget, J. La formation du symbole chez l’enfant (1945). Neuchatel: Delachaux et
+Néstle, 7eme edition; p.237.
+4. Quine, W. V. Carnap and logical truth. In The ways of paradox. Cambridge,
+Mass.: Harvard University Press, 1966; p.109.
+5. Hume, D. A treatise of human nature (1739-40), Book I, Part IV, Ch. i.
+6. Wittgenstein, L. On certainty. New York: Harper Torchbooks, 1969; 1522/523,
+p.69.
+7. Steffe, L. P., von Glasersfeld, E., Richards, J. & Cobb, P. Children’s counting types:
+Philosophy, theory, and application. New York: Praeger, 1983.
+
+Ernst von Glasersfeld (1985) Representation and Deduction
+
+5
+
+Acknowledgement
+I am indebted to Les Steffe for helpful criticisms of the first version of this paper.
+
+This paper was downloaded from the Ernst von Glasersfeld Homepage, maintained by Alexander Riegler.
+It is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/2.0/ or
+send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, CA 94305, USA.
+Preprint version of 15 Feb 2006
+
+Ernst von Glasersfeld (1985) Representation and Deduction
+
+6
+
+

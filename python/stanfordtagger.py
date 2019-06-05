@@ -76,7 +76,9 @@ class NER():
 	
 	def print_tagged_text(self):
 		print('print_tagged_text')
-		print(self.tagged_text)
+		for (text, tag) in self.tagged_text:
+			if tag == 'PERSON':
+				print(text, tag)
 	
 	def print_bio_tagged_text(self):
 		print(self.bio_tagged)
@@ -91,9 +93,10 @@ class NER():
 
 
 myner = NER('text_en.txt')
+# myner = NER('text_dt2.txt')
 # myner = NER('text_dt.txt')
 # myner.print_tokenized_text()
-# myner.print_tagged_text()
+myner.print_tagged_text()
 # myner.print_bio_tagged_text()
 # myner.print_ne_tree()
-myner.print_ne()
+# myner.print_ne()

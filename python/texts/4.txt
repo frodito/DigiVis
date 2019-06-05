@@ -1,0 +1,480 @@
+Ernst von
+
+Glasersfeld
+http://www.vonglasersfeld.com
+
+131
+
+Glasersfeld E. von & Steffe L. P. (1991) Conceptual models in educational research and
+practice. Journal of Educational Thought 25(2): 91–103. Available at
+http://www.vonglasersfeld.com/131
+
+Conceptual Models in Educational Research
+and Practice
+Traditionally, there has been a certain amount of detachment between teachers of mathematics
+and cognitively oriented educational scientists who endeavored to develop theories about the
+learning of mathematics. At present, however, there are signs of a rapprochement, at least on
+the part of some of the scientists, who have come to realize that their theories must ultimately
+be evaluated according to how much they can contribute to the improvement of educational
+practice. Healthy though this realization is, it at once raises problems of its own. At the outset
+there is the research scientists’ inherent fear of getting bogged down in so many practical
+considerations that it will no longer be possible to come up with a theory that may satisfy their
+minimum requirements of generality and elegance. Then, when scientists do come up with a
+tentative theory, there is the difficulty of applying it in such a way that its practical usefulness
+is demonstrated. This would require either scientists’ direct involvement in teaching or the
+professional teachers’ willingness and freedom to become familiar with the theory and to
+incorporate it into actual teaching practice for a certain length of time. In both cases, it will
+help if scientists and teachers can establish a consensual domain. In other words, they must
+come to share some basic ideas on the process of education and the teaching of mathematics in
+particular.
+The main objective of cognitively oriented educational scientists is to understand how
+children build up their picture of the world piece by piece. In mathematics education the
+specific objective is to understand the way children build up their mathematical reality and the
+operations by means of which they try to move within that reality. The scientific investigators
+who enter this still largely uncharted field cannot search for some ultimate truth but must
+strive to understand individual children’s understanding. The way to do this is to embed
+oneself as best one can in the actual situations where children manifest their constructing and
+solving procedures. First-hand observation, not only of children’s mathematical activity, but
+also of how that activity can be influenced, is necessary to gain the experiential basis for
+formulating explanations of it. The researcher must actually teach children (Steffe & Cobb,
+1983).
+The gap between classroom teachers and contemporary educational scientists can be
+bridged only if they both begin to speak the same language – the language that springs from
+the researchers’ quest to understand children’s understanding and the teachers’ quest to
+facilitate children’s understanding.
+David Hawkins (1973) said in one of the main lectures presented at the Second
+International Congress of Mathematics Education:
+
+The really interesting problems of education are hard to study. They are too long-term and
+too complex for the laboratory, and too diverse and non-linear for the comparative method.
+They require longitudinal study of individuals, with intervention a dependent variable,
+dependent upon close diagnostic observation. The investigator who can do that and will do it
+is, after all, rather like what I have called a teacher. So, the teacher himself is potentially the
+best researcher … (p. 135).
+
+If Hawkins is right, mathematics teachers should reconceptualize their goals and
+activities so as to include at least the idea of experimentation. Hawkins was optimistic and
+seemed to believe that the teacher’s necessary reconceptualization could be brought about, “if
+only we could offer him strong intellectual support and respect his potentialities as a scientist”
+(p. 135).
+While it may not be clear what will have to be done to enable teachers to participate in
+experimentation in their classrooms, it certainly seems essential to shift the focus of their
+attention away from what students ought to be doing to an attempt to discover what actually
+goes on in students’ heads. In the traditional view, school mathematics is considered as
+something that exists in its own right, a well-defined and well-described body of knowledge
+that is to be transported from teachers to children. This view of school mathematics has its
+roots in the belief that mathematics is the way it is rather than the way human beings make it.
+This belief has permeated mathematics education at all levels. The traditionalists essentially
+ignore the mathematical knowledge of children and proceed on the formalist’ assumption that
+there is a world of mathematical objects, a world independent of the thinking individual
+(Brouwer,1913). In a relativistic world view, various frames of reference must be taken into
+account. Taking children’s frames of reference into consideration, as well as those of adults,
+has made us aware of how limited traditional educational practices are. Once one gives up the
+idea that knowledge is a commodity that can be transferred from a teacher to a learner, it
+becomes imperative to replace that idea with some notion as to what does and what could go
+on in the learner’s head.
+In this paper we try to show that the notions of teaching and of scientific research can be
+modified and that considerable common ground can be discovered once it is realized that both
+activities are essentially involved with the building of hypothetical models – models of
+particular students’ cognitive structures in the one case, and models of the cognitive (or
+mathematical) development of children in the other.
+
+THE NOTION OF MODEL
+As we are using it here, the term model is borrowed from contemporary philosophy of
+science which has brought about a major revolution in the way we see the world and the
+relation between the world and scientific knowledge. The source of this revolution lies in the
+realization that observers will consciously see only what they are able to conceptualize, given
+their present repertoire of concepts. This idea is certainly not new. Protagoras, in the 5th
+century B. C., said “man is the measure of all things”; Hanson, in the 20th century A. D. (1958),
+wrote: “There is a sense, then, in which seeing is a ‘theory-laden’ undertaking. Observation of x
+is shaped by prior knowledge of x” (p. 19). Both statements can be read to mean that one sees
+what, in a wide sense, one is ready to see.
+This is different from the conventional 19th-century view of the scientific endeavor
+characterized by Brush (1974, p. 1164) in which ideal professional scientists are seen
+… as rational, open-minded investigators, proceeding methodically, grounded
+incontrovertibly in the outcome of controlled experiments, and seeking objectively for
+“truth” …
+
+2
+
+Ernst von Glasersfeld & Leslie Steffe
+
+In contrast to this, scientists who have founded and advanced their work on the
+revolutionary conceptual changes brought about by relativity, quantum mechanics, genetic
+epistemology, and cybernetics tend to be extremely wary of the notions of truth and objectivity
+in the ontological sense. They have become very conscious of the fact that observation is a
+generative rather than a passive process, that all data are “theory-laden,” and that, as von
+Foerster (1978) so neatly put it, “objectivity is the illusion that observation could take place
+without an observer. ”
+Just as the interpretation of a piece of language is always guided by the individual
+interpreter’s experience and expectations, so the interpretation of what one observes is always
+governed by some theory one has in mind and a goal one has chosen.
+Lakatos (1970) addresses this point in his discussion of research programs. According to
+him, the hard core of a scientific research program consists of those beliefs which the
+researchers in the program do not challenge. The protective belt of the hard core (which is held
+to be irrefutable) has to bear the brunt of tests and gets adjusted and re-adjusted, or even
+completely replaced, to defend the thus-hardened core (p. 133); … research policy, or order of
+research, is set out – in more or less detail – in the positive heuristic of the research
+programme. … the positive heuristic consists of a partially articulated set of suggestions or
+hints on how to change, develop the ‘refutable variants’ of the research programme, how to
+modify, sophisticate, the ‘refutable’ protective belt.
+The positive heuristic of the programme saves the scientist from becoming confused by
+the ocean of anomalies. The positive heuristic sets out a programme which lists a chain of ever
+more complicated models simulating reality; the scientist’s attention is riveted on building his
+models following instructions which are laid down in the positive part of his programme. (p.
+135)
+It is the confirmations or verifications that sustain a scientific research program. The
+anomalies (i. e., the experiences that do not fit) are ignored but not forgotten, for it is hoped
+that they can eventually be turned into corroboration of future models which will supersede
+the current ones.
+For Lakatos, theories were hypothetical-deductive systems and the theoretical activity of
+the scientist constituted the primary source of progress of a research program. From the
+constructivist perspective, one particular aspect of this position must be stressed. Even the
+hard core of a research program (i. e., those beliefs that the program takes for granted) should
+not be considered as eternal truth. The history of science shows that, no matter how successful
+research programs are, they eventually collapse and are superseded by others with different
+hard cores. In fact, the knowledge constituted by a hard core is viable as long as it serves the
+purposes and helps to attain, with the help of the models in its “protective belt”, the goals of
+the established community of researchers. When it ceases to do this and, in Lakatos’ words,
+“degenerates” – either because some anomalies can no longer be disregarded for practical
+reasons, or because the goals of the community are shifted-a new research program must be
+generated.
+A model, then, “simulates reality”; it is a conceptual construct that is treated as though it
+gave an accurate picture of the real world, but has the actual function of making experimental
+results and other experiential elements compatible with the general assumptions that are
+inherent in the research program’s core.
+
+MODELS IN EDUCATIONAL SCIENCE
+The notion that learning can be modelled as a process of active self-organization has
+been developed independently in the fields of cognitive psychology and cybernetics (the
+discipline that investigates communication and control). From this perspective, the
+Conceptual Models in Educational Research and Practice
+
+3
+
+construction of models that “simulate the reality” of the learning organism becomes vastly
+more important than it was in the traditional learning theory where the learner was simply a
+passive entity whose responses were more or less mechanistically determined by external
+stimuli (Skinner, 1977). In retrospect it is indeed puzzling how radical behaviorists, either in
+psychology or in education, could live for so long with the peculiar contradictory notion that
+they, as experimenters or teachers, were free to make choices as to what their subjects should
+be doing, whereas the subjects were considered to be wholly stimulus-determined reactive
+entities.
+If both educational scientists and mathematics teachers want to profit from this shift in
+the psychological paradigm, they must come to regard the learner as a relatively autonomous
+entity, an intelligent entity that is first and foremost concerned with making sense (i. e. some
+kind of order) in its own experiential world. This conviction forms the hard core of a new
+research program in truly cognitive psychology as well as the basis of a teaching methodology
+that is significantly different from the traditional one. In the traditional view, the child was a
+relatively malleable entity that could be shaped by good examples, by practice and drill, and
+above all by the judicious allocation of reinforcement. The really effective teachers, of course,
+have always known – at least since Socrates – that examples, drill, and overt reinforcement are
+quite effective in producing a desired behavior; but precisely because they were good teachers
+they also knew that generating understanding was a worthier educational objective than
+merely modifying behavior. To generate understanding is also a much more difficult objective
+to attain. To some extent, however, this greater difficulty is compensated by the fact that
+understanding is self-reinforcing because, from the children’s point of view, it leads to making
+sense of their experiential world.
+In adopting the new, cognitive paradigm, then, it becomes imperative that both teachers
+and researchers acquire some theoretical notions of how this “making sense” can be
+conceptualized. The sum of these notions, once they are linked and in some way organized,
+constitutes what we want to call a model of the cognitive or, better, the cognizing part of the
+child. But because the goals of the scientists and the teachers are not entirely the same, there
+will have to be several models, and though they must obviously all be related, they will be
+different in certain respects. First, there will be a general model of learning, a model that
+serves to illustrate and implement the main thrust of the cognitive core theory towards selforganization and the active construction of knowledge. Because this model is intended to be
+general and interdisciplinary, it will not take into account the particulars and difficulties that
+are inherent in teaching and learning mathematics. The construction of the particular concepts
+and operations of school mathematics would be the content of a second model that attempts to
+explain the successful learning of mathematics. It is at this level of specificity, where teaching
+and learning are quite deliberately restricted to the area of mathematics, that we as educators
+wish to foster interactions between researchers and teachers. To achieve this, however, a
+further distinction of relevant models is needed.
+Both educational scientists and teachers in the field of mathematics education try to
+model the children’s mathematical reality and how that reality may be cognitively built up
+piece by piece. The first, the scientists, may be mainly interested in establishing the hard core
+of a mathematics learning theory that would be applicable to as large a number of children as
+possible, but the viability of that theory, to quote Lakatos again, depends on “confirmations or
+‘verifications’ that sustain a scientific research program. ” Consequently, in order to “confirm”
+or “verify” their theory, the scientists must “test” it by observing individuals. But – and this is
+crucial from the cognitive point of view – the tests in this context do not primarily concern the
+level of performance of new children but rather the question of whether or not the model can
+be maintained in the face of observations and teaching experiments with new children.
+However, it is not only in the context of justification but also in the context of re-invention that
+the scientific investigators need to observe individuals. In order to formulate even the most
+
+4
+
+Ernst von Glasersfeld & Leslie Steffe
+
+tentative model of cognitive change, educational scientists must witness the growth of
+mathematical knowledge in particular children and clarify and substantiate their
+interpretations by means of deliberate interventions. Conceptual analysis alone is simply not
+sufficient as a source of insight in model building. It is only on the basis of models of particular
+children, that a more general model can eventually be abstracted – and the models of
+particular children are a natural bridge between educational scientists and the teachers.
+Teachers may be predominantly interested in the progress of the individual children they
+are teaching; but their assessment of progress and, indeed, their very job as teachers would
+become practically impossible if their method of teaching mathematics had to be adapted in all
+details to each individual child. Teachers, therefore, need an at least partially generalized
+theory and a model of the learner that is general enough to serve as a basis for the
+establishment of more than one individual model. Ideally, then, the teachers’ models of
+individual students will be instantiations of the educational scientists’ more general model of
+mathematics learning; and conversely, the individual models the teachers construct for
+individual students will be a continuous testing ground for the theoretical assumptions the
+scientists have incorporated in the more general model.
+Thus, both educational researchers and teachers, whether they like it or not, are in a very
+real sense dependent on one another. Given this dependence, the two roles also have much to
+offer each other in terms of assistance and exchange of ideas. As Hawkins (1973) pointed out:
+The working perspective of a teacher allows him … to make many observations of those
+acquisitions and transitions in intellectual development upon which the growth of
+mathematical knowledge depends. But such a teacher is of course not only an observer, he
+would indeed be less of an observer if he were not also a participant; one who, because of the
+way he shares in and contributes to the development, can earn the privilege of insight into its
+details and pathways (p. 117).
+
+To make explicit this relationship between scientists and teachers, as we see it, it is
+indispensable to adjust the conceptions of scientific theory and the practice of teaching to some
+of the present ideas in the philosophy of science and, in particular, to adopt the notion of
+hypothetical models as interface between a basic theory and the experiential reality in research
+and teaching. The notion of the hypothetical model, however, brings with it a characteristic
+difficulty.
+
+THE INSTRUMENTAL CHARACTER OF MODELS
+Working with children is in many ways like working with foreigners with whom one has
+only fragments of a language in common. The situation is extreme when the work involves
+numbers and mathematical operations and aims at developing some insight into how
+individual children think about numbers and how they operate with them. Anyone who has
+seriously tried to investigate what actually goes on in children’s heads when they are struggling
+to solve an addition or subtraction problem at the limit of their present capability will have
+realized that the children’s mathematical world is indeed outlandish from the adult’s point of
+view.
+Yet, children who have not been totally alienated from the number game and have at
+least a modicum of motivation do not act randomly. They do proceed according to some
+method, even if that method would seem unorthodox to the experienced reckoner. To get an
+inkling of what that method might be, investigators cannot but use their own imagination and
+try to conceive a reasonable path that might connect such manifestations of children’s
+operating as can be observed, with steps that could possibly lead to an answer to the given
+question. That is to say, no matter how hard investigators try to adapt their analyses to the
+“foreign” ways of children, the model they build up will always be a model constructed out of
+Conceptual Models in Educational Research and Practice
+
+5
+
+concepts that are necessarily the investigators’. Because children’s ways of thinking are never
+directly accessible, the investigators’ model can never be compared to a child’s thought in
+order to determine whether there is or is not a perfect match. The most one can hope for is that
+the model fits whatever observations one has made and, more importantly, that it remains
+viable in the face of new observations.
+What, one might ask, is the use of such models if they remain hypothetical and are linked
+to the reality of children’s thinking, not by hard facts, but by inferences that may be
+countermanded at any moment? The answer is simple and perhaps disconcerting: no one can
+ever discover hard facts about the thoughts or operations that go on in another person’s head.
+The closest one can come is through linguistic communication, but even there one deals with
+approximation. Language does not transport pieces of one person’s reality into another’s – it
+merely prods and prompts the other to build up conceptual structures that, to this other, seem
+compatible with the words and actions the speaker or writer has used (von Glasersfeld, 1983).
+There is no denying the uncertainty inherent in all conjectures about another’s mental
+states and processes. Yet, it would be foolish to say that, because their accuracy is inherently
+uncertain, such conjectures should be considered useless. This inherent uncertainty pertains
+not only to psychology and its investigations of the mind but also to the “hardest” of the
+sciences (cf. Popper, 1963). In this respect, then, a cognitively oriented educational
+methodology differs radically from behavioristically oriented ones. If the educator’s objective is
+the generation of certain more or less specific behaviors in the student, the educator sees no
+need to ask what, if anything, might be going on in the student’s head. Whenever the student
+can be made to produce the desired behaviors in the situations with which they have been
+associated, the learning process will be deemed successful. Students do not have to see why the
+particular actions lead to a result that is considered “correct”; what matters is that they
+produce such a result. From our point of view, this exclusive focus on performance
+differentiates what we would call training from the kind of teaching that aims at understanding
+(cf. von Glasersfeld, 1989).
+In contrast, cognitively oriented educators will not be primarily interested in observable
+results, but rather in what students think they are doing and why they believe that their way of
+operating will lead to a solution. The rationale of this shift of focus is simply this: if one wants
+to generate understanding, the reasons why a student operates in a certain way are far more
+indicative of the student’s stage of conceptual development than whether or not these
+operations lead to a result that the teacher finds acceptable. Only when teachers have some
+notion of the conceptual structures with which students operate, can they try to intervene in
+ways that might lead students to change something in these conceptual structures.
+When such notions regarding states and operations in anther person’s head come to be
+organized in a coherent structure, they constitute hypothetical models. Though the states and
+operations that concern educational scientists are essentially the same that concern teachers,
+they will be organized somewhat differently because the goals of the two disciplines are not
+quite the same. The researchers want to build up a model that illustrates a way in which
+students construct mathematical knowledge. Because it would be much more useful to have
+one model, rather than several different ones, researchers must focus on features which, they
+believe, will be widely generalizable. Above all, they must establish patterns of change and
+development, and basic principles of how change and development may be induced. Teachers,
+on the other hand, are primarily concerned with the progress of groups of students; therefore,
+they need first of all a plausible model of the conceptual structures with which students are
+operating at the time.
+Ideally, then, the model or models teachers come to use in interactions with students
+should always be somewhat simplified or modified versions of the general model the
+educational scientists have developed for mathematics education. Insofar as teachers’ models
+of their students must contain mathematics, this has to be the particular students’
+
+6
+
+Ernst von Glasersfeld & Leslie Steffe
+
+mathematics, and it is the teachers’ business to infer as much about this as possible in their
+interactions with the students. These inferences, however, can then be fitted into the more
+general model of conceptual construction and change that has been developed by cognitive
+psychology and educational research. Clearly, if a generalized model of mathematics learning is
+to be grounded in practice, it must have been abstracted from a great deal of experience with
+actual students’ successful learning efforts and actual teachers’ successes in instruction. We
+present a preliminary outline of such a model in the next section. In any case, however, we
+believe that the fundamental relation between the researcher’s and the teacher’s models is
+what Hawkins alluded to in the passage quoted at the outset.
+
+METHODOLOGICAL CONSIDERATIONS
+One recent development based on the close relationship between teaching and research is the
+technique that has become known as the “teaching experiment” (Steffe, 1983; Cobb & Steffe,
+1983). Designed to provide the experimenter with the opportunity to explore conceptual
+change and development in the learner, the technique is indeed a powerful tool for the
+construction of conceptual models. What has sometimes been misunderstood or ignored is
+that teaching experiments were originally designed not for the immediate purpose of teaching,
+but rather to serve the experimenter in the quest for more reliable models of the learner.
+Although it does happen that a task, question, or suggestion presented within a teaching
+experiment benefits the student because it leads to a step in a new direction, any such direct
+benefit to the learner is not the main objective of the experimenter. Experimenters are excited
+whenever a student embarks on a new and successful step, but their interest is focused not on
+advancing an individual student, but on discovering something about the specific conditions
+under which students can be expected to take new steps.
+The construction of mathematics learning models (which, with regard to abstraction, lie
+between the most general learning model and the models of individual learners) still relies on
+concepts in the hard core of the research program, concepts that transcend any particular
+model and have been accepted by the researchers (Steffe, 1984). These hard core concepts are
+used in the formulation of both the model builder’s abstractions from experience and the
+model of the learner.
+Thom (1973) stressed that, in order to raise to the level of conscious awareness those
+cognitive structures that are only implicit in what children do, it is necessary to lead the
+children into situations where their results of using those structures can be experienced. In
+principle, we agree. But, as constructivists, we would insist that students can become aware of
+the kind of abstractions that are involved in mathematics only if they are already carrying out
+the operations from which the new conceptual structures are to be derived. (We do not see how
+anyone could make abstractions from anything except his or her own experiences and
+actions.)The main purpose of the teaching experiment is, in fact, to discover the kinds of
+situations that may induce a naive learner, first, to embark on a novel way of operating and,
+then, if this new way led to success, to abstract from it an operative conceptual structure.
+Thom’s (1973) notion of extracting conscious structures from unconscious activity is for
+us closely linked to Piaget’s notion of accommodation, a notion which, unfortunately, is not as
+simple as many Piaget interpreters seem to believe. Thus, we frequently read textbook
+definitions that are essentially similar to the following: “While assimilation involved changing
+incoming information, accommodation involves changing the structures used to assimilate
+information” (Brainerd, 1978; p. 24). To anyone who reads the Genevan literature in the
+original language, this would at once be suspect because Piaget does not use the term
+“information. ” But let us focus on accommodation. One of the most important aspects of a
+viable model of the learner would be an indication of at least some of the ways in which a
+Conceptual Models in Educational Research and Practice
+
+7
+
+learner’s conceptual structures are superseded by structures that seem more adequate from the
+teacher’s point of view. Such modification or increase in an individual’s conceptual repertoire
+is indeed what Piaget called accommodation; yet, in his constructivist theory, change or growth
+does not take place in response to external “information” but in response to an internal
+perturbation.
+The sort of perturbations that lead to the accommodation of conceptual structures are
+perturbations that arise in the context of a “scheme. ” A scheme is a triadic arrangement
+consisting of an initiating situation (which may be perceptual or conceptual), an activity or
+operation, and an expected outcome or result (von Glasersfeld, 1979). According to the original
+scheme theory, there are three main causes of perturbation:
+1. A situation is recognized as instantiation of one that has been associated with a particular
+action, the action is carried out, and the expected result fails to be experienced. (Note
+that the “recognition” of the trigger situation is where “assimilation” plays its part.) This
+first kind of perturbation, that is, the failure to produce the expected result, will most
+frequently lead to an accommodation of the recognition procedure.
+2. If the scheme, as described in (1), produces, instead of the accustomed result, another
+result that turns out to be desirable, this may lead to differentiation in the initial
+situation or in the activity and thus to the construction of a new scheme which will then
+be expected to produce the new result.
+3. A different activity, associated with a different situation, leads to a result that is
+recognized as the expected result of another scheme.
+This, obviously, is an extremely general model of the learning situation and it should be
+clear that, in any area of experience that provides complex goals, the learner will soon become
+susceptible to other perturbations. Above all, with increasing familiarity and practice, the final
+component of the scheme, the “expected outcome,” tends to become a more diversified factor
+and its non-attainment will then lead to distinguishable subcategories of the perturbation
+listed under (1) above. The work of mapping and sorting out these ramifications is still very
+much in progress.
+This work has, of course, its own problems. One of them is that it does not conform to the
+traditional procedure of experimental psychology, in that its progress is necessarily ad hoc.
+Educational researchers, in their role as observers in a teaching experiment, may at a given
+point decide to generate a perturbation on the spontaneous conjecture that the child in the
+experiment might be able to make a certain accommodation. Similarly, they may conjecture
+that the child made an accommodation. But there is no way to tell whether or not this is
+actually the case. The only way to confirm such conjectures is to engage the child in further
+interactions. However, what form these interactions should take with a particular child at a
+particular point in that child’s conceptual development is not something that can be decided
+beforehand in any detail; it must depend on the experimenter’s experienced intuition at the
+particular moment.
+This flexibility, though it has at times been interpreted as a lack of methodological rigor,
+is absolutely essential if, for the purpose of devising a general model, we want to chart the
+growth of understanding in human learners. As we said at the outset, this undertaking is very
+different from the behaviorist’s attempt directly to modify behavior. Understanding and the
+urge to make sense of one’s experience are the most private of affairs. But to become conscious
+of understanding and making sense are the very results of intelligent behavior that provide
+satisfaction to the acting individual and thus may generate the motivation to continue the
+process of learning. And if, as teachers, we want to foster understanding, we will have a better
+chance of success once we have more reliable models of students’ conceptual structures,
+because it is precisely those structures upon which we hope to have some effect.
+
+8
+
+Ernst von Glasersfeld & Leslie Steffe
+
+ACKNOWLEDGMENT
+This paper is based on work supported by the National Science Foundation under Grant No.
+MDR-8550463. Any opinions, findings, and conclusions or recommendations expressed in this
+publication are those of the authors and do not necessarily reflect the views of the National
+Science Foundation.
+
+REFERENCES
+Brainerd, C. J. (1978). Piaget’s theory of intelligence. Englewood Cliffs, N. J. : Prentice-Hall.
+Brouwer, L. E. J. (1913). Intuitionism and formalism. Bulletin of the American Mathematical Society, 20,
+81-96.
+Brush, S. (1974). Should the history of science be rated X? Science, 183, 1164-1172.
+Cobb, P. & Steffe, L. P. (1983). The constructivist research er as teacher and model builder. Journal for
+Research in Mathematics Education, 14, 12, 83-94.
+Hanson, N. R. (1958). Patterns of discovery. Cambridge, U. K. : Cambridge University Press.
+Hawkins, D. (1973). Nature, man, and mathematics. In A. G. Howson (Ed.), Developments in
+mathematical education: Proceedings of the Second International Congress on Mathematical
+Education (115-135). Cambridge, U. K. : Cam ridge University Press.
+Lakatos, I. (1970). Falsification and the methodology of scientific research Programmes. In I. Lakatos &
+A. Musgrave (Eds.), Criticism and the growth of knowledge (91 195). Cambridge, U. K. : Cambridge
+University Press.
+Popper, K. R. (1963). Conjectures and refutations: The growth of scientific knowledge. New York: Harper
+Torch books.
+Skinner, B. F. (1977). Why I am not a cognitive psychologist. Behaviorism, 5(2), 1-10.
+Steffe, L. P. (1983). The teaching experiment methodology in a constructivist research program. In M.
+Zweng et al. (Eds.), Proceedings of the Fourth International Congress on Mathematics Education
+(469-471). Boston: Birkhauser.
+Steffe, L. P. (1984). An educational scientist in mathematics education: Observer, teacher, and
+theoretician. In H. G. Steiner (Ed.), Theory of mathematics education (Occasional paper 54).
+Bielefeld, Germany: Institut für Didaktik der Mathematik.
+Thom, R. (1973). Modern mathematics: Does it exist? In A. G. Howson (Ed.), Developments in
+mathematical education: Proceedings of the Second International Congress on Mathematical
+Education (194-209). Cambridge, U. K. : Cam bridge University Press.
+von Foerster, H. (1974). Cybernetics of cybernetics. In K. Krippendorff (Ed.), Communication and control
+in society. New York: Gordon and Breach.
+von Glasersfeld, E. (1983). On the concept of interpretation. Poetics, 12, 207-218.
+Available at http://www.vonglasersfeld.com/082
+von Glasersfeld, E. (1989). Cognition, construction of knowledge, and teaching. Synthese, 80, 121-140.
+Available at http://www.vonglasersfeld.com/118
+von Glasersfeld, E. (1979). Cybernetics, experience, and the concept of self. In M. N. Ozer (Ed.), A
+cybernetic approach to the assessment of children: Toward the more humane use of human beings
+(67-113). Boulder, CO: West view Press, 67-113. Available at http://www.vonglasersfeld.com/056
+
+This paper was downloaded from the Ernst von Glasersfeld Homepage, maintained by Alexander Riegler.
+It is licensed under a Creative Commons Attribution-NonCommercialNoDerivs 3. 0 Unported License. To view a copy of this license, visit
+http://creativecommons. org/licenses/by-nc-nd/3. 0/ or send a letter to
+Creative Commons, 559 Nathan Abbott Way, Stanford, CA 94305, USA.
+
+Preprint version of 7 June 2014
+
+Conceptual Models in Educational Research and Practice
+
+9
+
+
