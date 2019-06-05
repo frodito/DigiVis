@@ -30,13 +30,13 @@
 #
 
 # Database connection information
-dbname="" # (e.g.: dbname=wikidb)
-dbhost=""
-dbuser="" # (e.g.: dbuser=wikiuser)
-dbpw="" # (e.g.: dbuser password)
+dbname="wikidb" # (e.g.: dbname=wikidb)
+dbhost="localhost"
+dbuser="wikidb" # (e.g.: dbuser=wikiuser)
+dbpw="G6sdYlDDUKhN0HUVMSEN" # (e.g.: dbuser password)
 
 # Website Files
-webrootdir="" # (e.g.: webrootdir=/home/user/public_html)
+webrootdir="/var/www/html/mediawiki" # (e.g.: webrootdir=/home/user/public_html)
 
 #
 # Variables
@@ -68,19 +68,16 @@ fi
 # Begin logging
 #
 echo "Beginning mediawiki site backup using fullsitebackup.sh ..." > $logfile
-echo "Beginning mediawiki site backup using fullsitebackup.sh ..."
 #
 # Create temporary working directory
 #
 echo " Creating temp working dir ..." >> $logfile
-echo " Creating temp working dir ..."
 mkdir $tempdir
 
 #
 # TAR website files
 #
 echo " TARing website files into $webrootdir ..." >> $logfile
-echo " TARing website files into $webrootdir ..."
 cd $webrootdir
 tar cf $startdir/$tempdir/filecontent.tar .
 
@@ -89,8 +86,6 @@ tar cf $startdir/$tempdir/filecontent.tar .
 #
 echo " Dumping mediawiki database, using ..." >> $logfile
 echo " user:$dbuser; database:$dbname host:$dbhost " >> $logfile
-echo " Dumping mediawiki database, using ..."
-echo " user:$dbuser; database:$dbname host:$dbhost "
 cd $startdir/$tempdir
 mysqldump --host=$dbhost --user=$dbuser --password=$dbpw --add-drop-table $dbname > dbcontent.sql
 
@@ -98,14 +93,12 @@ mysqldump --host=$dbhost --user=$dbuser --password=$dbpw --add-drop-table $dbnam
 # Create final backup file
 #
 echo " Creating final compressed (tgz) TAR file: $tarname ..." >> $logfile
-echo " Creating final compressed (tgz) TAR file: $tarname ..."
 tar czf $startdir/$tarname filecontent.tar dbcontent.sql
 
 #
 # Cleanup
 #
 echo " Removing temp dir $tempdir ..." >> $logfile
-echo " Removing temp dir $tempdir ..."
 cd $startdir
 rm -r $tempdir
 
@@ -114,4 +107,3 @@ rm -r $tempdir
 #
 endtime=`date`
 echo "Backup completed $endtime, TAR file at $tarname. " >> $logfile
-echo "Backup completed $endtime, TAR file at $tarname. "

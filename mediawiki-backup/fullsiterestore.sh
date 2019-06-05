@@ -29,13 +29,13 @@
 #
 #
 # Database connection information
-dbname="" # (e.g.: dbname=wikidb)
-dbhost="" #
-dbuser="" # (e.g.: dbuser=wikiuser)
-dbpw="" # database user password
+dbname="wikidb" # (e.g.: dbname=wikidb)
+dbhost="localhst" #
+dbuser="wikidb" # (e.g.: dbuser=wikiuser)
+dbpw="G6sdYlDDUKhN0HUVMSEN" # database user password
 
 # Website location
-webrootdir="" # (e.g.: where you keep your mediawiki directory structure)
+webrootdir="/var/www/html/mediawiki" # (e.g.: where you keep your mediawiki directory structure)
 #
 # Variables
 
@@ -106,8 +106,6 @@ rm -r $webrootdir/*
 echo " unTARing website files into $webrootdir ..." >> $logfile
 cd $webrootdir
 tar xf $startdir/$tempdir/filecontent.tar
-sudo chown -R www-data:www-data $webrootdir
-sudo chmod -R 774 $webrootdir
 
 #
 # Load database information

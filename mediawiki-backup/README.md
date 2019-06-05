@@ -1,4 +1,4 @@
-# Full Backup & Restore of Mediawiki Installation
+# Full backup & restore of a local mediawiki-installation
 - Backup
  - [fullsitebackup.sh](https://www.mediawiki.org/wiki/Fullsitebackup)
 - Restore
