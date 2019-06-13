@@ -69,29 +69,42 @@
 # 	print(k1, k2, v)
 
 
-import pandas as pd
-from pySankey import sankey
+# import pandas as pd
+# from pySankey import sankey
+#
+# df = pd.read_csv("data_parallel.csv")
+#
+# leftLabels = [thema for thema in sorted(list(set(df['Thema'])), reverse=True)]
+# rightLabels = [jahr for jahr in sorted(list(set(df['Jahr'])), reverse=True)]
+# print(rightLabels)
+#
+# colorDict = {
+#     "Anpassung": "#E74C3C",
+#     "Erfahrung": "#1abc9c",
+#     "Lernen": "#283747",
+#     "Raum und Zeit": "#f39c12",
+#     "Realität": "#5499c7",
+#     "Wirklichkeit": "#f0c40f",
+#     "Sprache": "#82e0aa",
+#     "Viabilität": "#cacfd2",
+#     "Wahrnehmung": "#ff00ff",
+# }
+#
+# sankey.sankey(
+#     left=df['Thema'], right=df['Jahr'], aspect=20,
+#     leftLabels=leftLabels, rightLabels=rightLabels,
+#     fontsize=20, figure_name="Stränge"
+# )
 
-df = pd.read_csv("data_parallel.csv")
+text = '\nHello\nWorld!\n'
+print('before')
+if text[0:1] == '\n':
+    text = text[1:]
 
-leftLabels = [thema for thema in sorted(list(set(df['Thema'])), reverse=True)]
-rightLabels = [jahr for jahr in sorted(list(set(df['Jahr'])), reverse=True)]
-print(rightLabels)
-
-colorDict = {
-    "Anpassung": "#E74C3C",
-    "Erfahrung": "#1abc9c",
-    "Lernen": "#283747",
-    "Raum und Zeit": "#f39c12",
-    "Realität": "#5499c7",
-    "Wirklichkeit": "#f0c40f",
-    "Sprache": "#82e0aa",
-    "Viabilität": "#cacfd2",
-    "Wahrnehmung": "#ff00ff",
-}
-
-sankey.sankey(
-    left=df['Thema'], right=df['Jahr'], aspect=20,
-    leftLabels=leftLabels, rightLabels=rightLabels,
-    fontsize=20, figure_name="Stränge"
-)
+if text[-1] == '\n':
+    text = text[0:-1]
+    
+text = text.replace('\n', " ")
+    
+print(text)
+print('after')
