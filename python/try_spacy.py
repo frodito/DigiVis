@@ -1,4 +1,3 @@
-import argparse
 import spacy
 from spacy import displacy
 
@@ -51,6 +50,10 @@ class DigiVisNER:
             for entity in self.doc.ents:
                 print(entity.text, entity.start_char, entity.end_char, entity.label_, sep=';')
         
+        elif outputmode == 'table2':
+            for entity in self.doc.ents:
+                print(entity.text, entity.label_, sep=' ')
+        
         elif outputmode == 'convert':
             print(self.text_annotated)
         
@@ -93,14 +96,21 @@ class DigiVisNER:
     
     
 # parse arguments
-parser = argparse.ArgumentParser()
-parser.add_argument("-f", dest='text_file')
+# parser = argparse.ArgumentParser()
+# parser.add_argument("-f", dest='text_file')
 
-args = parser.parse_args()
+# args = parser.parse_args()
 
 # myner = DigiVisNER(filename=args.text_file)
-# myner = DigiVisNER(filename='text.txt', model='xx_ent_wiki_sm')
+myner = DigiVisNER(
+    # filename='./texts/Abstraction, Re-Presentation, and Reflection: An Interpretation of Experience and of Piaget’s Approach.txt',
+    # filename='./texts/The Construction of Knowledge.txt',
+    filename='./texts/Questions and Answers about Radical Constructivism Introductory.txt',
+    # model='en_core_web_sm')
+    # model='en_core_web_md')
+    model='en_core_web_lg')
+# myner = DigiVisNER(model='en_core_web_sm')
 # myner = TrySpacy(filename='text.txt', model='en_core_web_sm')
-myner = TrySpacy(filename='./texts/01.txt')
+# myner = DigiVisNER(filename='./texts/0.txt')
 myner.print_results(outputmode='table')
 # myner.print_annotated_text()

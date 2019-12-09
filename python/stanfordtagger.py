@@ -92,7 +92,7 @@ class NER():
 		print(self.ne)
 
 
-myner = NER('text_en.txt')
+myner = NER('text_de.txt')
 # myner = NER('text_dt2.txt')
 # myner = NER('text_dt.txt')
 # myner.print_tokenized_text()
