@@ -1,0 +1,152 @@
+table {
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table, th, td {
+    vertical-align: top;
+    border: 1px solid black;
+}
+
+td {
+    height: 100px;
+}
+
+.selectarea {
+    min-width: 60vw;
+    max-width: 60vw;
+    min-height: 80vh;
+    max-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: auto;
+}
+
+.filterWrapper {
+    width: 20vw;
+    height: 80vh;
+}
+
+.hierarchyWrapper {
+    width: 99%;
+    height: 100%;
+    overflow: auto;
+}
+
+.treeview {
+    margin: 10px 0 0 10px;
+}
+
+ul {
+    list-style: none;
+    /*padding-inline-start: 20px;*/
+    padding-inline-start: 0;
+}
+
+.treeview li {
+    padding: 2px 0 0 2px;
+}
+
+.treeview > li:first-child > label {
+    /* style for the root element - IE8 supports :first-child
+    but not :last-child ..... */
+}
+
+.treeview li.last {
+
+}
+
+.treeview li > input {
+    height: 16px;
+    width: 16px;
+}
+
+.treeview li > label {
+    /* move left to cover the original checkbox area */
+    margin-left: -20px;
+    /* pad the text to make room for image */
+    padding-left: 20px;
+}
+
+/* Unchecked styles */
+.treeview .custom-unchecked {
+
+}
+
+.treeview .custom-unchecked:hover {
+
+}
+
+/* Checked styles */
+.treeview .custom-checked {
+
+}
+
+.treeview .custom-checked:hover {
+
+}
+
+/* Indeterminate styles */
+.treeview .custom-indeterminate {
+
+}
+
+.treeview .custom-indeterminate:hover {
+
+}
+
+.cardHeader {
+
+}
+
+.headerElement {
+    float: left;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+.cardOuter {
+    cursor: pointer;
+    float: left;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 100%;
+    margin: 5px 5px 5px 5px;
+    padding: 10px 10px 10px 10px;
+    vertical-align: middle;
+    --lh: 1.2em;
+    --numlines: 4;
+    /*height: calc(var(--lh) * var(--numlines));*/
+    display: -webkit-box;
+    /*-webkit-line-clamp: calc(var(--numlines) - 1);*/
+    -webkit-box-orient: vertical;
+    -webkit-box-shadow: 5px 5px dodgerblue;
+    overflow: hidden;
+
+}
+
+.cardInner {
+    background-color: white;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.cardFooter {
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: white;
+    width: 100%;
+    padding: 5px 0 5px 0px;
+}
+
+#filter_annotation {
+    display: inline-block;
+    float: right;
+    width: 30vw
+}

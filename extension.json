@@ -1,0 +1,177 @@
+{
+  "name": "DigiVis",
+  "author": "Manfred Moosleitner",
+  "license-name": "GPL-2.0-or-later",
+  "version": "0.0.1",
+  "namemsg": "digiVis",
+  "descriptionmsg": "digiVis-desc",
+  "manifest_version": 1,
+  "MessagesDirs": {
+    "DigiVis": [
+      "i18n"
+    ]
+  },
+  "config": {
+    "DigiVisNERUser": {
+      "value": "change-me-here",
+      "description": "Username for the bot-user to create NamedEntities pages."
+    },
+    "DigiVisNERPassword": {
+      "value": "change-me-in-localsettings.php",
+      "description": "Password for the bot-user to create NamedEntities pages, specify in LocalSettings.php."
+    }
+  },
+  "ConfigRegistry": {
+    "DigiVis": "GlobalVarConfig::newInstance"
+  },
+  "AutoloadClasses": {
+    "SpecialDigiVis": "specials/SpecialDigiVis.php",
+    "SpecialDigiVisVis": "specials/SpecialDigiVisVis.php",
+    "SpecialDigiVisAnnotationList": "specials/SpecialDigiVisAnnotationList.php",
+    "SpecialDigiVisWalkCreator": "specials/SpecialDigiVisWalkCreator.php",
+    "DigiVisNERAPI": "Api/DigiVisNERAPI.php",
+    "DigiVisHooks": "DigiVisHooks.php",
+    "DigiVisDataExportAPI": "Api/DigiVisDataExportAPI.php"
+  },
+  "ResourceFileModulePaths": {
+    "localBasePath": "",
+    "remoteExtPath": "DigiVis/modules"
+  },
+  "ResourceModules": {
+    "ext.digiVis": {
+      "styles": [
+        "modules/general/general_styles.css"
+      ],
+      "scripts": [
+        "modules/ext.digiVis.layer2.js"
+      ]
+    },
+    "ext.digiVis.special.annotationlist": {
+      "scripts": [
+        "modules/ext.digiVis.special.annotationlist.js",
+        "modules/ext.digiVis.class.annotation.js",
+        "modules/ext.digiVis.helper.checkbox.js",
+        "modules/ext.digiVis.utility.js"
+      ],
+      "styles": [
+        "modules/ext.digiVis.special.annotationlist.css"
+      ]
+    },
+    "ext.digiVis.special.walkcreator": {
+      "scripts": [
+        "modules/ext.digiVis.class.station.js",
+        "modules/ext.digiVis.special.walkcreator.js",
+        "modules/ext.digiVis.class.annotation.js",
+        "modules/ext.digiVis.class.walk.js",
+        "modules/ext.digiVis.helper.checkbox.js",
+        "modules/ext.digiVis.utility.js"
+      ],
+      "styles": [
+        "modules/ext.digiVis.special.walkcreator.css"
+      ],
+      "dependencies": [
+        "jquery.ui.draggable",
+        "jquery.ui.droppable",
+        "jquery.ui.sortable"
+      ]
+    },
+    "ext.digiVis.special": {
+      "scripts": [
+        "modules/ext.digiVis.special.js"
+      ],
+      "styles": [
+        "modules/ext.digiVis.css"
+      ],
+      "messages": [
+        "digiVis",
+        "digiVis-desc",
+        "special-digiVis-title",
+        "special-digiVis-intro"
+      ],
+      "dependencies": [
+        "jquery.ui.autocomplete",
+        "oojs",
+        "oojs-ui"
+      ]
+    },
+    "ext.digiVis.vis": {
+      "scripts": [
+        "lib/d3.js",
+        "modules/ext.digiVis.vis.module.js"
+      ],
+      "styles": [
+        "modules/ext.digiVis.vis.css"
+      ],
+      "messages": [
+      ],
+      "dependencies": [
+      ]
+    }
+  },
+  "SpecialPages": {
+    "DigiVis": "SpecialDigiVis",
+    "VisDigiVis": "SpecialDigiVisVis",
+    "AnnotationListDigiVis": "SpecialDigiVisAnnotationList",
+    "WalkCreatorDigiVis": "SpecialDigiVisWalkCreator"
+  },
+  "ExtensionMessagesFiles": {
+    "DigiVisAlias": "DigiVis.alias.php",
+    "DigiVisMagic": "i18n/DigiVis.i18n.magic.php"
+  },
+  "Hooks": {
+    "ResourceLoaderTestModules": "DigiVisHooks::onResourceLoaderTestModules",
+    "BeforePageDisplay": "DigiVisHooks::onBeforePageDisplay",
+    "ParserFirstCallInit": "DigiVisHooks::onParserFirstCallInit"
+  },
+  "APIModules": {
+    "dvner": "DigiVisNERAPI",
+    "dvextract": "DigiVisDataExportAPI"
+  },
+  "type": "other",
+  "namespaces": [
+    {
+      "id": 2500,
+      "constant": "NS_WALK",
+      "name": "Walk"
+    },
+    {
+      "id": 2501,
+      "constant": "NS_WALK_TALK",
+      "name": "WalkTalk"
+    },
+    {
+      "id": 2502,
+      "constant": "NS_NER",
+      "name": "NamedEntities"
+    },
+    {
+      "id": 2503,
+      "constant": "NS_NER_TALK",
+      "name": "NamedEntitiesTalk"
+    },
+    {
+      "id": 2504,
+      "constant": "NS_VIABLORY_DESCRIPTION",
+      "name": "ViabloryDescription",
+      "protection": "custom-edit2"
+    },
+    {
+      "id": 2505,
+      "constant": "NS_VIABLORY_DESCRIPTION_TALK",
+      "name": "ViabloryDescriptionTalk"
+    },
+    {
+      "id": 2506,
+      "constant": "NS_VIS_COMMENT",
+      "name": "VisualizationComment"
+    },
+    {
+      "id": 2507,
+      "constant": "NS_VIS_COMMENT_TALK",
+      "name": "VisualizationCommentTalk"
+    }
+
+  ],
+  "callback": "DigiVisHooks::afterInit"
+}
+

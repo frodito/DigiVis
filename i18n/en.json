@@ -1,0 +1,24 @@
+{
+    "@metadata": {
+        "authors": [
+            "Manfred Moosleitner"
+        ]
+    },
+    "specialpages-group-DigiVis": "DigiVis",
+    "digiVis": "DigiVis",
+    "digivis": "DigiVis",
+    "visdigivis": "DigiVis - Vis",
+    "annotationlistdigivis": "DigiVis - Annotationlist",
+    "walkcreatordigivis": "Digivis - Walk Creator",
+    "digiVis-desc": "Collection of functionalities developed in the course of the DigiVis-Project",
+    "special-digiVis-title": "DigiVis",
+    "special-digiVis-intro": "This is the specialpage of the DigiVis extension.",
+    "digivis-label-filename": "Filename",
+    "special-digiVis-vis-title": "DigiVis Visualization",
+    "special-digiVis-vis-intro": "Welcome to the Visualization page of DigiVis.",
+    "digivis-api-invalid-parameters": "Error with parameters.",
+    "digivis-layer2-title": "Layer2",
+    "digivis-layer3-title": "Layer3",
+    "special-digiVis-annotationlist-title": "List of Annotations with filters",
+    "special-digiVis-walkcreator-title": "Create a walk"
+}

@@ -1,0 +1,72 @@
+.box-layer2-title {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom-right-radius: 10px;
+    padding: 4px;
+    margin-left: -10px;
+    margin-top: -2px;
+}
+
+.box-layer2 {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+    cursor: text;
+}
+
+.annotator-hl {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.annotator-hl-red {
+    background: #ffcfbf;
+}
+
+.annotator-hl-green {
+    background: #dfffbf;
+}
+
+.annotator-hl-yellow {
+    background: #ffffb5;
+}
+
+.annotator-hl-blue {
+    background: #6d9bff;
+}
+
+.annotator-hl-grey {
+    background: #c6c6c6;
+}
+
+.annotator-hl-lime {
+    background: #00FF00;
+}
+
+.annotator-hl-magenta {
+    background: #FF00FF;
+    color: white;
+}
+
+.annotator-hl-orange {
+    background: #FFA500;
+}
+
+.annotator-hl-chocolate {
+    background: #D2691E;
+}
+
+.annotator-hl-cyan {
+    background: #00FFFF;
+}
+
+.annotator-hl-blueviolet {
+    background: #8A2BE2;
+    color: white;
+}
+
+.annotator-hl-olive {
+    background: #808000;
+}

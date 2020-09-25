@@ -1,0 +1,20 @@
+{
+    "@metadata": {
+        "authors": [
+            "Manfred Moosleitner"
+        ]
+    },
+    "specialpages-group-DigiVis": "Name of the DigiVis-group",
+    "digiVis": "The name of the extension",
+    "digivis": "The name of the extension",
+    "digiVis-desc": "{{desc|name=DigiVis|url=}}",
+    "special-digiVis-title": "Title of the special page Special:DigiVis",
+    "special-digiVis-intro": "Description appearing on top of <tvar|1>Special:{{ll|DigiVis}}</>.",
+    "digivis-label-filename": "Name of the document-page.",
+    "special-digiVis-vis-title": "Title of the specialpage of Special:DigiVis-Vis",
+    "special-digiVis-vis-intro": "Intro message of the visualization page.",
+    "digivis-api-invalid-parameters": "Error with parameters.",
+    "digivis-layer2-title": "Layer2",
+    "digivis-layer3-title": "Layer3",
+    "special-digiVis-annotationlist-title": "List of Annotations with filters"
+}

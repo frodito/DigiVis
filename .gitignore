@@ -16,7 +16,7 @@ dist/
 downloads/
 eggs/
 .egs/
-lib/
+#lib/
 lib64/
 parts/
 sdist/
@@ -167,9 +167,9 @@ fabric.properties
 .idea/httpRequests
 
 .idea/
-!/.eslintrc.json
-
-!/Gruntfile.js
-!/package-lock.json
-!/package.json
-!/composer.json
+/.eslintrc.json
+.stylelintrc
+/Gruntfile.js
+/package-lock.json
+/package.json
+/composer.json
