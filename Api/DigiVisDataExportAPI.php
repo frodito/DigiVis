@@ -1,6 +1,11 @@
 <?php
-
-// TODO: read plain text of page and build HTML by hand (headers, paragraphs, spans for annotations)
+/**
+ * Class DigiVisDataExport
+ * This class was written in the context of the project DigiVis and its purpose is to collect the text of specific pages
+ * and annotations created with the MediaWiki extension SemanticTextAnnotator. Processing steps are applied to the
+ * collected data, which can be output as JSON or CSV. Additional, an HTML version of the texts is created. The output
+ * of the CSV and the text/html-files is done in a specified folder on the server running MediaWiki.
+ */
 
 class DigiVisDataExportAPI extends ApiBase
 {
@@ -48,6 +53,9 @@ class DigiVisDataExportAPI extends ApiBase
         ];
     }
 
+    /**
+     * Method called by MediaWiki-API if corresponding action is used
+     */
     public function execute()
     {
 
@@ -60,6 +68,7 @@ class DigiVisDataExportAPI extends ApiBase
         $form = $params['form'][0];
         $content = $params['content'][0];
 
+        // create folder with current date and time
         $this->dir = 'tmp/' . date('Y-m-d H-i-s') . '/';
         if ($form === 'text') {
             if (!is_dir($this->dir)) {
@@ -67,10 +76,15 @@ class DigiVisDataExportAPI extends ApiBase
             }
         }
 
+        // collect metadata from specified pages and store as CSV on server if specified in the API call
         list($result_json, $result_csv, $this->texts) = $this->getMetadata();
         if ($content === 'metadata' || $content === 'all') {
             $filename_csv = $this->dir . 'metadata_extract.csv';
-            $header = "page_id,title,author,location,publication_date,publication_media,length\r\n";
+
+            // specify which fields of the meta are used in the CSV file,
+            // e.g., $header = "title,author,location,publication date,publication media,length\r\n";
+            $header = "\r\n";
+
             if ($form === 'text') {
                 $this->writeCSV($filename_csv, $result_csv, $header);
             }
@@ -78,6 +92,8 @@ class DigiVisDataExportAPI extends ApiBase
                 'metadata' => $result_json
             ));
         }
+
+        // process annotations
         if ($content === 'annotations' || $content === 'all') {
             list($result_json, $result_csv) = $this->getAnnotationsV2();
             $filename_csv = $this->dir . 'annotation_extract.csv';
@@ -90,6 +106,8 @@ class DigiVisDataExportAPI extends ApiBase
             ));
         }
 
+        // create HTML representation of the texts containing the annotations as DIV-elements to be used
+        // in the visualization
         $this->constructHTML($result_json);
 
         if ($form === 'text') {
@@ -103,6 +121,14 @@ class DigiVisDataExportAPI extends ApiBase
         $this->getResult()->addValue(null, $this->getModuleName(), $result);
     }
 
+    /**
+     * Create the HTML representation for the text pages, including the annotations
+     * as DIV elements.
+     * Here the used wiki-formatting, like <ref></ref> for footnotes and such is translated
+     * to HTML representations.
+     *
+     * @param array $result_json the results from previous methods containing the annotations
+     */
     private function constructHTML($result_json)
     {
 
@@ -128,7 +154,6 @@ class DigiVisDataExportAPI extends ApiBase
             }
 
             $text = $this->translateNotes($text);
-//            $text = $this->constructParagraphs($text);
             if (count($references) > 0) {
                 $text = $this->reconstructRefTags($text, $references);
             }
@@ -136,7 +161,6 @@ class DigiVisDataExportAPI extends ApiBase
             $text = $this->removePoemTag($text);
             $text = $text_prefix . $text . $text_suffix;
             $text = $this->removeReferenceTag($text);
-//            $text = $this->removeEmptyParagraphs($text);
             $text = $this->removeBrTags($text);
             $text = $this->removePAroundH($text);
             if (!is_file($this->dir . $page_id . '.html')) {
@@ -145,11 +169,21 @@ class DigiVisDataExportAPI extends ApiBase
         }
     }
 
+    /**
+     * Method to get static urls to images included in the texts, and replace the wiki-format style
+     * includion of images to standard HTML-style.
+     *
+     * Dependent on how images are included in your texts, the patterns may need to be adapted.
+     *
+     * @param string $text
+     * @return string|string[]
+     */
     private function translateFile($text)
     {
-        $url_prefix = "https://dbis-digivis.uibk.ac.at/mediawiki/index.php?title=Special:Redirect/file/";
+        // put the URL to your MediaWiki installation's specialpage to convert the filename to a static URL
+        $url_prefix = "https://<YOUR-DOMAIN>/<YOUR-WEB-PATH-TO-MEDIAWIKI>/index.php?title=Special:Redirect/file/";
         $pattern_file = '/\[\[([^\[]*)\]\]/';
-        //        $pattern_file_structure = '/\[\[File:(.*)(\|)+center\|([01234556789]*)(.*)\]\]/';
+
         // instead of center sometimes there is thumb and for some the rest after center is missing
         $pattern_file_structure = '/\[\[File:(.*)(\|)+(center|thumb)\|*([01234556789]*)(.*)\]\]/';
         preg_match_all($pattern_file, $text, $matches, PREG_OFFSET_CAPTURE);
@@ -165,14 +199,20 @@ class DigiVisDataExportAPI extends ApiBase
                 $width = 400;
             }
             $height = ceil($width / $image_ratio);
-//            $unit = $matches_structure[4][0][0];
-//            $replace = '<div style="text-align: center"><img src="' . $url_prefix . $filename . '" width="' . $width . '"></div>';
             $replace = '<div style="text-align: center"><img src="' . $url_prefix . $filename . '" width="' . $width . '" height="' . $height . '" alt="image"></div>';
             $text = str_replace($search, $replace, $text);
         }
         return $text;
     }
 
+    /**
+     * Put the collected references, prior translated in the text to [number], in the form of a list
+     * at the bottom of the page, to look like in MediaWiki.
+     *
+     * @param string $text the pagetext
+     * @param array $references list of references in the text
+     * @return string the pagetext with the references as ordered list appended
+     */
     private function reconstructRefTags($text, $references)
     {
         $reference_list = '<div class="mw-references-wrap mw-references-columns"><ol class="references">';
@@ -196,9 +236,18 @@ class DigiVisDataExportAPI extends ApiBase
         return $text . $reference_list;
     }
 
+    /**
+     * Wrap the annotated text passages inside divs, using the category of the annotation
+     * as HTML class attribute for further styling of the HTML representations of the texts.
+     *
+     * @param string $text the pagetext
+     * @param string $quote the text passage
+     * @param string $annotation_id the id of the annotation
+     * @param string $category the category of the annotation
+     * @return string|string[] pagetext with the text passages wrapped in DIVs
+     */
     private function wrapWithDiv($text, $quote, $annotation_id, $category)
     {
-
         $startPos = strpos($text, $quote);
         if ($startPos !== false) {   // full quote found in $text
             $endPos = $startPos + strlen($quote);
@@ -219,6 +268,16 @@ class DigiVisDataExportAPI extends ApiBase
         return $text;
     }
 
+    /**
+     * Calculate a suitable prefix of the annotation-quote in the text for the case the full text of the quote
+     * cannot be found inside the text, due to newlines, etc.
+     *
+     * Needed for calculating the offsets.
+     *
+     * @param string $text the pagetext
+     * @param string $quote the text of the annotation quote
+     * @return false|int the length of the suffix as integer or false
+     */
     private function calculatePrefixLength($text, $quote)
     {
         $prefix_length = 40;
@@ -240,6 +299,16 @@ class DigiVisDataExportAPI extends ApiBase
         return $prefix_length;
     }
 
+    /**
+     * Calculate a suitable suffix of the annotation-quote in the text for the case the full text of the quote
+     * cannot be found inside the text, due to newlines, etc.
+     *
+     * Needed for calculating the offsets.
+     *
+     * @param string $text the pagetext
+     * @param string $quote the text of the annotation-quote
+     * @return false|int the length of the suffix as integer or false
+     */
     private function calculateSuffixLength($text, $quote)
     {
         $suffix_length = 40;
@@ -261,58 +330,12 @@ class DigiVisDataExportAPI extends ApiBase
         return $suffix_length;
     }
 
-    private function wrapWithSpan($text, $quote, $annotation_id, $category)
-    {
-        $prefix_length = 30;
-        $quote_prefix = substr($quote, 0, $prefix_length);
-        $quote_suffix = substr($quote, strlen($quote) - $prefix_length, $prefix_length);
-        $startPos = strpos($text, $quote_prefix);
-        $endPos = strpos($text, $quote_suffix);
-        $substr = substr($text, $startPos, $endPos - $startPos + $prefix_length);
-        $replacement = '<span id="' . $annotation_id . '" class="' . $category . '">' . $substr . '</span>';
-        $text = str_replace($substr, $replacement, $text);
-        return $text;
-    }
-
-    private function calculateOffsetsText()
-    {
-        $pattern_newline = '/\r\n|\r|\n/';
-        preg_match_all($pattern_newline, $quote, $newlines, PREG_OFFSET_CAPTURE);
-
-        $start_pos_in_text = strpos($text, $quote);
-
-        // quote not found in text, possible reasons are wikitext formatting, newlines, etc.
-        if ($start_pos_in_text === false) {
-            // search with prefix and suffix
-            if (count($newlines[0])) {
-                $pos_first_newline = $newlines[0][0][1];
-                $pos_last_newline = count($newlines[0]) > 1 ? $newlines[0][count($newlines[0]) - 1][1] : $pos_first_newline;
-                $prefix = substr($quote, 0, $pos_first_newline);
-                $suffix = substr($quote, $pos_last_newline + 1);
-                $start_pos_in_text = strpos($text, $prefix);
-                $end_pos_in_text = strpos($text, $suffix, $start_pos_in_text) + strlen($suffix);
-            } else {
-                // unexpected reason on why the quote is not found in text
-                // manual investigation triggered via setting both positions to false
-                $start_pos_in_text = false;
-                $end_pos_in_text = false;
-            }
-        } else {
-            $end_pos_in_text = $start_pos_in_text + strlen($quote);
-        }
-    }
-
-    function deleteFiles()
-    {
-        $folder = 'tmp';
-        $files = glob($folder . '/*');
-        foreach ($files as $file) {
-            if (is_file($file)) {
-                unlink($file);
-            }
-        }
-    }
-
+    /**
+     * Create CSV file with specified filename
+     * @param $filename the name of the resulting file
+     * @param $result the datarows of the CSV
+     * @param $header the header row of the CSV
+     */
     function writeCSV($filename, $result, $header)
     {
         $fp = fopen($filename, 'w');
@@ -323,11 +346,22 @@ class DigiVisDataExportAPI extends ApiBase
         fclose($fp);
     }
 
+    /**
+     * Helper function to submit a Semantic MediaWiki ask-query via MediaWiki-API
+     *
+     * If the query result has more rows than permitted by the current API limits, the query is submitted
+     * repeatedly with offset, until all rows are retrieved.
+     *
+     * @param $query string of the ask query
+     * @return array the result of the query as returned by the MediaWiki-API
+     */
     function submitAskQuery($query)
     {
         $result = [];
         $continue = true;
         $offset = 0;
+
+        // repeat the query if query-result has more rows than permitted by current API limits by using offset
         for ($i = 0; $continue; $i++) {
             $req_params = new FauxRequest(
                 array(
@@ -346,22 +380,41 @@ class DigiVisDataExportAPI extends ApiBase
         return $result;
     }
 
+    /**
+     * Helper function to retrieve the metadata of specified pages, where the metadata is stored in Semantic MediaWiki
+     * via MediaWiki templates included at the pages. The specification of the pages is done with the help of a
+     * MediaWiki category.
+     *
+     * @param $dir path to the folder when the text of the pages should be stored (pass through)
+     * @return array[] contains the results
+     */
     function getMetadata()
     {
-
+        /**
+         * Text of the ask query, contains a page-selection with a category, which is followed by the fields to
+         * retrieve. See the documentation about ask-queries in the wiki of Semantic MediaWiki for full details on
+         * how ask queries work https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki.
+         */
         $result_json = [];
         $texts = [];
-        $query = "[[Category:DigiVisDocumentPages]]|?Title|?Author|?Location|?Published Date|?Published Media";
+        $query = "[[Category:PUT_YOUR_CATEGORY_HERE]]" .
+            "|?ATTRIBUTE1|?ATTRIBUTE2|?ATTRIBUTE3|?ATTRIBUTE4|?ATTRIBUTE5";
         $metadata = $this->submitAskQuery($query);
         ksort($metadata, SORT_STRING);
 
         foreach ($metadata as $element) {
-            $title = $element['printouts']['Title'][0]['fulltext'];
-            $text_title = 'Text:' . $title;
-            $author = $element['printouts']['Author'][0]['fulltext'];
-            $location = $element['printouts']['Location'][0]['fulltext'];
-            $pub_date = $element['printouts']['Published Date'][0]['fulltext'];
-            $pub_media = $element['printouts']['Published Media'][0]['fulltext'];
+            // the path in $element depends on the datatype of the corresponding Semantic MediaWiki attribute and may
+            // differ from $element['printouts']['ATTRIBUTE1'][0]['fulltext']
+
+            // assume that $ATTRIBUTE1 contains the name of the corresponding page
+            $ATTRIBUTE1 = $element['printouts']['ATTRIBUTE1'][0]['fulltext'];
+            $text_title = 'Text:' . $ATTRIBUTE1;
+
+            $ATTRIBUTE2 = $element['printouts']['ATTRIBUTE2'][0]['fulltext'];
+            $ATTRIBUTE3 = $element['printouts']['ATTRIBUTE3'][0]['fulltext'];
+            $ATTRIBUTE4 = $element['printouts']['ATTRIBUTE4'][0]['fulltext'];
+            $ATTRIBUTE5 = $element['printouts']['ATTRIBUTE5'][0]['fulltext'];
+
             $page_id = $this->getPageIdFromPage($text_title);
             $html = $this->getHTMLToPage($text_title);
             $text = html_entity_decode(strip_tags($this->replaceRefTagsWithNumberedSquares($html)));
@@ -373,15 +426,15 @@ class DigiVisDataExportAPI extends ApiBase
             }
             array_push($result_json, array(
                 'id' => $page_id,
-                'title' => $title,
-                'author' => $author,
-                'location' => $location,
-                'published_date' => $pub_date,
-                'published_media' => $pub_media,
+                'ATTRIBUTE1' => $ATTRIBUTE1,
+                'ATTRIBUTE2' => $ATTRIBUTE2,
+                'ATTRIBUTE3' => $ATTRIBUTE3,
+                'ATTRIBUTE4' => $ATTRIBUTE4,
+                'ATTRIBUTE5' => $ATTRIBUTE5,
                 'text_length' => $text_length
             ));
             $texts[$page_id] = array(
-                'title' => $title,
+                'ATTRIBUTE1' => $ATTRIBUTE1,
                 'text' => $text,
                 'html' => $html
             );
@@ -390,6 +443,16 @@ class DigiVisDataExportAPI extends ApiBase
         return array($result_json, $result_json, $texts);
     }
 
+    /**
+     * Retrieve the named entities of a single annotation, which are stored on individual pages using
+     * Semantic MediaWiki subobjects. The NER-Pages are supposed to be in the namepsace'NamedEntities',
+     * with the pagename of the annotation appended to it,
+     * e.g., NamedEntities:Annotation:ORIGINALTEXTPAGENAME/RANDOM_ANNOTATION_ID
+     *
+     *
+     * @param string $name name/id of the annotation
+     * @return array all entities of that annotation as array
+     */
     function getNamedEntitiesSingleAnnotation($name)
     {
 
@@ -398,7 +461,7 @@ class DigiVisDataExportAPI extends ApiBase
         $result['orgs'] = array();
         $result['locs'] = array();
 
-        // [[-Has subobject::NamedEntities:Annotation:Abstraction, Re-Presentation, and Reflection: An Interpretation of Experience and of Piaget’s Approach/Oluafsqlrw]]|?Has person|?Has org|?Has norp|?Has loc|?Has gpe|mainlabel=Pagetitle
+        // the labels for the entities possible needs to be adapted to your needs
         $searchTitle = 'NamedEntities:' . $name;
         $query = "[[-Has subobject::$searchTitle]]|?Has person|?Has org|?Has loc|mainlabel=Pagetitle";
         $named_entities = $this->submitAskQuery($query);
@@ -409,6 +472,8 @@ class DigiVisDataExportAPI extends ApiBase
             $title = str_replace("NamedEntities:Annotation:", "", $key);
             $title = str_replace('/' . $id . "#NER", "", $title);
 
+            // "Has person", "Has org", and "Has loc" are the attribute names we used
+            // for our use case. Please adapt to your needs.
             foreach ($entities['printouts']['Has person'] as $index => $person) {
                 array_push($result['persons'], $person);
             }
@@ -422,6 +487,24 @@ class DigiVisDataExportAPI extends ApiBase
         return $result;
     }
 
+
+    /**
+     * In our use-case, we worked with a text corpus containing argumentions, counter arguments from
+     * different authors, and again answers to the counter arguments from the author of the first argumentaion.
+     * To create a link between the annotated counter arguments and the answers, in the annotations of
+     * the answers, the name to the page of the annotation of the counter argument was stored, to create a
+     * direct relation.
+     *
+     * If this functionality does not fit for your use case, please comment all code calling the method
+     * "getRelations()".
+     */
+
+    /**
+     * Method reads specific relations stored in some annotations created with Semantic Text Annotator
+     *
+     * @param string $pagetitle the name of a MediaWiki page
+     * @return string
+     */
     function getRelations($pagetitle)
     {
         $result = "";
@@ -459,6 +542,12 @@ class DigiVisDataExportAPI extends ApiBase
         return $result;
     }
 
+    /**
+     * Get the MediaWiki internal ID of a page.
+     *
+     * @param string $page_title the name of a MediaWiki page
+     * @return string the pageid as string
+     */
     function getPageIdFromPage($page_title)
     {
         $page_id = "error";

@@ -96,7 +96,6 @@
     },
     "ext.digiVis.vis": {
       "scripts": [
-        "lib/d3.js",
         "modules/ext.digiVis.vis.module.js"
       ],
       "styles": [
