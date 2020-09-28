@@ -138,7 +138,7 @@ class DigiVisDataExportAPI extends ApiBase
 
             $title = $text_object['title'];
             $text = $this->getTextToPage('Text:' . $title);
-            list($text, $references) = $this->replaceRefTagsWithNumberedSquaresV2($text);
+            list($text, $references) = $this->replaceRefTagsWithNumberedSquaresInPlainText($text);
             $text = $this->replaceWikiHeaderWithHTMLHeaders($text);
             $text = $this->removeBTags($text);
             $text = $this->removeBlockquote($text);
@@ -417,7 +417,7 @@ class DigiVisDataExportAPI extends ApiBase
 
             $page_id = $this->getPageIdFromPage($text_title);
             $html = $this->getHTMLToPage($text_title);
-            $text = html_entity_decode(strip_tags($this->replaceRefTagsWithNumberedSquares($html)));
+            $text = html_entity_decode(strip_tags($this->replaceRefTagsWithNumberedSquaresInHTML($html)));
             $text = str_replace("\n", " ", $text);
             $text = preg_replace("/\s+/", " ", $text);
             $text_length = strlen($text);
@@ -579,6 +579,11 @@ class DigiVisDataExportAPI extends ApiBase
         return $page_id;
     }
 
+    /**
+     * Methods retrieves all annotations in the MediaWiki installation make with Semantic Text Annotator
+     * @param $dir  path where to store result files on the server (pass through)
+     * @return array[] results as JSON and as CSV
+     */
     function getAnnotationsV2()
     {
 
@@ -592,24 +597,24 @@ class DigiVisDataExportAPI extends ApiBase
             $text = $text_object['text'];
             $html = $text_object['html'];
 
-            $query = '[[Annotation of::+]][[~Text:'
-                . $title
-                . '*||~Annotationen:'
-                . $title
-                . '*]]|?AnnotationComment|?AnnotationMetadata|?Category|?ist Thema|?ist Innovationstyp|?Referenztyp|?Narrativtyp';
+            /***************************************************************************************/
+            /* SMW-Query to retrieve all annotations with metadata and all custom attributes
+             */
+            $query = '[[Annotation of::+]][[~Text:{$title}*||~Annotationen:{$title}*]]'
+                .'|?AnnotationComment|?AnnotationMetadata|?Category'
+                .'?ATTRIBUTE_A|?ATTRIBUTE_B|?ATTRIBUTE_C|?ATTRIBUTE_D';
+//                .'|?ist Thema|?ist Innovationstyp|?Referenztyp|?Narrativtyp';
 
             $annotations = $this->submitAskQuery($query);
             ksort($annotations, SORT_STRING);
 
-            $count_annotations_before = count($annotations);
             $annotations = $this->removeDuplicatesFromAnnotations($annotations);
-            if ($count_annotations_before !== count($annotations)) {
-                // duplicates in annotations
-            }
 
             foreach ($annotations as $element) {
                 preg_match_all('/(?<=Annotation:)(.*)(?=\/.*)/', $element['fulltext'], $matches);
                 $current_title = $matches[0][0];
+                // We assume that the page of the text pages begins with the prefix 'Text',
+                // but shares the name basename, replace done to retrieve the text of the page
                 $current_title = str_replace("Annotationen:", "Text:", $current_title);
 
                 $annotation = $element['printouts'];
@@ -636,6 +641,10 @@ class DigiVisDataExportAPI extends ApiBase
                     $antwortGlasersfeldRelationen = $this->getRelations($element['fulltext']);
                 }
 
+                /**
+                 * For CSV format, arrays in the data are translated to a single string, where the individual values are
+                 * seprated by the given symbol. This is not wanted for JSON format, hence two different arrays are created
+                 */
                 array_push($result_csv, array(
                     'page_id' => $page_id,
                     'annotation_id' => $metadata->id,
@@ -702,22 +711,33 @@ class DigiVisDataExportAPI extends ApiBase
         return array($result_json, $result_csv);
     }
 
+    /**
+     * Determine priority based on the given category.
+     *
+     * This is used when building the HTML representation of the textpages,
+     * to guarantee that nested annotations are always processed in the same order.
+     *
+     * 0 = highest priority
+     *
+     * @param string $category the category
+     * @return int the priority if the
+     */
     private function checkPriority($category)
     {
         switch ($category) {
-            case "Argumentation2":
+            case "LEVEL 2 CATEGORY 1":
                 return 0;
                 break;
-            case "Narrativ2":
-            case "Innovationsdiskurs2":
-            case "AntwortGlasersfeld":
-            case "ArgumentationFremd":
+            case "LEVEL 2 CATEGORY 2":
+            case "LEVEL 2 CATEGORY 3":
+            case "LEVEL 2 CATEGORY 4":
+            case "LEVEL 2 CATEGORY 5":
                 return 1;
                 break;
-            case "Prämisse3":
+            case "LEVEL 3 CATEGORY 1":
                 return 2;
                 break;
-            case "WissenschaftlicheReferenz2":
+            case "LEVEL 3 CATEGORY 2":
                 return 3;
                 break;
             default:
@@ -725,136 +745,12 @@ class DigiVisDataExportAPI extends ApiBase
         }
     }
 
-    function getAnnotations($dir)
-    {
-
-        $result_json = [];
-        $result_csv = [];
-        $previous_title = '';
-
-        /***************************************************************************************/
-        /* SMW-Query to select annotations, set $debug to false to select all annotations and
-         * to true, to select only annotations to specific text (set $debug_title
-         */
-        $debug = false;
-
-        if (!$debug) {    // normal mode of operation
-            $query = '[[Annotation of::+]][[~Text:*||~Annotationen:*]]' .
-                '|?AnnotationComment|?AnnotationMetadata|?Category|' .
-                '?ist Thema|?ist Innovationstyp|?Referenztyp|?Narrativtyp';
-
-        } else {    // query for single document
-            //			$debug_title = 'Why I Consider Myself a Cybernetician';
-            //			$debug_title = 'Josef Mitterer – Der Radikale Konstruktivismus: „What difference does it make“';
-            $debug_title = 'Die Radikal-Konstruktivistische Wissenstheorie';
-            $query = '[[Annotation of::+]]' .
-                '[[~Text:' . $debug_title . '*||~Annotationen:' . $debug_title . '*]]' .
-                '|?AnnotationComment|?AnnotationMetadata|?Category|' .
-                '?ist Thema|?ist Innovationstyp|?Referenztyp|?Narrativtyp';
-        }
-
-        $annotations = $this->submitAskQuery($query);
-        ksort($annotations, SORT_STRING);
-
-        $count_annotations_before = count($annotations);
-        $annotations = $this->removeDuplicatesFromAnnotations($annotations);
-        if ($count_annotations_before !== count($annotations)) {
-            // duplicates in annotations
-        }
-
-        foreach ($annotations as $element) {
-            preg_match_all('/(?<=Annotation:)(.*)(?=\/.*)/', $element['fulltext'], $matches);
-            $current_title = $matches[0][0];
-            $current_title = str_replace("Annotationen:", "Text:", $current_title);
-
-            if ($current_title !== $previous_title) {
-                $pagetext = $this->getTextToPageForOffset($current_title);
-                if (is_null($pagetext)) {
-                    continue;
-                }
-            }
-            $page_id = $this->getPageIdFromPage($current_title);
-
-            $annotation = $element['printouts'];
-            $metadata = json_decode(self::translateBrackets($annotation['AnnotationMetadata'][0]));
-
-            list($start, $end) = $this->calculateAnnotationOffset($pagetext, $metadata->quote);
-
-            $start = $start ?: "error";
-            $end = $end ?: "error";
-            if (is_numeric($start) && is_numeric($end)) {
-                if ($start > $end) {
-                    $start = $start . ' AFTER END';
-                    $end = $end . ' BEFORE START';
-                }
-            }
-
-            $namedEntities = [];
-            if ($metadata->category === 'Argumentation2') {
-                $namedEntities = $this->getNamedEntitiesSingleAnnotation($element['fulltext']);
-            }
-
-            $argumentationFremdRelationen = "";
-            if ($metadata->category === 'ArgumentationFremd') {
-                $argumentationFremdRelationen = $this->getRelations($element['fulltext']);
-            }
-
-            $antwortGlasersfeldRelationen = "";
-            if ($metadata->category === 'AntwortGlasersfeld') {
-                $antwortGlasersfeldRelationen = $this->getRelations($element['fulltext']);
-            }
-
-            array_push($result_csv, array(
-                'page_id' => $page_id,
-                'annotation_id' => $metadata->id,
-                'category' => $metadata->category,
-                'quote' => $metadata->quote,
-                'offsetBegin' => $start,
-                'offsetEnd' => $end,
-                'comment' => isset($annotation['AnnotationComment'][0]) ? $annotation['AnnotationComment'][0] : "",
-                'topics' => $this->getFulltextArrayAsString($annotation['Ist Thema'], ";") ?: "",
-                'innovation_type ' => $this->getFulltextArrayAsString($annotation['Ist Innovationstyp'], ";") ?: "",
-                'reference_type' => isset($annotation['Referenztyp'][0]['fulltext']) ? $annotation['Referenztyp'][0]['fulltext'] : "",
-                'narrative_type' => isset($annotation['Narrativtyp'][0]['fulltext']) ? $annotation['Narrativtyp'][0]['fulltext'] : "",
-                'persons' => isset($namedEntities['persons']) ? $this->getFulltextArrayAsString($namedEntities['persons'], ";") : "",
-                'orgs' => isset($namedEntities['orgs']) ? $this->getFulltextArrayAsString($namedEntities['orgs'], ";") : "",
-                'locs' => isset($namedEntities['locs']) ? $this->getFulltextArrayAsString($namedEntities['locs'], ";") : "",
-                //				'norps' => isset($namedEntities['norp']) ? $this->getFulltextArrayAsString($namedEntities['norp'], ";") : "",
-                //				'gpes' => isset($namedEntities['gpe']) ? $this->getFulltextArrayAsString($namedEntities['gpe'], ";") : "",
-                'relationen_argumentation_fremd' => $argumentationFremdRelationen,
-                'relationen_antwort_glasersfeld' => $antwortGlasersfeldRelationen
-            ));
-
-            array_push($result_json, array(
-                'page_id' => $page_id,
-                'annotation_id' => $metadata->id,
-                'category' => $metadata->category,
-                'quote' => $metadata->quote,
-                'offsetBegin' => $start,
-                'offsetEnd' => $end,
-                'comment' => isset($annotation['AnnotationComment'][0]) ? $annotation['AnnotationComment'][0] : "",
-                'topics' => $this->getFulltextArrayAsArray($annotation['Ist Thema']) ?: [],
-                'innovation_type ' => $this->getFulltextArrayAsArray($annotation['Ist Innovationstyp']) ?: [],
-                'reference_type' => isset($annotation['Referenztyp'][0]['fulltext']) ? $annotation['Referenztyp'][0]['fulltext'] : "",
-                'narrative_type' => isset($annotation['Narrativtyp'][0]['fulltext']) ? $annotation['Narrativtyp'][0]['fulltext'] : "",
-                'persons' => isset($namedEntities['persons']) ? $this->getFulltextArrayAsArray($namedEntities['persons']) : [],
-                'orgs' => isset($namedEntities['orgs']) ? $this->getFulltextArrayAsArray($namedEntities['orgs']) : [],
-                'locs' => isset($namedEntities['locs']) ? $this->getFulltextArrayAsArray($namedEntities['locs']) : [],
-                //				'norps' => isset($namedEntities['norp']) ? $this->getFulltextArrayAsArray($namedEntities['norp']) : [],
-                //				'gpes' => isset($namedEntities['gpe']) ? $this->getFulltextArrayAsArray($namedEntities['gpe']) : [],
-                'relationen_argumentation_fremd' => $argumentationFremdRelationen,
-                'relationen_antwort_glasersfeld' => $antwortGlasersfeldRelationen
-            ));
-            //			$previous_title = $matches[0][0];
-            $previous_title = $current_title;
-        }
-
-        return array($result_json, $result_csv);
-    }
-
     /**
-     * @param $annotations
-     * @return array
+     * Rempove duplicates from the list of annotations by checking the actual quoted text
+     * of the annotations. Allows to differ between allowed and unallowed duplicates.
+     *
+     * @param array $annotations the list of annotations
+     * @return array the list without duplicates
      */
     function removeDuplicatesFromAnnotations($annotations)
     {
@@ -893,9 +789,9 @@ class DigiVisDataExportAPI extends ApiBase
                     $cat1 = array_keys($categories)[0];
                     $cat2 = array_keys($categories)[1];
 
-                    // combination of WissenschaftlicheReferenz2 and Prämisse3 allowed
-                    if (($cat1 === 'WissenschaftlicheReferenz2' && $cat2 === 'Prämisse3') ||
-                        ($cat1 === 'Prämisse3' && $cat2 === 'WissenschaftlicheReferenz2')) {
+                    // combination of CATEGORY1 and CATEGORY2 allowed
+                    if (($cat1 === 'CATEGORY1' && $cat2 === 'CATEGORY2') ||
+                        ($cat1 === 'CATEGORY2' && $cat2 === 'CATEGORY1')) {
                         foreach ($categories as $category => $val_annotation_id) {
                             $result[$val_annotation_id[0]] = $annotations[$val_annotation_id[0]];
                         }
@@ -908,13 +804,18 @@ class DigiVisDataExportAPI extends ApiBase
                     $annotation_id = reset($categories)[0];
                     $result[$annotation_id] = $annotations[$annotation_id];
                 }
-            } else {
-                // should not happen
             }
         }
         return $result;
     }
 
+    /**
+     * Method to calculate the offset of the text of annotations in the corresponding text.
+     *
+     * @param $text string calculate offsets in this text
+     * @param $quote string the string we want the offsets to
+     * @return array the start and the end position of $quote in $text
+     */
     function calculateAnnotationOffsetV2($text, $quote)
     {
 
@@ -925,6 +826,7 @@ class DigiVisDataExportAPI extends ApiBase
 
         // full quote not found in text, try again with a prefix and a suffix
         if ($start_pos_in_text === false) {
+            // if text long enough, use 50 characters, else use 25
             $length = strlen($quote) >= 100 ? 50 : 25;
             $prefix = substr($quote, 0, $length);
             $suffix = substr($quote, strlen($quote) - $length);
@@ -945,37 +847,14 @@ class DigiVisDataExportAPI extends ApiBase
         return array($start_pos_in_text, $end_pos_in_text);
     }
 
-    function calculateAnnotationOffset($text, $quote)
-    {
 
-        $pattern_newline = '/\r\n|\r|\n/';
-        preg_match_all($pattern_newline, $quote, $newlines, PREG_OFFSET_CAPTURE);
-
-        $start_pos_in_text = strpos($text, $quote);
-
-        // quote not found in text, possible reasons are wikitext formatting, newlines, etc.
-        if ($start_pos_in_text === false) {
-            // search with prefix and suffix
-            if (count($newlines[0])) {
-                $pos_first_newline = $newlines[0][0][1];
-                $pos_last_newline = count($newlines[0]) > 1 ? $newlines[0][count($newlines[0]) - 1][1] : $pos_first_newline;
-                $prefix = substr($quote, 0, $pos_first_newline);
-                $suffix = substr($quote, $pos_last_newline + 1);
-                $start_pos_in_text = strpos($text, $prefix);
-                $end_pos_in_text = strpos($text, $suffix, $start_pos_in_text) + strlen($suffix);
-            } else {
-                // unexpected reason on why the quote is not found in text
-                // manual investigation triggered via setting both positions to false
-                $start_pos_in_text = false;
-                $end_pos_in_text = false;
-            }
-        } else {
-            $end_pos_in_text = $start_pos_in_text + strlen($quote);
-        }
-        return array($start_pos_in_text, $end_pos_in_text);
-    }
-
-    // https://stackoverflow.com/questions/16352591/convert-php-array-to-csv-string
+    /**
+     * Methods to construct CSV files with PHP, taken from https://stackoverflow.com/questions/16352591/convert-php-array-to-csv-string
+     * @param $input
+     * @param string $delimiter
+     * @param string $enclosure
+     * @return string
+     */
     function str_putcsv($input, $delimiter = ',', $enclosure = '"')
     {
         // Open a memory "file" for read/write...
@@ -992,25 +871,12 @@ class DigiVisDataExportAPI extends ApiBase
         return rtrim($data, "\n");
     }
 
-    private function enquoteForCSV($text)
-    {
-        return '"' . $text . '"';
-    }
-
-    private function commaSeparate()
-    {
-        $result = "";
-        $args = func_get_args();
-        foreach ($args as $key => $arg) {
-            $result .= $arg;
-            if ($key !== count($args)) {
-                $result .= ",";
-            }
-        }
-        $result .= "\\r\\n";
-        return $result;
-    }
-
+    /**
+     * Translate FulltextArray as found in results of ASK-queries to a separated string
+     * @param array $array the FulltextArray
+     * @param string $separator the seperator for the resulting string
+     * @return string $separator separated string representation of the the FulltextArray
+     */
     private function getFulltextArrayAsString($array, $separator)
     {
         $result = "";
@@ -1023,6 +889,11 @@ class DigiVisDataExportAPI extends ApiBase
         return $result;
     }
 
+    /**
+     * Translate FulltextArray as found in results of ASK-queries to a PHP array
+     * @param array $array the FulltextArray
+     * @return array FulltextArray as PHP array
+     */
     private function getFulltextArrayAsArray($array)
     {
         $result = [];
@@ -1032,6 +903,12 @@ class DigiVisDataExportAPI extends ApiBase
         return $result;
     }
 
+    /**
+     * Translate the bracket-replacements used by Semantic Text Annotator to curly and square brackets
+     *
+     * @param $text
+     * @return string|string[]
+     */
     private function translateBrackets($text)
     {
         $text = str_replace("^", "{", $text);
@@ -1042,6 +919,12 @@ class DigiVisDataExportAPI extends ApiBase
         return $text;
     }
 
+    /**
+     * Get HTML representation of a MediaWiki page to a given page title.
+     *
+     * @param string $page_title the title of the MediaWiki page
+     * @return mixed the HTML code of the page
+     */
     private function getHTMLToPage($page_title)
     {
         $req_params = new FauxRequest(
@@ -1061,10 +944,12 @@ class DigiVisDataExportAPI extends ApiBase
         return $data['parse']['text'];
     }
 
+
     /**
-     * @param $page_title
-     * @param $dir
-     * @return string
+     * Retrieve the plain text of a MediaWiki page
+     *
+     * @param string $page_title the title of the MediaWiki page
+     * @return string the content of the page as plain text (including wiki formatting, etc.)
      */
     private function getTextToPage($page_title)
     {
@@ -1085,80 +970,15 @@ class DigiVisDataExportAPI extends ApiBase
         return '';
     }
 
+
     /**
-     * @param $current_title
-     * @param $dir
-     * @return string
+     * Replace MediaWiki stylel formatting of footnotes with Square brackets and number to match the reprsentation
+     * in the text in the annotations saved by Semantic Text Annotator. Save references to append list of footnotes.
+     *
+     * @param string $text the text of the MediaWiki page
+     * @return array the text with the replacements and a list of all references for later use
      */
-    private function getTextToPageForOffset($current_title)
-    {
-        try {
-            if ($current_title === "Michael Flacke – Radikal-Konstruktivistische Wissenstheorie oder sozialkonstruktivistische Praxis?") {
-                $current_title = "Michael Flacke – Radikal-Konstruktivistische Wissenstheorie oder sozialkonstruktivistische Praxis";
-            }
-            $title = Title::makeTitle(0, $current_title);
-            $article = new Article($title);
-            $page = $article->getPage();
-            $revision = $page->getRevision();
-            if (is_null($revision)) {
-                return null;
-            }
-            $content = $revision->getContent();
-            $pagetext = ContentHandler::getContentText($content);
-            $processed_text = strip_tags($this->replaceRefTagsWithNumberedSquares($pagetext));
-            $tmp_title = str_replace("Annotationen:", "Text:", $current_title);
-            $tmp_title = str_replace("Text:", "", $tmp_title);
-            $tmp_title = str_replace("/", "_", $tmp_title);
-            return $processed_text;
-        } catch (MWException $e) {
-            $this->logMessage($current_title, $e->getMessage(), $e->getCode());
-        }
-        return null;
-    }
-
-    private function savePageText($title, $dir)
-    {
-        try {
-            if ($title === "Michael Flacke – Radikal-Konstruktivistische Wissenstheorie oder sozialkonstruktivistische Praxis?") {
-                $title = "Michael Flacke – Radikal-Konstruktivistische Wissenstheorie oder sozialkonstruktivistische Praxis";
-            }
-            $title = Title::makeTitle(0, $title);
-            $article = new Article($title);
-            $page = $article->getPage();
-            $revision = $page->getRevision();
-            if (is_null($revision)) {
-                return null;
-            }
-            $pageId = $revision->getRevisionRecord()->getPageId();
-            $content = $revision->getContent();
-            $pagetext = ContentHandler::getContentText($content);
-
-            $pageId = $revision->getRevisionRecord()->getPageId();
-            $content = $revision->getContent();
-            $pagetext = ContentHandler::getContentText($content);
-            $processed_text = $this->textPostProcessing($pagetext);
-            $tmp_title = str_replace("Annotationen:", "Text:", $title);
-            $tmp_title = str_replace("Text:", "", $tmp_title);
-            $tmp_title = str_replace("/", "_", $tmp_title);
-
-            if (!is_file($dir . $pageId . '.txt')) {
-                file_put_contents($this->dir . $pageId . '.txt', $processed_text);
-            }
-        } catch (MWException $e) {
-            $this->logMessage($current_title, $e->getMessage(), $e->getCode());
-        }
-    }
-
-    private function textPostProcessing($text)
-    {
-        $text = $this->replaceRefTagsWithNumberedSquares($text);
-        $text = $this->replaceWikiHeaderWithHTMLHeaders($text);
-        $text = $this->translateNotes($text);
-        $text = $this->removePoemTag($text);
-        return $text;
-    }
-
-    private function replaceRefTagsWithNumberedSquaresV2($text)
+    private function replaceRefTagsWithNumberedSquaresInPlainText($text)
     {
         $tmp_text = $text;
         $references = [];
@@ -1167,14 +987,19 @@ class DigiVisDataExportAPI extends ApiBase
 
         foreach ($matches[0] as $key => $ref) {
             $tmp_text = str_replace($ref[0], '[' . ($key + 1) . ']', $tmp_text);
-            //			$tmp_text .= "\n" . ($key + 1) . '. ' . $matches[1][$key][0];
-            //			$tmp_text .= "<br>" . ($key + 1) . '. ' . $matches[1][$key][0];
             $references[$key + 1] = $matches[1][$key][0];
         }
         return array($tmp_text, $references);
     }
 
-    private function replaceRefTagsWithNumberedSquares($text)
+    /**
+     * Replace MediaWiki style formatting of footnotes with square brackets and number to match
+     * the representation in the text in the annotations saved by Semantic Text Annotator.
+     *
+     * @param $text
+     * @return string
+     */
+    private function replaceRefTagsWithNumberedSquaresInHTML($text)
     {
         $tmp_text = $text;
         $pattern_ref = '/\<ref\>([^<]*)\<\/ref\>/';
@@ -1182,14 +1007,20 @@ class DigiVisDataExportAPI extends ApiBase
 
         foreach ($matches[0] as $key => $ref) {
             $tmp_text = str_replace($ref[0], '[' . ($key + 1) . ']', $tmp_text);
-            //			$tmp_text .= "\n" . ($key + 1) . '. ' . $matches[1][$key][0];
             $tmp_text .= "<br>" . ($key + 1) . '. ' . $matches[1][$key][0];
         }
         return $tmp_text;
     }
 
+    /**
+     * Translate wiki style formatted text headers into HTML h1 to h4 tags.
+     *
+     * @param string $text the text of the MediaWiki page
+     * @return string|string[] the text with the headers replaced
+     */
     private function replaceWikiHeaderWithHTMLHeaders($text)
     {
+        // wiki style text headers
         $pattern_h4 = '/====(.*)====/';
         $pattern_h3 = '/===(.*)===/';
         $pattern_h2 = '/==(.*)==/';
@@ -1211,24 +1042,37 @@ class DigiVisDataExportAPI extends ApiBase
         return $text;
     }
 
+    /**
+     * Helper method to change wiki style text headers in the text
+     *
+     * @param array $matches list of occurrences of the corresponding header
+     * @param string $text the text of the MediaWiki page
+     * @param string $open the opening HTML-tag to use
+     * @param string $close the closing HTML-tag to use
+     * @return string|string[] the text with the text headers replaced
+     */
     private function translateHeader($matches, $text, $open, $close)
     {
         $tmp_text = $text;
         for ($i = 0; $i < sizeof($matches[0]); $i++) {
             $needle = $matches[0][$i][0];
-            // $replace_with = $open . substr($matches[1][$i][0], 0, sizeof($matches[1][$i][0]) - 2) . $close;
             $replace_with = $open . substr($matches[1][$i][0], 0, strlen($matches[1][$i][0]) - 1) . $close;
             $tmp_text = str_replace($needle, $replace_with, $tmp_text);
         }
         return $tmp_text;
     }
 
+    /**
+     * Translate wiki style formatted notes in the text of a MediaWiki page and translate into an HTML list.
+     *
+     * @param string $text the text of a MediaWiki page
+     * @return string|string[] the text with the tranlates wiki style notes
+     */
     private function translateNotes($text)
     {
         $pattern_notes = '/#(.*)\n*/';
         preg_match_all($pattern_notes, $text, $matches, PREG_OFFSET_CAPTURE);
         $tmp_text = $text;
-        //		for ($i = 0; $i <= sizeof($matches[0]); $i++) {
         $j = 1;
         for ($i = 0; $i < sizeof($matches[0]); $i++) {
             $replace_with = "";
@@ -1252,47 +1096,52 @@ class DigiVisDataExportAPI extends ApiBase
                 $j = 1;
             }
             $needle = $matches[0][$i][0];
-            //            $replace_with = ($i + 1) . "." . $matches[1][$i][0] . "<br>";
             $tmp_text = str_replace($needle, $replace_with, $tmp_text);
         }
         return $tmp_text;
     }
 
+
+    /**
+     * Helper method to remove wiki style poem-tags in the text of a MediaWiki page.
+     *
+     * @param string $text the text of a MediaWiki page
+     * @return string|string[] the text without poem-tags
+     */
     private function removePoemTag($text)
     {
-//        $pattern_poem = '/\<poem\>([^<]*)\<\/poem\>/';
-//        preg_match_all($pattern_poem, $text, $matches, PREG_OFFSET_CAPTURE);
-//        $tmp_text = $text;
-//        //		for ($i = 0; $i <= sizeof($matches[0]); $i++) {
-//        for ($i = 0; $i < sizeof($matches[0]); $i++) {
-//            $needle = $matches[0][$i][0];
-//            $replace_with = $matches[1][$i][0];
-//            $tmp_text = str_replace($needle, $replace_with, $tmp_text);
-//        }
         $text = str_replace('<poem>', "", $text);
         return str_replace('</poem>', "", $text);
     }
 
+    /**
+     * Helper method to remove the wiki style references-tag from the text of a MediaWiki page.
+     *
+     * @param string $text the text of a MediaWiki page
+     * @return string|string[]|null the text of a Mediawiki page without the references-tag
+     */
     private function removeReferenceTag($text)
     {
         return preg_replace('/\<references \/\>/', "", $text);
     }
 
-    private function constructParagraphs($text)
-    {
-        return "<p>" . preg_replace("/\n\n+/", "</p><p>", $text) . "</p>";
-    }
-
-    private function removeEmptyParagraphs($text)
-    {
-        return preg_replace('/<p><\/p>( |)/', "", $text);
-    }
-
+    /**
+     * Helper method to remove BR-tags from the text of a MediaWiki page.
+     *
+     * @param string $text the text of a MediaWiki page
+     * @return string|string[] the text of a MediaWiki page without the BR-tags
+     */
     private function removeBrTags($text)
     {
         return str_replace('<br>', "", $text);
     }
 
+    /**
+     * Helper method to remove B-tags from the text of a MediaWiki page
+     *
+     * @param string $text the text of a MediaWiki page
+     * @return string|string[] the text of a MediaWiki page without B-tags
+     */
     private function removeBTags($text)
     {
         $text = str_replace('<b>', "", $text);
@@ -1300,6 +1149,12 @@ class DigiVisDataExportAPI extends ApiBase
 
     }
 
+    /**
+     * Helper method to remove P-tags, that are around text header tags in the text of a MediaWiki page.
+     *
+     * @param string $text the text of a MediaWiki page
+     * @return string|string[] the text of a MediaWiki page without P-tags wrapped around text header tags
+     */
     private function removePAroundH($text)
     {
         $text = str_replace('<p><h', "<h", $text);
@@ -1309,7 +1164,13 @@ class DigiVisDataExportAPI extends ApiBase
         return str_replace('</h4></p>', "</h4>", $text);
     }
 
-    private function removeBlockquote($text)
+    /**
+     * Helper method to remove block-quote tags in the text of a MediaWiki text.
+     *
+     * @param string $text the text of a MediaWiki page
+     * @return string|string[] the text of a MediaWiki page without blockquote tags
+     */
+        private function removeBlockquote($text)
     {
         $text = str_replace('<blockquote>', "", $text);
         return str_replace('</blockquote>', "", $text);
