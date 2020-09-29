@@ -1,8 +1,12 @@
-// digiVis-annotationlist
+/**
+ * Displays the filterable and searchable overview over all annotations.
+ */
+
+/**
+ * Adds necessary HTMl elements to the page
+ */
 (function () {
 	'use strict';
-	// mw.digiVis = mw.digiVis || {};
-
 	let $tableContainer = $('<table class="tableContainer"></table>');
 	let $headerRow = $('<tr></tr>');
 	let $thAnnotations = $('<th>Annotations<input type="text" placeholder="Search.." name="search" id="filter_annotation"></th>');
@@ -31,15 +35,11 @@ const params = 'action=ask&format=json';
 const origin = '&origin=*';
 let timeout = 0;
 
-// query with annotations from 2nd and 3rd level
-// [[Annotation of::+]][[~Text:*||~Annotationen:*]]|?AnnotationComment|?AnnotationMetadata|?Category|?ist Thema|?ist Innovationstyp|?Referenztyp|?Narrativtyp|limit=100
-// const query = '&query=%5B%5BAnnotation%20of%3A%3A%2B%5D%5D%5B%5B~Text%3A*%7C%7C~Annotationen%3A*%5D%5D%7C%3FAnnotationComment%7C%3FAnnotationMetadata%7C%3FCategory%7C%3Fist%20Thema%7C%3Fist%20Innovationstyp%7C%3FReferenztyp%7C%3FNarrativtyp%7Climit%3D100';
+// ASK-query to get all annotations
+// before HTML-encoding: [[Annotation of::+]][[~Text:*]]|?AnnotationComment|?AnnotationMetadata|?Category|?ATTRIBUTE1|?ATTRIBUTE2|?ATTRIBUTE3|?ATTRIBUTE4|limit=100
+const query = '&query=%5B%5BAnnotation%20of%3A%3A%2B%5D%5D%5B%5B~Text%3A*%5D%5D%7C%3FAnnotationComment%7C%3FAnnotationMetadata%7C%3FCategory%7C%3FATTRIBUTE1%7C%3FATTRIBUTE2%7C%3FATTRIBUTE3%7C%3FATTRIBUTE4%7Climit%3D100';
 
-// query with annotations only from 3rd level
-// [[Annotation of::+]][[~Text:*]]|?AnnotationComment|?AnnotationMetadata|?Category|?ist Thema|?ist Innovationstyp|?Referenztyp|?Narrativtyp|limit=100
-const query = '&query=%5B%5BAnnotation%20of%3A%3A%2B%5D%5D%5B%5B~Text%3A*%5D%5D%7C%3FAnnotationComment%7C%3FAnnotationMetadata%7C%3FCategory%7C%3Fist%20Thema%7C%3Fist%20Innovationstyp%7C%3FReferenztyp%7C%3FNarrativtyp%7Climit%3D100';
-
-const query_plain = '[[Annotation of::+]][[~Text:*]]|?AnnotationComment|?AnnotationMetadata|?Category|?ist Thema|?ist Innovationstyp|?Referenztyp|?Narrativtyp';
+const query_plain = '[[Annotation of::+]][[~Text:*]]|?AnnotationComment|?AnnotationMetadata|?Category|?ATTRIBUTE1|?ATTRIBUTE2|?ATTRIBUTE3|?ATTRIBUTE4';
 
 let annotationMap = new Map();
 let offset = 0;
@@ -47,6 +47,10 @@ let run = true;
 let counter = 0;
 let mappingData = [];
 
+/**
+ * Retrieve all annotations through MediaWiki API and fill into array.
+ * Also creates the mapping for building the hierarchy.
+ */
 (async function () {
 	while (run) {
 		let apiCall = new mw.Api();
@@ -79,8 +83,12 @@ let mappingData = [];
 	});
 })();
 
-
-
+/**
+ * Copies the identifier to the MediaWiki annotation when clicking on the footer into copy-buffer.
+ * Convenience functionality to create direct links between annotations.
+ *
+ * @param event
+ */
 function inputElementClickHandlerSelectCopy(event) {
 	let element = event.target;
 	element.select();

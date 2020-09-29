@@ -1,3 +1,5 @@
+# Code for DigiVis NER
+
 import os
 import spacy
 from datetime import datetime

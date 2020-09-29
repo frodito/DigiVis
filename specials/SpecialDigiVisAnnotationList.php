@@ -1,7 +1,8 @@
 <?php
 
 /**
- * digiVis SpecialPage for DigiVis extension
+ * DigiVis SpecialPage providing a convenient overview over all annotations. The text of the Annotations can be searched
+ * through and filtered by categories.
  *
  * @file
  * @ingroup Extensions
@@ -25,6 +26,7 @@ class SpecialDigiVisAnnotationList extends SpecialPage {
 
 		$out->setPageTitle($this->msg('special-digiVis-annotationlist-title'));
 
+		// container to add the overview
 		$out->addHTML('<div class="digivis-annotationlist"></div>');
 
 	}

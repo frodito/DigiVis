@@ -16,15 +16,13 @@ class DigiVisHooks {
 	 * @var array
 	 */
 	private static $categories_lookup = array(
-		"argumentation2" => "annotator-hl-blue",
-		"innovationsdiskurs2" => "annotator-hl-magenta",
-		"narrativ2" => "annotator-hl-lime",
-		"wissenschaftlichereferenz2" => "annotator-hl-yellow",
-		"beispiel3" => "annotator-hl-blueviolet",
-		"praemisse3" => "annotator-hl-orange",
-		"schlussfolgerung3" => "annotator-hl-cyan",
-		"argumentationfremd" => "annotator-hl-chocolate",
-		"antwortglasersfeld" => "annotator-hl-red"
+		"LEVEL2CATEGORY1" => "annotator-hl-blue",
+		"LEVEL2CATEGORY2" => "annotator-hl-magenta",
+		"LEVEL2CATEGORY3" => "annotator-hl-lime",
+		"LEVEL2CATEGORY4" => "annotator-hl-yellow",
+		"LEVEL3CATEGORY1" => "annotator-hl-blueviolet",
+		"LEVEL3CATEGORY2" => "annotator-hl-orange",
+		"LEVEL3CATEGORY3" => "annotator-hl-cyan"
 	);
 
 	public static function onCanonicalNamespaces(array &$namespaces) {
@@ -113,30 +111,11 @@ class DigiVisHooks {
 	 * @throws MWException
 	 */
 	public static function onParserFirstCallInit(Parser $parser) {
-
-		// Create a function hook associating the "layer2display" magic word with renderLayer2()
-		$parser->setFunctionHook('layer2display', [self::class, 'constructLayer2ForDisplay']);
-
 		// function hook for magic word "layer3annotate"
 		$parser->setFunctionHook('layer2annotate', [self::class, 'constructLayer2ForAnnotation']);
 
 		// function hook for magic word "layer3display"
 		$parser->setFunctionHook('layer3display', [self::class, 'constructLayer3ForDisplay']);
-
-		// function hook for magic word "testitest"
-		$parser->setFunctionHook('testitest', [self::class, 'testitest']);
-
-		// function hook for magic word ""
-		$parser->setFunctionHook('a2t', [self::class, 'a2t']);
-	}
-
-	public static function a2t(Parser $parser, $topics = array()) {
-
-	}
-
-	public static function testitest(Parser $parser, $pagetitle = '') {
-		$output = "";
-		return $output;
 	}
 
 	/**
@@ -200,12 +179,8 @@ class DigiVisHooks {
 			if (preg_match_all($pattern_xpath, $start_xpath, $p)) {
 				if (count($p) == 2) {
 					$index_paragraph = $p[1][0];
-				} else {
-					// TODO: can $matches contain 4, 6, 8, ... entries?
-//					echo "<h1>Problem with paragraphs, more than 2 elements.</h1>";
 				}
 			}
-
 
 			// store calculated values for further processing, use index + start-offset for sorting
 			$annotations_array[$category . " " . $index_paragraph . " " . $start_pos . " " . $end_pos] = array(
@@ -317,12 +292,6 @@ class DigiVisHooks {
 		ksort($annotations_offsets, SORT_NATURAL);
 		$annotations_offsets_keys = array_keys($annotations_offsets);
 
-//		foreach ($annotations_offsets as $offset) {
-//			if ($offset['start'] >= $offset['end']) {
-//				var_dump($offset);
-//			}
-//		}
-
 		$prev_end = 0;
 		$double_processing = false;
 
@@ -337,7 +306,6 @@ class DigiVisHooks {
 			$offset = $annotations_offsets[$annotations_offsets_keys[$i]];
 
 			// get next annotation to check if current and next overlap in any way
-//			if ($annotations_offsets[$annotations_offsets_keys[$i + 1]]) {
 			if (array_key_exists($i + 1, $annotations_offsets_keys)) {
 				$next_offset = $annotations_offsets[$annotations_offsets_keys[$i + 1]];
 			} else {    // last annotation
@@ -388,7 +356,6 @@ class DigiVisHooks {
 
 				// text before first annotation
 				if ($prev_end === 0) {
-//					$text_modified .= substr($text, 0, ($offset['end'] - $offset['start']));
 					$text_modified .= substr($text, 0, $offset['start']);
 
 					// normal text
@@ -518,34 +485,6 @@ class DigiVisHooks {
 	}
 
 	/**
-	 * @param $annotations_layer2
-	 * @param array $annotations_array
-	 * @return array
-	 */
-	public static function processAnnotations($annotations_layer2, array $annotations_array) {
-
-		foreach ($annotations_layer2 as $annotation) {
-
-			// dig out metadata from annotation
-			$metadata_json = json_decode(self::translateBrackets($annotation["printouts"]["#"][0]), true);
-			$category = $metadata_json['category'];
-			$quote = $metadata_json['quote'];
-			$start_xpath = $metadata_json['ranges'][0]['start'];
-			$start_pos = $metadata_json['ranges'][0]['startOffset'];
-			$end_pos = $metadata_json['ranges'][0]['endOffset'];
-
-			// store calculated values for further processing, use index + start-offset for sorting
-			$tmp_annotations_array[$start_pos . " " . $end_pos] = array(
-				'category' => self::umlauteumwandeln(strtolower($metadata_json['category'])),
-				'span_title' => $category,
-				'quote' => $quote
-			);
-
-		} // foreach annotationlayer2
-		return $annotations_array;
-	}
-
-	/**
 	 * @param $pagetitle
 	 * @param $text
 	 * @return array
@@ -615,9 +554,6 @@ class DigiVisHooks {
 						$end_pos_in_text = strpos($text, '</ref>', $pos_prefix) + 6;
 					}
 
-					if ($pos_prefix === false) {
-						// TODO: error handling if prefix cannot be found in $text
-					}
 					if ($pos_suffix === false) {
 						// search newlines, and use text from last newline to end of quote for searching
 						if (count($newlines[0]) > 0) {
@@ -652,10 +588,6 @@ class DigiVisHooks {
 						}
 						$suffix = substr($quote, $footnotes[0][0][1] + strlen($footnotes[0][0][0]) + $tmp_pos_suffix);
 						$pos_suffix = strlen($suffix) === 0 ? false : strpos($text, $suffix);
-						if ($pos_suffix === false) {
-							// TODO: come up with better ideas to find positions
-							echo $suffix;
-						}
 					}
 					$start_pos_in_text = $pos_prefix;
 					$end_pos_in_text = $pos_suffix + strlen($suffix);
@@ -681,7 +613,6 @@ class DigiVisHooks {
 				}
 			}
 
-			// TODO: priority 1
 			// if current interval includes mediawiki formatting tags,
 			// e.g. <blockquote></blockquote>, <poem></poem>, etc.,
 			// check if both opening and closing tags are included and act accordingly
@@ -691,6 +622,7 @@ class DigiVisHooks {
 
 
 			if (!$balanced) {
+			    echo 'Error on processing annotation '
 			}
 
 			// store calculated values for further processing, use index + start-offset for sorting

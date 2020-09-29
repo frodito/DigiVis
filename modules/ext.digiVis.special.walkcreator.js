@@ -2,21 +2,26 @@ const delay = 600;
 const url = 'http://' + location.hostname + '/mediawiki/api.php';
 const params = 'action=ask&format=json';
 const origin = '&origin=*';
-const query = '&query=%5B%5BAnnotation%20of%3A%3A%2B%5D%5D%5B%5B~Text%3A*%7C%7C~Annotationen%3A*%5D%5D%7C%3FAnnotationComment%7C%3FAnnotationMetadata%7C%3FCategory%7C%3Fist%20Thema%7C%3Fist%20Innovationstyp%7C%3FReferenztyp%7C%3FNarrativtyp%7Climit%3D1000';
-const query_plain = '[[Annotation of::+]][[~Text:*||~Annotationen:*]]|?AnnotationComment|?AnnotationMetadata|?Category|?ist Thema|?ist Innovationstyp|?Referenztyp|?Narrativtyp';
+
+// The query needs to reflect your use case, i.e., adapt the query with your custom attributes
+const query = '&query=%5B%5BAnnotation%20of%3A%3A%2B%5D%5D%5B%5B~Text%3A*%7C%7C~Annotationen%3A*%5D%5D%7C%3FAnnotationComment%7C%3FAnnotationMetadata%7C%3FCategory%7C%3FATTRIBUTE1%7C%3FATTRIBUTE2%7C%3FATTRIBUTE3%7C%3FATTRIBUTE4%7Climit%3D1000';
+const query_plain = '[[Annotation of::+]][[~Text:*||~Annotationen:*]]|?AnnotationComment|?AnnotationMetadata|?Category|?ATTRIBUTE1|?ATTRIBUTE2|?ATTRIBUTE3|?ATTRIBUTE4';
 
 let annotationMap = new Map();
 let offset = 0;
 let run = true;
 let counter = 0;
 let timeout = 0;
-// let $walkname = "";
 let mappingData = [];
 let cmcontinue = "";
 let $listAnnotationsFiltered = [];
 let indexCurrentAnnotation = 0;
 
 
+/**
+ * Add the necessary HTML elements, fill with content, checkbox hierarchy and event listeners for drag and drop
+ * functionality.
+ */
 (function () {
     'use strict';
     let $tableContainer = $('<table class="container_table" id="container_table"></table>');
@@ -44,7 +49,6 @@ let indexCurrentAnnotation = 0;
     $('.previous_annotation').click(previousButtonClickHandler);
     $('.next_annotation').click(nextButtonClickHandler);
     $('#btnSaveWalk').click(saveWalkButtonClickHandler);
-    // $('#btnLoadWalk').click(loadWalkButtonClickHandler);
 
     $('#existingWalkSelect').change(function () {
         let $select = $('#existingWalkSelect');
@@ -64,19 +68,7 @@ let indexCurrentAnnotation = 0;
         helper: function (ev, target) {
             return $('<div class="sortable_list_helper"></div>');
         },
-        activate: da_activate_handler,
-        beforeStop: da_beforeStop_handler,
-        change: da_change_handler,
-        create: da_create_handler,
-        deactivate: da_deactivate_handler,
-        out: da_out_handler,
-        over: da_over_handler,
         receive: da_receive_handler,
-        remove: da_remove_handler,
-        sort: da_sort_handler,
-        start: da_start_handler,
-        stop: da_stop_handler,
-        update: da_update_handler,
     });
     $('.add_empty_station_button').click(addCustomStationButtonClickHandler);
     addWalkTemplate();
@@ -118,7 +110,10 @@ let indexCurrentAnnotation = 0;
     }
 })();
 
-// load annotations and populate the selectarea
+/**
+ * Load annotations from MediaWiki and populate the select area and add custom data to the HTML elements.
+ * Also fill mappingData to create the checkbox hierarchy.
+ */
 (async function () {
     while (run) {
         let apiCall = new mw.Api();
@@ -155,11 +150,7 @@ let indexCurrentAnnotation = 0;
             helper: function () {
                 return $(this).clone(true, true);
             },
-            connectToSortable: ".droparea",
-            create: a_create_handler,
-            drag: a_drag_handler,
-            start: a_start_handler,
-            stop: a_stop_handler
+            connectToSortable: ".droparea"
         });
         $('#' + annotationId).attr({
             'data-annotation_id': annotationId,
@@ -171,6 +162,9 @@ let indexCurrentAnnotation = 0;
     });
 })();
 
+/**
+ * Empty template with title, explanation and walk-conclusion slide when starting or when reset button is pressed.
+ */
 function addWalkTemplate() {
     let $droparea = $('.droparea');
     let $title_slide = createTitleSlideEmpty();
@@ -182,17 +176,26 @@ function addWalkTemplate() {
     $droparea.append($conclusion_slide);
 }
 
+/**
+ * Helper method to create HTML code of a station.
+ *
+ * @param $content
+ * @returns {*}
+ */
 function createStation($content) {
-    // let $station = $('<div class="station"></div>');
     let $close_button = $('<button class="station_close_button">X</button>');
     $close_button.click(function (ev) {
         $(ev.target).parent().remove();
     });
-    // $content.append($close_button);
     $content.prepend($close_button);
     return $content;
 }
 
+/**
+ * Create HTML container for an empty title slide.
+ *
+ * @returns {*}
+ */
 function createTitleSlideEmpty() {
     let $container = $('<div class="station title static" id="title_station"></div>');
     let $title = $('<input type="text" id="walk_title" name="walk_title" placeholder="Title of the walk">');
@@ -206,6 +209,11 @@ function createTitleSlideEmpty() {
     return createStation($container);
 }
 
+/**
+ * Create HTML container for an empty explanation slide.
+ *
+ * @returns {*}
+ */
 function createExplanationSlideEmpty() {
     let $container = $('<div class="station explanation static" id="explanation_station"></div>\'');
     let $explanation = $('<textarea rows="4" type="text" id="explanation_text" name="explanation_text" placeholder="Explanation about the walk"></textarea>');
@@ -213,6 +221,11 @@ function createExplanationSlideEmpty() {
     return createStation($container);
 }
 
+/**
+ * Create HTML container for an empty conclusion slide.
+ *
+ * @returns {*}
+ */
 function createConclusionSlideEmpty() {
     let $container = $('<div class="station conclusion static" id="conclusion_station"></div>');
     let $header = $('<input id="conclusion_header" name="conclusion_header" placeholder="Header for the conclusion of the walk.">');
@@ -227,7 +240,8 @@ function createConclusionSlideEmpty() {
 }
 
 /**
- * Construct the HTML when dragging an annotation to the droparea
+ * Construct HTML when dragging an annotation to the droparea
+ *
  * @param id    the id of the annotation
  * @param quote the quote to use in this station
  * @param doc_title the title of the source-text
@@ -253,6 +267,7 @@ function createStationContent(id, quote, doc_title, doc_url) {
 
 /**
  * Construct the HTML when adding an empty station to the droparea
+ *
  * @param id    the id of the annotation
  * @param quote the quote to use in this station
  * @param doc_title the title of the source-text
@@ -277,13 +292,26 @@ function createStationCustom() {
     return createStation($container);
 }
 
+/**
+ * Handler to add empty custom station when corresponding button is pressed.
+ *
+ * @param ev
+ */
 function addCustomStationButtonClickHandler(ev) {
     $newStation = createStationCustom();
     $('.droparea').prepend($newStation);
 }
 
+
+/**
+ * Handler for saving a walk when the corresponding button is pressed.
+ *
+ * @param ev
+ */
 function saveWalkButtonClickHandler(ev) {
     let $walkname = 'Walk:' + $('#walkNameInput')[0].value;
+
+    // check given name for walk with MediaWiki API and handle errors
     new mw.Api().get({
         action: "query",
         titles: [$walkname],
@@ -295,7 +323,7 @@ function saveWalkButtonClickHandler(ev) {
                 let invalidReason = value.invalidreason;
             } else {
                 let stationId = 1;
-                // loop over all entries in droparea and create string for SMW
+                // loop over all entries in droparea and create string for Semantic MediaWiki
                 let smwString = "";
                 $('.droparea > div').each(function (index, element) {
                     let tmpString = ``;
@@ -364,14 +392,17 @@ function saveWalkButtonClickHandler(ev) {
             }
         });
     }, function (error) {
-        console.log("Error when checking if page", $walkname, "exists.");
+        console.log("Error when checking if page ", $walkname, " exists.");
     });
 }
 
-function getEditToken() {
-    return token;
-}
-
+/**
+ * Helper method to handle editing a MediaWiki page.
+ * Retrieves an edit-token from the API, if successful sends the edit of the page to the API.
+ *
+ * @param pagename
+ * @param content
+ */
 function editPage(pagename, content) {
     var getTokenUrl = mw.config.get('wgScriptPath') + '/api.php?action=query&meta=tokens&format=json';
     var token;
@@ -388,9 +419,10 @@ function editPage(pagename, content) {
     });
 }
 
-
+/**
+ * Handler to load a selected walk when the corresponding button is pressed.
+ */
 function loadWalkButtonClickHandler() {
-    console.log("in loadWalkClickHandler");
     let $select = $('#existingWalkSelect');
     let $value = $select.children("option:selected").val();
     if ($value !== "") {
@@ -419,98 +451,39 @@ function loadWalkButtonClickHandler() {
     }
 }
 
+/**
+ * Handler to reset the droparea with the three default stations.
+ *
+ * @param ev
+ */
 function resetWalkClickHandler(ev) {
     console.log("in resetWalkClickHandler");
     $('.droparea').empty();
     addWalkTemplate();
 }
 
-function a_create_handler(ev, ui) {
-    log_event_message("a_create", ev, ui);
-}
-
-function a_drag_handler(ev, ui) {
-    log_event_message("a_drag", ev, ui);
-}
-
-function a_start_handler(ev, ui) {
-    log_event_message("a_start", ev, ui);
-}
-
-function a_stop_handler(ev, ui) {
-    log_event_message("a_stop", ev, ui);
-}
-
-function da_activate_handler(ev, ui) {
-    log_event_message("da_activate", ev, ui);
-}
-
-function da_beforeStop_handler(ev, ui) {
-    log_event_message("da_beforeStop", ev, ui);
-}
-
-function da_change_handler(ev, ui) {
-    log_event_message("da_change", ev, ui);
-}
-
-function da_create_handler(ev, ui) {
-    log_event_message("da_create", ev, ui);
-}
-
-function da_deactivate_handler(ev, ui) {
-    log_event_message("da_deactivate", ev, ui);
-}
-
-
-function da_out_handler(ev, ui) {
-    log_event_message("da_out", ev, ui);
-}
-
-function da_over_handler(ev, ui) {
-    log_event_message("da_over", ev, ui);
-}
-
+/**
+ * Custom receive handler for the droparea.
+ *
+ * @param ev
+ * @param ui
+ * @returns {boolean}
+ */
 function da_receive_handler(ev, ui) {
     log_event_message("da_receive", ev, ui);
     let $element = $(this).data().uiSortable.currentItem;
     let annotation_id = $element.data('annotation_id');
     let doc_url = $element.data('doc_url');
     let doc_title = $element.data('doc_title');
-    let cat_intern = $element.data('cat_intern');
-    let fulltext = $element.data('fulltext');
-    let station = $('<div class="station" id="station-' + annotation_id + '"></div>');
-    let station_card = $('<div class="station_card"></div>');
     let newElement = createStationContent(annotation_id, $element[0].innerText, doc_title, doc_url);
     newElement.css('background-color', $element[0].style.backgroundColor);
     $element.replaceWith(newElement);
     return true;
 }
 
-function da_remove_handler(ev, ui) {
-    log_event_message("da_remove", ev, ui);
-}
-
-function da_sort_handler(ev, ui) {
-    log_event_message("da_sort", ev, ui);
-}
-
-function da_start_handler(ev, ui) {
-    log_event_message("da_start", ev, ui);
-}
-
-function da_stop_handler(ev, ui) {
-    log_event_message("da_stop", ev, ui);
-}
-
-function da_update_handler(ev, ui) {
-    log_event_message("da_update_handler", ev, ui);
-}
-
-function log_event_message(text, ev, ui) {
-    // console.log(text, ev, ui);
-    // console.log(text);
-}
-
+/**
+ * Show clicked annotation with full text in bigger overlay.
+ */
 function showAnnotation() {
     let $e = $listAnnotationsFiltered.eq(indexCurrentAnnotation);
     $('.overlayTitle').text($e.data('title'));
@@ -519,12 +492,22 @@ function showAnnotation() {
     $('.overlayOuter').show(delay);
 }
 
+/**
+ * Click handler for cards
+ *
+ * @param ev
+ */
 function cardClickHandler(ev) {
     $listAnnotationsFiltered = $('.selectarea > .cardOuter:visible');
     indexCurrentAnnotation = $listAnnotationsFiltered.index(ev.target);
     showAnnotation();
 }
 
+/**
+ * Clickhandler to switch overlay to annotation, which is the predecessor to the current one in the list.
+ *
+ * @param ev
+ */
 function previousButtonClickHandler(ev) {
     if (indexCurrentAnnotation > 0) {
         indexCurrentAnnotation--;
@@ -532,6 +515,11 @@ function previousButtonClickHandler(ev) {
     showAnnotation();
 }
 
+/**
+ * Clickhandler to switch overlay to annoation, which is the successor to the current one in the list.
+ *
+ * @param ev
+ */
 function nextButtonClickHandler(ev) {
     if (indexCurrentAnnotation < $listAnnotationsFiltered.length - 1) {
         indexCurrentAnnotation++;
@@ -539,6 +527,11 @@ function nextButtonClickHandler(ev) {
     showAnnotation();
 }
 
+/**
+ * Clickhandler to close the overlay
+ *
+ * @param ev
+ */
 function closeButtonClickHandler(ev) {
     $('.overlayOuter').hide(delay);
 }

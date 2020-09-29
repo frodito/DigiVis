@@ -1,3 +1,14 @@
+/**
+ * File contains utility methods.
+ */
+
+/**
+ * Extract and return base page name of given pagename.
+ *
+ * @param title
+ * @returns {string}
+ */
+
 function extractTitle(title) {
     let needle = '';
     if (title.includes('Annotationen:')) {
@@ -12,6 +23,12 @@ function extractTitle(title) {
     return title.substring(pos_start + needle.length, pos_end);
 }
 
+/**
+ * Extracts the URL and creates link to overview page.
+ *
+ * @param url
+ * @returns {string}
+ */
 function extractUrl(url) {
     let pos_anno = url.indexOf("Annotation:");
     let pos_text = url.indexOf("Text:");
@@ -29,6 +46,12 @@ function extractUrl(url) {
     return url_head + doc_title;
 }
 
+/**
+ * Translate bracket-symbols used by Semantic Text Annotator into curly and square brackets.
+ *
+ * @param text
+ * @returns {*}
+ */
 function translateBrackets(text) {
     text = text.replace(/\^/g, "{");
     text = text.replace(/°/g, "}");
@@ -38,6 +61,12 @@ function translateBrackets(text) {
     return text;
 }
 
+/**
+ * Replace german umlauts to 2-character representation
+ *
+ * @param string
+ * @returns {*}
+ */
 function replaceUmlaute(string) {
     string = string.replace(/\u00e4/g, "ae");
     string = string.replace(/\u00fc/g, "ue");
@@ -45,6 +74,15 @@ function replaceUmlaute(string) {
     return string;
 }
 
+/**
+ * Helper method to search for values in array holding hierarchical information, where parents are in the array as
+ * single entry and children are in the array as PARENTNAME-CHILDNAME.
+ *
+ * @param haystack
+ * @param parentname
+ * @param needles
+ * @returns {boolean}
+ */
 function in_array(haystack, parentname, needles) {
     let found = false;
     needles.forEach(function (needle) {
@@ -55,10 +93,19 @@ function in_array(haystack, parentname, needles) {
     return found;
 }
 
+/**
+ * Check if given key is the last entry in the given array.
+ * @param array
+ * @param key
+ * @returns {boolean}
+ */
 function lastElement(array, key) {
     return (Object.is(array.length - 1, key));
 }
 
+/**
+ * Build hierarchy of checkboxes for the filtering mechanism from the information from the mapping.
+ */
 function createCheckboxHierarchy() {
     let $root = $('<li></li>');
     let $checkboxAll = assembleCheckboxWithLabel('all', 'all', 'Alle');
@@ -70,7 +117,9 @@ function createCheckboxHierarchy() {
             .css('background', Annotation.prototype.catToColor[lv2key])
 			.css('border', '1px solid black')
             .css('border-radius', '7px');
-        if (lv2key === 'beispiel3' || lv2key === 'innovationsdiskurs2') {
+
+        // use white font color for categories with darker colors to make them readable
+        if (lv2key === 'LEVEL3CATEGORY1' || lv2key === 'LEVEL2CATEGORY3') {
             $newLevel.css('color', 'white');
         }
         $newLevel.append(assembleCheckboxWithLabel(lv2key, lv2key, lv2Cat));
@@ -88,28 +137,44 @@ function createCheckboxHierarchy() {
     $('.treeview').append($root);
 }
 
+/**
+ * Helper method to construct the single checkbox elements in the hierarchy.
+ * @param name
+ * @param id
+ * @param labelText
+ * @returns {jQuery|HTMLElement}
+ */
 function assembleCheckboxWithLabel(name, id, labelText) {
     return $('<input class="checkbox" type="checkbox" name="' + name + '" id="' + id + '" checked><label for="' + id + '" class="custom-checked">' + labelText + '</label>');
 }
 
+/**
+ * Add data from the annotation to the mappingData container.
+ *
+ * @param annotation
+ */
 function fillMappingData(annotation) {
     if (!(annotation.category in mappingData)) {
         mappingData[annotation.category] = new Set();
     }
-    annotation.topics.forEach(function (topic) {
-        mappingData[annotation.category].add(topic);
+    annotation.ATTRIBUTE1.forEach(function (attr1) {
+        mappingData[annotation.category].add(attr1);
     });
-    annotation.innovationtypes.forEach(function (innovationtype) {
-        mappingData[annotation.category].add(innovationtype)
+    annotation.ATTRIBUTE2.forEach(function (attr2) {
+        mappingData[annotation.category].add(attr2)
     });
-    annotation.narrativetype.forEach(function (narrativetype) {
-        mappingData[annotation.category].add(narrativetype);
+    annotation.ATTRIBUTE3.forEach(function (attr3) {
+        mappingData[annotation.category].add(attr3);
     });
-    annotation.referencetype.forEach(function (referencetype) {
-        mappingData[annotation.category].add(referencetype);
+    annotation.ATTRIBUTE4.forEach(function (attr4) {
+        mappingData[annotation.category].add(attr4);
     });
 }
 
+/**
+ * Functionality adding freetext filter.
+ * Uses a timeout such that the filtering is only done after 1 second no change happened.
+ */
 function handleFreetextFilter() {
     clearTimeout(timeout);
     timeout = setTimeout(function () {

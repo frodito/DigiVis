@@ -1,5 +1,9 @@
 // tree-view with checkboxes: https://codepen.io/fsbdev/pen/nILhu
 
+/**
+ * Methods used to create the tree-view with checkboxes to filter the annotations displayed.
+ * Based on the code found here https://codepen.io/fsbdev/pen/nILhu
+ */
 function checkboxChanged() {
 	let $this = $(this),
 		checked = $this.prop("checked"),
@@ -20,6 +24,9 @@ function checkboxChanged() {
 	handleFreetextFilter()
 }
 
+/**
+ * Handles updates to the view when checkboxes are ticked or unticked.
+ */
 function applyCheckboxSelection() {
 	let allCheckbox = $('#all')[0];
 	let listChecked = [];
@@ -38,10 +45,10 @@ function applyCheckboxSelection() {
 		});
 		annotationMap.forEach(function (annotation) {
 				let id = annotation._metadata.id;
-				if (annotation.topics.length !== 0 && in_array(listChecked, annotation.cat_intern, annotation.topics) ||
-					annotation.innovationtypes.length !== 0 && in_array(listChecked, annotation.cat_intern, annotation.innovationtypes) ||
-					annotation.narrativetype.length !== 0 && in_array(listChecked, annotation.cat_intern, annotation.narrativetype) ||
-					annotation.referencetype.length !== 0 && in_array(listChecked, annotation.cat_intern, annotation.referencetype)) {
+				if (annotation.ATTRIBUTE1.length !== 0 && in_array(listChecked, annotation.cat_intern, annotation.ATTRIBUTE1) ||
+					annotation.ATTRIBUTE2.length !== 0 && in_array(listChecked, annotation.cat_intern, annotation.ATTRIBUTE2) ||
+					annotation.ATTRIBUTE3.length !== 0 && in_array(listChecked, annotation.cat_intern, annotation.ATTRIBUTE3) ||
+					annotation.ATTRIBUTE4.length !== 0 && in_array(listChecked, annotation.cat_intern, annotation.ATTRIBUTE4)) {
 					annotation.element.show();
 				} else {
 					annotation.element.hide();
@@ -51,6 +58,12 @@ function applyCheckboxSelection() {
 	}
 }
 
+/**
+ * check for siblings in the hierarchy.
+ *
+ * @param $el
+ * @param checked
+ */
 function checkSiblings($el, checked) {
 	let parent = $el.parent().parent(),
 		all = true,

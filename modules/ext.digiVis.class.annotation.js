@@ -1,3 +1,8 @@
+/**
+ * @class Class represents our view on annotation, created with Semantic Text Annotator, for the purpose of using it in
+ * visualizations. Here the annotations are display in form of cards, displaying the text of the annotations and using
+ * the colors assigned in Semantic Text Annotator as color coding.
+ */
 class Annotation {
 
 	constructor(query_result, type = "annotationlist") {
@@ -11,71 +16,92 @@ class Annotation {
 		this._category = this._metadata.category;
 		this._id = this._metadata.id;
 		this._cat_intern = replaceUmlaute(this.category.toLowerCase());
-		this._topics = [];
-		this._innovationtypes = [];
-		this._narrativetype = [];
-		this._referencetype = [];
-		this.fill_topics();
-		this.fill_innovationtypes();
-		this.fill_narrativetype();
-		this.fill_referencetype();
+		this._ATTRIBUTE1 = [];
+		this._ATTRIBUTE2 = [];
+		this._ATTRIBUTE3 = [];
+		this._ATTRIBUTE4 = [];
+		this.fill_ATTRIBUTE1();
+		this.fill_ATTRIBUTE2();
+		this.fill_ATTRIBUTE3();
+		this.fill_ATTRIBUTE4();
 		this.createHTML();
 	}
 
-	fill_topics() {
+	/**
+	 * Populate array for ATTRIBUTE1
+	 */
+	fill_ATTRIBUTE1() {
 		let self = this;
-		this.printouts["Ist Thema"].forEach(function (obj) {
-			self._topics.push(obj.fulltext);
+		this.printouts["ATTRIBUTE1"].forEach(function (obj) {
+			self._ATTRIBUTE1.push(obj.fulltext);
 		});
 	}
 
-	fill_innovationtypes() {
+	/**
+	 * Populate array for ATTRIBUTE2
+	 */
+	fill_ATTRIBUTE2() {
 		let self = this;
-		this.printouts["Ist Innovationstyp"].forEach(function (obj) {
-			self._innovationtypes.push(obj.fulltext);
+		this.printouts["ATTRIBUTE2"].forEach(function (obj) {
+			self._ATTRIBUTE2.push(obj.fulltext);
 		});
 	}
 
-	fill_narrativetype() {
+	/**
+	 * Populate array for ATTRIBUTE3
+	 */
+	fill_ATTRIBUTE3() {
 		let self = this;
-		this.printouts["Narrativtyp"].forEach(function (obj) {
-			self._narrativetype.push(obj.fulltext);
+		this.printouts["ATTRIBUTE3"].forEach(function (obj) {
+			self._ATTRIBUTE3.push(obj.fulltext);
 		});
 	}
 
-	fill_referencetype() {
+	/**
+	 * Populate array for ATTRIBUTE4
+	 */
+	fill_ATTRIBUTE4() {
 		let self = this;
-		this.printouts["Referenztyp"].forEach(function (obj) {
-			self._referencetype.push(obj.fulltext);
+		this.printouts["ATTRIBUTE4"].forEach(function (obj) {
+			self._ATTRIBUTE4.push(obj.fulltext);
 		});
 	}
 
+	/**
+	 * Create the header in the cards according to category of the annotation.
+	 *
+	 * @param header
+	 * @returns {*}
+	 */
 	fill_header(header) {
 		let self = this;
 		switch (this.cat_intern) {
-			case 'argumentation2':
-			case 'argumentationfremd':
-				self.topics.forEach(function (topic) {
+			case 'LEVEL2CATEGORY1':
+			case 'LEVEL2CATEGORY2':
+				self.ATTRIBUTE1.forEach(function (topic) {
 					header.append($('<p class="headerElement">' + topic + '</p>'));
 				});
 				break;
-			case 'narrativ2':
-				header.append($('<p class="headerElement">' + self.narrativetype + '</p>'));
+			case 'LEVEL2CATEGORY3':
+				header.append($('<p class="headerElement">' + self.ATTRIBUTE3 + '</p>'));
 				break;
-			case 'innovationsdiskurs2':
-				self.innovationtypes.forEach(function (innovationtype) {
+			case 'LEVEL2CATEGORY4':
+				self.ATTRIBUTE2.forEach(function (innovationtype) {
 					header.append($('<p class="headerElement">' + innovationtype + '</p>'));
 				});
 				break;
-			case 'wissenschaftlichereferenz2':
-				header.append($('<p class="headerElement">' + self.referencetype + '</p>'));
+			case 'LEVEL2CATEGORY5':
+				header.append($('<p class="headerElement">' + self.ATTRIBUTE4 + '</p>'));
 				break;
 			default:
-			// do nothing
+			// do nothing when other categories occur
 		}
 		return header;
 	}
 
+	/**
+	 * Create the HTML for the application, depending if it is used in the annotation-list or the walk-creator
+	 */
 	createHTML() {
 		if (this.type === "annotationlist") {
 			this._html = this.createHtmlAnnotationlist();
@@ -84,6 +110,11 @@ class Annotation {
 		}
 	}
 
+	/**
+	 * Create the HTML code for the annotation-list
+	 *
+	 * @returns {jQuery|HTMLElement}
+	 */
 	createHtmlAnnotationlist() {
 		let text = this.metadata.quote;
 		let $headerCard = $('<div class="cardHeader"></div>');
@@ -100,6 +131,11 @@ class Annotation {
 		return $outerCard;
 	}
 
+	/**
+	 * Create the HTML for the walk-creator
+	 *
+	 * @returns {jQuery|HTMLElement}
+	 */
 	createHtmlWalkcreator() {
 		let text = this.metadata.quote;
 		let $innerCard = $('<p class="cardInner"></p>').text(text);
@@ -121,13 +157,13 @@ class Annotation {
 
 	get printouts() { return this._printouts; }
 
-	get topics() { return this._topics; }
+	get ATTRIBUTE1() { return this._ATTRIBUTE1; }
 
-	get innovationtypes() { return this._innovationtypes; }
+	get ATTRIBUTE2() { return this._ATTRIBUTE2; }
 
-	get narrativetype() { return this._narrativetype; }
+	get ATTRIBUTE3() { return this._ATTRIBUTE3; }
 
-	get referencetype() { return this._referencetype; }
+	get ATTRIBUTE4() { return this._ATTRIBUTE4; }
 
 	get element() { return this._html; }
 
@@ -146,23 +182,30 @@ class Annotation {
 	get html() { return this._html; }
 }
 
+/**
+ * Mapping of category to color to be used for the cards.
+ * Categories are the ones used in the configuration of the Semantic Text Annotator, possibly
+ * matching also the colors.
+ */
 Annotation.prototype.catToColor = {
-	"argumentation2": "#6d9bff",
-	"innovationsdiskurs2": "#FF00FF",
-	"narrativ2": "#00FF00",
-	"wissenschaftlichereferenz2": "#ffffb5",
-	"beispiel3": "#8A2BE2",
-	"praemisse3": "#FFA500",
-	"schlussfolgerung3": "#00FFFF",
-	"argumentationfremd": "#D2691E",
-	"antwortglasersfeld": "#FFCFBF"
+	"LEVEL2CATEGORY1": "#6d9bff",
+	"LEVEL2CATEGORY2": "#FF00FF",
+	"LEVEL2CATEGORY3": "#00FF00",
+	"LEVEL2CATEGORY4": "#ffffb5",
+	"LEVEL3CATEGORY1": "#8A2BE2",
+	"LEVEL3CATEGORY2": "#FFA500",
+	"LEVEL3CATEGORY3": "#00FFFF",
 };
 
 Annotation.prototype.mappingNameToKey = {};
 Annotation.prototype.mappingKeyToName = {};
 
+/**
+ * Creating mapping with actual names of the categories and key-ified representations of the category
+ *
+ * @param mappingData
+ */
 Annotation.prototype.createMappings = function (mappingData) {
-	console.log("creating mappings");
 	Object.keys(mappingData).forEach(function (lv2Cat) {
 		Annotation.prototype.mappingNameToKey[lv2Cat] = {};
 		let lv2Key = replaceUmlaute(lv2Cat.toLowerCase());
@@ -172,6 +215,4 @@ Annotation.prototype.createMappings = function (mappingData) {
 			Annotation.prototype.mappingKeyToName[lv3Key] = lv2Cat + '-' + lv3Cat;
 		});
 	});
-	console.log("mappingNameToKey", Annotation.prototype.mappingNameToKey);
-	console.log("mappingKeyToName", Annotation.prototype.mappingKeyToName);
 };

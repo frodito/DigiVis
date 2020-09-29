@@ -1,7 +1,7 @@
 {
   "name": "DigiVis",
   "author": "Manfred Moosleitner",
-  "license-name": "GPL-2.0-or-later",
+  "license-name": "GPL-3.0-or-later",
   "version": "0.0.1",
   "namemsg": "digiVis",
   "descriptionmsg": "digiVis-desc",
@@ -25,8 +25,6 @@
     "DigiVis": "GlobalVarConfig::newInstance"
   },
   "AutoloadClasses": {
-    "SpecialDigiVis": "specials/SpecialDigiVis.php",
-    "SpecialDigiVisVis": "specials/SpecialDigiVisVis.php",
     "SpecialDigiVisAnnotationList": "specials/SpecialDigiVisAnnotationList.php",
     "SpecialDigiVisWalkCreator": "specials/SpecialDigiVisWalkCreator.php",
     "DigiVisNERAPI": "Api/DigiVisNERAPI.php",
@@ -41,9 +39,6 @@
     "ext.digiVis": {
       "styles": [
         "modules/general/general_styles.css"
-      ],
-      "scripts": [
-        "modules/ext.digiVis.layer2.js"
       ]
     },
     "ext.digiVis.special.annotationlist": {
@@ -62,7 +57,6 @@
         "modules/ext.digiVis.class.station.js",
         "modules/ext.digiVis.special.walkcreator.js",
         "modules/ext.digiVis.class.annotation.js",
-        "modules/ext.digiVis.class.walk.js",
         "modules/ext.digiVis.helper.checkbox.js",
         "modules/ext.digiVis.utility.js"
       ],
@@ -73,37 +67,6 @@
         "jquery.ui.draggable",
         "jquery.ui.droppable",
         "jquery.ui.sortable"
-      ]
-    },
-    "ext.digiVis.special": {
-      "scripts": [
-        "modules/ext.digiVis.special.js"
-      ],
-      "styles": [
-        "modules/ext.digiVis.css"
-      ],
-      "messages": [
-        "digiVis",
-        "digiVis-desc",
-        "special-digiVis-title",
-        "special-digiVis-intro"
-      ],
-      "dependencies": [
-        "jquery.ui.autocomplete",
-        "oojs",
-        "oojs-ui"
-      ]
-    },
-    "ext.digiVis.vis": {
-      "scripts": [
-        "modules/ext.digiVis.vis.module.js"
-      ],
-      "styles": [
-        "modules/ext.digiVis.vis.css"
-      ],
-      "messages": [
-      ],
-      "dependencies": [
       ]
     }
   },

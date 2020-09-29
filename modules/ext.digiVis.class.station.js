@@ -1,5 +1,13 @@
+/**
+ * @class Station represents a station for the DigiVis Walks application.
+ */
 class Station {
 
+    /**
+     * Constructor takes into account the stype of the station.
+     *
+     * @param stationSMW
+     */
     constructor(stationSMW) {
         this._stationId = stationSMW.StationId.length > 0 ? stationSMW.StationId[0] : 0;
         this._stationType = stationSMW.StationType.length > 0 ? stationSMW.StationType[0] : "";
@@ -18,6 +26,9 @@ class Station {
         this.createHTML();
     }
 
+    /**
+     * Creates the HTML code corresponding to the type of the station.
+     */
     createHTML() {
         switch (this._stationType) {
             case "title":
@@ -41,6 +52,11 @@ class Station {
         }
     }
 
+    /**
+     * Create the HTML elements for a title station.
+     *
+     * @returns {jQuery|HTMLElement}
+     */
     createHTMLTitle() {
         let $container = $('<div class="station title static" id="title_station"></div>');
         let $title = $('<input type="text" id="walk_title" name="walk_title" value="' + this._walkTitle + '" placeholder="Title of the walk">');
@@ -60,6 +76,11 @@ class Station {
         return $container;
     }
 
+    /**
+     * Create the HTML elements for an explanation station.
+     *
+     * @returns {jQuery|HTMLElement}
+     */
     createHTMLExplanation() {
         let $container = $('<div class="station explanation static" id="explanation_station"></div>');
         let $explanation = $('<textarea rows="4" type="text" id="explanation_text" name="explanation_text" placeholder="Explanation about the walk">' + this._explanationText + '</textarea>');
@@ -73,6 +94,11 @@ class Station {
         return $container;
     }
 
+    /**
+     * Create the HTML elements for a conclusion station.
+     *
+     * @returns {jQuery|HTMLElement}
+     */
     createHTMLConclusion() {
         let $container = $('<div class="station conclusion static" id="conclusion_station"></div>');
         let $header = $('<input id="conclusion_header" name="conclusion_header" value="' + this._conclusionHeader + '" placeholder="Header for the conclusion of the walk.">');
@@ -92,6 +118,11 @@ class Station {
         return $container;
     }
 
+    /**
+     * Create the HTML elements for a normal station, holding text of an annotation and links to the original annotation.
+     *
+     * @returns {jQuery|HTMLElement}
+     */
     createHTMLNormal() {
         let $container = $('<div class="station custom" id="station_' + this._stationId + '"></div>');
         let $header = $('<input id="header_' + this._stationId + '" name="header_' + this._stationId + '" value="' + this._stationHeader + '">');
@@ -115,6 +146,11 @@ class Station {
         return $container;
     }
 
+    /**
+     * Create the HTML elements for a custom station.
+     *
+     * @returns {jQuery|HTMLElement}
+     */
     createHTMLCustom() {
         let $container = $('<div class="station custom" id="station_' + this._stationId + '"></div>');
         let $header = $('<input id="header_' + this._stationId + '" name="header_' + this._stationId + '" value="' + this._stationHeader + '">');
@@ -133,12 +169,13 @@ class Station {
         $container.append($quote);
         $container.append($link_video);
         $container.append($link_image);
-        // $container.append($source);
         $container.append($conclusion);
         return $container;
     }
 
-    get html() { return this._$html; }
+    get html() {
+        return this._$html;
+    }
 
     get stationId() {
         return this._stationId;
