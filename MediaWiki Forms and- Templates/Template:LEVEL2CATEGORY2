@@ -1,0 +1,12 @@
+<noinclude>
+This is the "LEVEL2CATEGORY2" template.
+It should be called in the following format:
+<pre>
+{{LEVEL2CATEGORY2}}
+</pre>
+Edit the page to see the template text.
+</noinclude><includeonly>{| class="wikitable"
+|}
+
+[[Category:LEVEL2CATEGORY2]]
+</includeonly>

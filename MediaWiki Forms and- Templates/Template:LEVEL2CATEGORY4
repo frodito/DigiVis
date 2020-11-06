@@ -1,0 +1,15 @@
+<noinclude>
+This is the "LEVEL2CATEGORY4" template.
+It should be called in the following format:
+<pre>
+{{LEVEL2CATEGORY4}}
+</pre>
+Edit the page to see the template text.
+</noinclude><includeonly>{| class="wikitable"
+! LEVEL2CATEGORY4ATTRIBUTE1:
+| [[LEVEL2CATEGORY4ATTRIBUTE1::{{{field_radiobutton}}}]]
+
+|}
+
+[[Category:LEVEL2CATEGORY4]]
+</includeonly>

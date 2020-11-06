@@ -1,0 +1,16 @@
+<noinclude>
+This is the "LEVEL2CATEGORY2ATTRIBUTE1" template.
+It should be called in the following format:
+<pre>
+{{LEVEL2CATEGORY2ATTRIBUTE1
+|LEVEL2CATEGORY2ATTRIBUTE1=
+}}
+</pre>
+Edit the page to see the template text.
+</noinclude><includeonly>{| class="wikitable"
+! LEVEL2CATEGORY2ATTRIBUTE1
+| [[LEVEL2CATEGORY2ATTRIBUTE1::{{{field_text_autocomplete}}}]]
+|}
+
+[[Category:LEVEL2CATEGORY2ATTRIBUTE1n]]
+</includeonly>

@@ -36,10 +36,10 @@ const origin = '&origin=*';
 let timeout = 0;
 
 // ASK-query to get all annotations
-// before HTML-encoding: [[Annotation of::+]][[~Text:*]]|?AnnotationComment|?AnnotationMetadata|?Category|?ATTRIBUTE1|?ATTRIBUTE2|?ATTRIBUTE3|?ATTRIBUTE4|limit=100
-const query = '&query=%5B%5BAnnotation%20of%3A%3A%2B%5D%5D%5B%5B~Text%3A*%5D%5D%7C%3FAnnotationComment%7C%3FAnnotationMetadata%7C%3FCategory%7C%3FATTRIBUTE1%7C%3FATTRIBUTE2%7C%3FATTRIBUTE3%7C%3FATTRIBUTE4%7Climit%3D100';
+// before HTML-encoding: [[Annotation of::+]][[~Text:*]]|?AnnotationComment|?AnnotationMetadata|?Category|?LEVEL2CATEGORY1ATTRIBUTE1|?LEVEL2CATEGORY2ATTRIBUTE1|?LEVEL2CATEGORY3ATTRIBUTE1|?LEVEL2CATEGORY4ATTRIBUTE1|limit=100
+const query = '&query=%5B%5BAnnotation%20of%3A%3A%2B%5D%5D%5B%5B~Text%3A*%5D%5D%7C%3FAnnotationComment%7C%3FAnnotationMetadata%7C%3FCategory%7C%3FLEVEL2CATEGORY1ATTRIBUTE1%7C%3FLEVEL2CATEGORY2ATTRIBUTE1%7C%3FLEVEL2CATEGORY3ATTRIBUTE1%7C%3FLEVEL2CATEGORY4ATTRIBUTE1%7Climit%3D100';
 
-const query_plain = '[[Annotation of::+]][[~Text:*]]|?AnnotationComment|?AnnotationMetadata|?Category|?ATTRIBUTE1|?ATTRIBUTE2|?ATTRIBUTE3|?ATTRIBUTE4';
+const query_plain = '[[Annotation of::+]][[~Text:*]]|?AnnotationComment|?AnnotationMetadata|?Category|?LEVEL2CATEGORY1ATTRIBUTE1|?LEVEL2CATEGORY2ATTRIBUTE1|?LEVEL2CATEGORY3ATTRIBUTE1|?LEVEL2CATEGORY4ATTRIBUTE1';
 
 let annotationMap = new Map();
 let offset = 0;

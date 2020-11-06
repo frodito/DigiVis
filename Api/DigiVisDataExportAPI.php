@@ -95,9 +95,9 @@ class DigiVisDataExportAPI extends ApiBase
 
         // process annotations
         if ($content === 'annotations' || $content === 'all') {
-            list($result_json, $result_csv) = $this->getAnnotationsV2();
+            list($result_json, $result_csv) = $this->getAnnotations();
             $filename_csv = $this->dir . 'annotation_extract.csv';
-            $header = "page_id,annotation_id,category,quote,offsetBegin,offsetEnd,comment,topics,innovation_type,reference_type,narrative_type,persons,orgs,locs,relationen_argumentation_fremd,relationen_antwort_glasersfeld\r\n";
+            $header = "page_id,annotation_id,category,quote,offsetBegin,offsetEnd,comment,METADATA_ATTRIBUTE1,METADATA_ATTRIBUTE2,METADATA_ATTRIBUTE3,METADATA_ATTRIBUTE4,persons,orgs,locs\r\n";
             if ($form === 'text') {
                 $this->writeCSV($filename_csv, $result_csv, $header);
             }
@@ -385,7 +385,7 @@ class DigiVisDataExportAPI extends ApiBase
      * via MediaWiki templates included at the pages. The specification of the pages is done with the help of a
      * MediaWiki category.
      *
-     * @param $dir path to the folder when the text of the pages should be stored (pass through)
+     * @param string $dir path to the folder when the text of the pages should be stored (pass through)
      * @return array[] contains the results
      */
     function getMetadata()
@@ -398,22 +398,22 @@ class DigiVisDataExportAPI extends ApiBase
         $result_json = [];
         $texts = [];
         $query = "[[Category:PUT_YOUR_CATEGORY_HERE]]" .
-            "|?ATTRIBUTE1|?ATTRIBUTE2|?ATTRIBUTE3|?ATTRIBUTE4|?ATTRIBUTE5";
+            "|?METADATA_ATTRIBUTE1|?METADATA_ATTRIBUTE2|?METADATA_ATTRIBUTE3|?METADATA_ATTRIBUTE4|?METADATA_ATTRIBUTE5";
         $metadata = $this->submitAskQuery($query);
         ksort($metadata, SORT_STRING);
 
         foreach ($metadata as $element) {
             // the path in $element depends on the datatype of the corresponding Semantic MediaWiki attribute and may
-            // differ from $element['printouts']['ATTRIBUTE1'][0]['fulltext']
+            // differ from $element['printouts']['METADATA_ATTRIBUTE1'][0]['fulltext']
 
-            // assume that $ATTRIBUTE1 contains the name of the corresponding page
-            $ATTRIBUTE1 = $element['printouts']['ATTRIBUTE1'][0]['fulltext'];
-            $text_title = 'Text:' . $ATTRIBUTE1;
+            // assume that $METADATA_ATTRIBUTE1 contains the name of the corresponding page
+            $METADATA_ATTRIBUTE1 = $element['printouts']['METADATA_ATTRIBUTE1'][0]['fulltext'];
+            $text_title = 'Text:' . $METADATA_ATTRIBUTE1;
 
-            $ATTRIBUTE2 = $element['printouts']['ATTRIBUTE2'][0]['fulltext'];
-            $ATTRIBUTE3 = $element['printouts']['ATTRIBUTE3'][0]['fulltext'];
-            $ATTRIBUTE4 = $element['printouts']['ATTRIBUTE4'][0]['fulltext'];
-            $ATTRIBUTE5 = $element['printouts']['ATTRIBUTE5'][0]['fulltext'];
+            $METADATA_ATTRIBUTE2 = $element['printouts']['METADATA_ATTRIBUTE2'][0]['fulltext'];
+            $METADATA_ATTRIBUTE3 = $element['printouts']['METADATA_ATTRIBUTE3'][0]['fulltext'];
+            $METADATA_ATTRIBUTE4 = $element['printouts']['METADATA_ATTRIBUTE4'][0]['fulltext'];
+            $METADATA_ATTRIBUTE5 = $element['printouts']['METADATA_ATTRIBUTE5'][0]['fulltext'];
 
             $page_id = $this->getPageIdFromPage($text_title);
             $html = $this->getHTMLToPage($text_title);
@@ -426,15 +426,15 @@ class DigiVisDataExportAPI extends ApiBase
             }
             array_push($result_json, array(
                 'id' => $page_id,
-                'ATTRIBUTE1' => $ATTRIBUTE1,
-                'ATTRIBUTE2' => $ATTRIBUTE2,
-                'ATTRIBUTE3' => $ATTRIBUTE3,
-                'ATTRIBUTE4' => $ATTRIBUTE4,
-                'ATTRIBUTE5' => $ATTRIBUTE5,
+                'METADATA_ATTRIBUTE1' => $METADATA_ATTRIBUTE1,
+                'METADATA_ATTRIBUTE2' => $METADATA_ATTRIBUTE2,
+                'METADATA_ATTRIBUTE3' => $METADATA_ATTRIBUTE3,
+                'METADATA_ATTRIBUTE4' => $METADATA_ATTRIBUTE4,
+                'METADATA_ATTRIBUTE5' => $METADATA_ATTRIBUTE5,
                 'text_length' => $text_length
             ));
             $texts[$page_id] = array(
-                'ATTRIBUTE1' => $ATTRIBUTE1,
+                'METADATA_ATTRIBUTE1' => $METADATA_ATTRIBUTE1,
                 'text' => $text,
                 'html' => $html
             );
@@ -489,60 +489,6 @@ class DigiVisDataExportAPI extends ApiBase
 
 
     /**
-     * In our use-case, we worked with a text corpus containing argumentions, counter arguments from
-     * different authors, and again answers to the counter arguments from the author of the first argumentaion.
-     * To create a link between the annotated counter arguments and the answers, in the annotations of
-     * the answers, the name to the page of the annotation of the counter argument was stored, to create a
-     * direct relation.
-     *
-     * If this functionality does not fit for your use case, please comment all code calling the method
-     * "getRelations()".
-     */
-
-    /**
-     * Method reads specific relations stored in some annotations created with Semantic Text Annotator
-     *
-     * @param string $pagetitle the name of a MediaWiki page
-     * @return string
-     */
-    function getRelations($pagetitle)
-    {
-        $result = "";
-        $query = '[[-Has subobject::' . $pagetitle . ']]|mainlabel=-|?Thema|?Bezug|?Relation';
-        $relations = $this->submitAskQuery($query);
-        $counter = 0;
-        foreach ($relations as $index => $relation) {
-            if (sizeof($relation['printouts']['Thema']) !== 0 && array_key_exists('fulltext', $relation['printouts']['Thema'][0])) {
-                $thema = $relation['printouts']['Thema'][0]['fulltext'];
-            } else {
-                $thema = "";
-            }
-            if (sizeof($relation['printouts']['Bezug']) !== 0 && array_key_exists('fulltext', $relation['printouts']['Bezug'][0])) {
-                $bezug = $relation['printouts']['Bezug'][0]['fulltext'];
-                $pos_slash = strpos($bezug, "/", 30);
-                $page_title = substr($bezug, 0, $pos_slash);
-                $page_title = str_replace("Annotation:Text:", "", $page_title);
-                $page_id = $this->getPageIdFromPage($page_title);
-                $annotation_id = substr($bezug, $pos_slash);
-                $bezug = $page_id . "/" . $annotation_id;
-            } else {
-                $bezug = "";
-            }
-            if (sizeof($relation['printouts']['Relation']) !== 0 && array_key_exists('fulltext', $relation['printouts']['Relation'][0])) {
-                $relationtype = $relation['printouts']['Relation'][0]['fulltext'];
-            } else {
-                $relationtype = "";
-            }
-            $result .= $thema . "|" . $bezug . "|" . $relationtype;
-            if ($counter < sizeof($relations) - 1) {
-                $result .= ";";
-            }
-            $counter++;
-        }
-        return $result;
-    }
-
-    /**
      * Get the MediaWiki internal ID of a page.
      *
      * @param string $page_title the name of a MediaWiki page
@@ -551,10 +497,6 @@ class DigiVisDataExportAPI extends ApiBase
     function getPageIdFromPage($page_title)
     {
         $page_id = "error";
-        if ($page_title === "Michael Flacke – Radikal-Konstruktivistische Wissenstheorie oder sozialkonstruktivistische Praxis?") {
-            $page_title = "Michael Flacke – Radikal-Konstruktivistische Wissenstheorie oder sozialkonstruktivistische Praxis";
-        }
-
         $title = Title::makeTitle(0, $page_title);
         if (!is_null($title)) {
             $article = new Article($title);
@@ -564,27 +506,20 @@ class DigiVisDataExportAPI extends ApiBase
                     $revision = $page->getRevision();
                     if (!is_null($revision)) {
                         $page_id = $revision->getRevisionRecord()->getPageId();
-                    } else {
-                        $iwanttosetabreakpointhere = true;
                     }
-                } else {
-                    $iwanttosetabreakpointhere = true;
                 }
-            } else {
-                $iwanttosetabreakpointhere = true;
             }
-        } else {
-            $iwanttosetabreakpointhere = true;
         }
         return $page_id;
     }
 
     /**
      * Methods retrieves all annotations in the MediaWiki installation make with Semantic Text Annotator
+     *
      * @param $dir  path where to store result files on the server (pass through)
      * @return array[] results as JSON and as CSV
      */
-    function getAnnotationsV2()
+    function getAnnotations()
     {
 
         $result_json = [];
@@ -602,8 +537,7 @@ class DigiVisDataExportAPI extends ApiBase
              */
             $query = '[[Annotation of::+]][[~Text:{$title}*||~Annotationen:{$title}*]]'
                 .'|?AnnotationComment|?AnnotationMetadata|?Category'
-                .'?ATTRIBUTE_A|?ATTRIBUTE_B|?ATTRIBUTE_C|?ATTRIBUTE_D';
-//                .'|?ist Thema|?ist Innovationstyp|?Referenztyp|?Narrativtyp';
+                .'?LEVEL2CATEGORY1ATTRIBUTE1|?LEVEL2CATEGORY2ATTRIBUTE1|?LEVEL2CATEGORY3ATTRIBUTE1|?LEVEL2CATEGORY4ATTRIBUTE1';
 
             $annotations = $this->submitAskQuery($query);
             ksort($annotations, SORT_STRING);
@@ -623,22 +557,11 @@ class DigiVisDataExportAPI extends ApiBase
                 $quote = str_replace("\n", " ", $metadata->quote);
                 $quote = preg_replace("/\s+/", " ", $quote);
 
-                list($offset_start_text, $offset_end_text) = $this->calculateAnnotationOffsetV2($text, $quote);
-                //                list($offset_start_html, $offset_end_html) = $this->calculateAnnotationOffsetV2($html, $quote);
+                list($offset_start_text, $offset_end_text) = $this->calculateAnnotationOffset($text, $quote);
 
                 $namedEntities = [];
-                if ($metadata->category === 'Argumentation2') {
+                if ($metadata->category === 'LEVEL2CATEGORY1') {
                     $namedEntities = $this->getNamedEntitiesSingleAnnotation($element['fulltext']);
-                }
-
-                $argumentationFremdRelationen = "";
-                if ($metadata->category === 'ArgumentationFremd') {
-                    $argumentationFremdRelationen = $this->getRelations($element['fulltext']);
-                }
-
-                $antwortGlasersfeldRelationen = "";
-                if ($metadata->category === 'AntwortGlasersfeld') {
-                    $antwortGlasersfeldRelationen = $this->getRelations($element['fulltext']);
                 }
 
                 /**
@@ -652,20 +575,14 @@ class DigiVisDataExportAPI extends ApiBase
                     'quote' => $metadata->quote,
                     'offsetBegin' => $offset_start_text,
                     'offsetEnd' => $offset_end_text,
-                    //                    'offsetBeginHTML' => $offset_start_html,
-                    //                    'offsetEndHTML' => $offset_end_html,
                     'comment' => isset($annotation['AnnotationComment'][0]) ? $annotation['AnnotationComment'][0] : "",
-                    'topics' => $this->getFulltextArrayAsString($annotation['Ist Thema'], ";") ?: "",
-                    'innovation_type ' => $this->getFulltextArrayAsString($annotation['Ist Innovationstyp'], ";") ?: "",
-                    'reference_type' => isset($annotation['Referenztyp'][0]['fulltext']) ? $annotation['Referenztyp'][0]['fulltext'] : "",
-                    'narrative_type' => isset($annotation['Narrativtyp'][0]['fulltext']) ? $annotation['Narrativtyp'][0]['fulltext'] : "",
+                    'LEVEL2CATEGORY1ATTRIBUTE1' => $this->getFulltextArrayAsString($annotation['LEVEL2CATEGORY1ATTRIBUTE1'], ";") ?: "",
+                    'LEVEL2CATEGORY2ATTRIBUTE1 ' => $this->getFulltextArrayAsString($annotation['LEVEL2CATEGORY2ATTRIBUTE1'], ";") ?: "",
+                    'LEVEL2CATEGORY3ATTRIBUTE1' => isset($annotation['ATTRIBUTE3'][0]['fulltext']) ? $annotation['LEVEL2CATEGORY3ATTRIBUTE1'][0]['fulltext'] : "",
+                    'LEVEL2CATEGORY4ATTRIBUTE1' => isset($annotation['ATTRIBUTE4'][0]['fulltext']) ? $annotation['LEVEL2CATEGORY4ATTRIBUTE1'][0]['fulltext'] : "",
                     'persons' => isset($namedEntities['persons']) ? $this->getFulltextArrayAsString($namedEntities['persons'], ";") : "",
                     'orgs' => isset($namedEntities['orgs']) ? $this->getFulltextArrayAsString($namedEntities['orgs'], ";") : "",
-                    'locs' => isset($namedEntities['locs']) ? $this->getFulltextArrayAsString($namedEntities['locs'], ";") : "",
-                    //				'norps' => isset($namedEntities['norp']) ? $this->getFulltextArrayAsString($namedEntities['norp'], ";") : "",
-                    //				'gpes' => isset($namedEntities['gpe']) ? $this->getFulltextArrayAsString($namedEntities['gpe'], ";") : "",
-                    'relationen_argumentation_fremd' => $argumentationFremdRelationen,
-                    'relationen_antwort_glasersfeld' => $antwortGlasersfeldRelationen
+                    'locs' => isset($namedEntities['locs']) ? $this->getFulltextArrayAsString($namedEntities['locs'], ";") : ""
                 ));
 
                 array_push($result_json, array(
@@ -675,20 +592,14 @@ class DigiVisDataExportAPI extends ApiBase
                     'quote' => $metadata->quote,
                     'offsetBegin' => $offset_start_text,
                     'offsetEnd' => $offset_end_text,
-                    //                    'offsetBeginHTML' => $offset_start_html,
-                    //                    'offsetEndHTML' => $offset_end_html,
                     'comment' => isset($annotation['AnnotationComment'][0]) ? $annotation['AnnotationComment'][0] : "",
-                    'topics' => $this->getFulltextArrayAsArray($annotation['Ist Thema']) ?: [],
-                    'innovation_type ' => $this->getFulltextArrayAsArray($annotation['Ist Innovationstyp']) ?: [],
-                    'reference_type' => isset($annotation['Referenztyp'][0]['fulltext']) ? $annotation['Referenztyp'][0]['fulltext'] : "",
-                    'narrative_type' => isset($annotation['Narrativtyp'][0]['fulltext']) ? $annotation['Narrativtyp'][0]['fulltext'] : "",
+                    'LEVEL2CATEGORY1ATTRIBUTE1' => $this->getFulltextArrayAsArray($annotation['LEVEL2CATEGORY1ATTRIBUTE1']) ?: [],
+                    'LEVEL2CATEGORY2ATTRIBUTE1 ' => $this->getFulltextArrayAsArray($annotation['LEVEL2CATEGORY2ATTRIBUTE1']) ?: [],
+                    'LEVEL2CATEGORY3ATTRIBUTE1' => isset($annotation['ATTRIBUTE3'][0]['fulltext']) ? $annotation['LEVEL2CATEGORY3ATTRIBUTE1'][0]['fulltext'] : "",
+                    'LEVEL2CATEGORY4ATTRIBUTE1' => isset($annotation['ATTRIBUTE4'][0]['fulltext']) ? $annotation['LEVEL2CATEGORY4ATTRIBUTE1'][0]['fulltext'] : "",
                     'persons' => isset($namedEntities['persons']) ? $this->getFulltextArrayAsArray($namedEntities['persons']) : [],
                     'orgs' => isset($namedEntities['orgs']) ? $this->getFulltextArrayAsArray($namedEntities['orgs']) : [],
-                    'locs' => isset($namedEntities['locs']) ? $this->getFulltextArrayAsArray($namedEntities['locs']) : [],
-                    //				'norps' => isset($namedEntities['norp']) ? $this->getFulltextArrayAsArray($namedEntities['norp']) : [],
-                    //				'gpes' => isset($namedEntities['gpe']) ? $this->getFulltextArrayAsArray($namedEntities['gpe']) : [],
-                    'relationen_argumentation_fremd' => $argumentationFremdRelationen,
-                    'relationen_antwort_glasersfeld' => $antwortGlasersfeldRelationen
+                    'locs' => isset($namedEntities['locs']) ? $this->getFulltextArrayAsArray($namedEntities['locs']) : []
                 ));
 
 
@@ -816,7 +727,7 @@ class DigiVisDataExportAPI extends ApiBase
      * @param $quote string the string we want the offsets to
      * @return array the start and the end position of $quote in $text
      */
-    function calculateAnnotationOffsetV2($text, $quote)
+    function calculateAnnotationOffset($text, $quote)
     {
 
         $start_pos_in_text = false;
@@ -954,9 +865,6 @@ class DigiVisDataExportAPI extends ApiBase
     private function getTextToPage($page_title)
     {
         try {
-            if ($page_title === "Michael Flacke – Radikal-Konstruktivistische Wissenstheorie oder sozialkonstruktivistische Praxis?") {
-                $page_title = "Michael Flacke – Radikal-Konstruktivistische Wissenstheorie oder sozialkonstruktivistische Praxis";
-            }
             $title = Title::makeTitle(0, $page_title);
             $article = new Article($title);
             $page = $article->getPage();
@@ -1146,7 +1054,6 @@ class DigiVisDataExportAPI extends ApiBase
     {
         $text = str_replace('<b>', "", $text);
         return str_replace('</b>', "", $text);
-
     }
 
     /**

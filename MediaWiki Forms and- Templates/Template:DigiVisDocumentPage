@@ -1,0 +1,44 @@
+<noinclude>
+This is the "DigiVisDocumentPage" template.
+It should be called in the following format:
+<pre>
+{{DigiVisDocumentPage
+|METADATA_ATTRIBUTE1=
+|METADATA_ATTRIBUTE2=
+|METADATA_ATTRIBUTE3=
+|METADATA_ATTRIBUTE4=
+|METADATA_ATTRIBUTE5=
+|METADATA_ATTRIBUTE6=
+}}
+</pre>
+Edit the page to see the template text.
+</noinclude><includeonly>
+__NOTOC__
+
+{{DigiVisDocumentInfoBox
+|METADATA_ATTRIBUTE1={{{METADATA_ATTRIBUTE1|}}}
+|METADATA_ATTRIBUTE2={{{METADATA_ATTRIBUTE2|}}}
+|METADATA_ATTRIBUTE3={{{METADATA_ATTRIBUTE3|}}}
+|METADATA_ATTRIBUTE4={{{METADATA_ATTRIBUTE4|}}}
+|METADATA_ATTRIBUTE5={{{METADATA_ATTRIBUTE5|}}}
+|METADATA_ATTRIBUTE6={{{METADATA_ATTRIBUTE6|}}}
+}}
+
+<tabs container="width:74%;">
+<tab block name="Layer1">
+[[:Text:{{PAGENAME}}|Go to page of article]]
+
+{{:Text:{{PAGENAME}}}}
+</tab>
+
+<tab block name="Layer2">
+[[:Annotationen:{{PAGENAME}}|Go to layer2 annotations of article]]
+</tab>
+
+<tab block name="Layer3">
+{{#layer3display:Text:{{PAGENAME}}}}
+</tab>
+</tabs>
+
+[[Category:DigiVisDocumentPages]]
+</includeonly>

@@ -1,0 +1,31 @@
+<noinclude>
+This is the "DigiVisDocumentPage" form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+
+{{#forminput:form=DigiVisDocumentPage|namespace=Category}}
+
+</noinclude><includeonly>
+<div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{for template|DigiVisDocumentPage}}}
+{| class="formtable"
+! METADATA_ATTRIBUTE1:
+| {{{field|METADATA_ATTRIBUTE1|hidden}}}
+|-
+! METADATA_ATTRIBUTE2:
+| {{{field|METADATA_ATTRIBUTE2}}}
+|-
+! METADATA_ATTRIBUTE3:
+| {{{field|METADATA_ATTRIBUTE3}}}
+|-
+! METADATA_ATTRIBUTE4:
+| {{{field|METADATA_ATTRIBUTE4}}}
+|-
+! METADATA_ATTRIBUTE5:
+| {{{field|METADATA_ATTRIBUTE5}}}
+|}
+{{{end template}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+</includeonly>

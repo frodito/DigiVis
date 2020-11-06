@@ -1,0 +1,41 @@
+<noinclude>
+This is the "LEVEL3CATEGORY2" form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+
+{{#forminput:form=LEVEL3CATEGORY2}}
+
+{{#subobject:SemanticTextAnnotator
+|Form Type=SemanticTextAnnotator
+|SA Category Name=LEVEL3CATEGORY2
+|SA Category Color=blueviolet
+}}
+</noinclude><includeonly>
+<div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{for template|LEVEL3CATEGORY2}}}
+{| class="formtable"
+|}
+{{{end template}}}
+
+{{{for template|TextAnnotation}}}
+{| class="formtable"
+! AnnotationOf:
+| {{{field|AnnotationOf|hidden}}}
+|-
+! AnnotationComment:
+| {{{field|AnnotationComment|hidden}}}
+|-
+! LastModificationDate:
+| {{{field|LastModificationDate|hidden}}}
+|-
+! LastModificationUser:
+| {{{field|LastModificationUser|hidden}}}
+|-
+! AnnotationMetadata:
+| {{{field|AnnotationMetadata|hidden}}}
+|}
+{{{end template}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+</includeonly>

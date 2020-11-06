@@ -157,17 +157,17 @@ function fillMappingData(annotation) {
     if (!(annotation.category in mappingData)) {
         mappingData[annotation.category] = new Set();
     }
-    annotation.ATTRIBUTE1.forEach(function (attr1) {
-        mappingData[annotation.category].add(attr1);
+    annotation.LEVEL2CATEGORY1ATTRIBUTE1.forEach(function (attr) {
+        mappingData[annotation.category].add(attr);
     });
-    annotation.ATTRIBUTE2.forEach(function (attr2) {
-        mappingData[annotation.category].add(attr2)
+    annotation.LEVEL2CATEGORY2ATTRIBUTE1.forEach(function (attr) {
+        mappingData[annotation.category].add(attr)
     });
-    annotation.ATTRIBUTE3.forEach(function (attr3) {
-        mappingData[annotation.category].add(attr3);
+    annotation.LEVEL2CATEGORY3ATTRIBUTE1.forEach(function (attr) {
+        mappingData[annotation.category].add(attr);
     });
-    annotation.ATTRIBUTE4.forEach(function (attr4) {
-        mappingData[annotation.category].add(attr4);
+    annotation.LEVEL2CATEGORY4ATTRIBUTE1.forEach(function (attr) {
+        mappingData[annotation.category].add(attr);
     });
 }
 

@@ -1,0 +1,9 @@
+<noinclude>
+This is the "Layer2Annotate" template.
+It should be called in the following format:
+<pre>
+{{Layer2Annotate
+}}
+</pre>
+Edit the page to see the template text.
+</noinclude><includeonly>{{#layer2annotate:{{PAGENAME}}}}</includeonly>

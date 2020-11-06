@@ -1,0 +1,18 @@
+<noinclude>
+This is the "NamedEntitiesPage" template.
+It should be called in the following format:
+<pre>
+{{NamedEntitiesPage}}
+</pre>
+Edit the page to see the template text.
+</noinclude><includeonly>{{#ask: [[-Has subobject::{{FULLPAGENAME}}]]
+ |?Has org
+ |?Has person
+ |?Has gpe
+ |?Has norp
+ |?Has loc
+ |mainlabel=-
+ |format=broadtable|headers=plain|class=sortable wikitable smwtable
+}}
+[[Category:NamedEntitiesPages]]
+</includeonly>

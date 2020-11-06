@@ -16,54 +16,54 @@ class Annotation {
 		this._category = this._metadata.category;
 		this._id = this._metadata.id;
 		this._cat_intern = replaceUmlaute(this.category.toLowerCase());
-		this._ATTRIBUTE1 = [];
-		this._ATTRIBUTE2 = [];
-		this._ATTRIBUTE3 = [];
-		this._ATTRIBUTE4 = [];
-		this.fill_ATTRIBUTE1();
-		this.fill_ATTRIBUTE2();
-		this.fill_ATTRIBUTE3();
-		this.fill_ATTRIBUTE4();
+		this._LEVEL2CATEGORY1ATTRIBUTE1 = [];
+		this._LEVEL2CATEGORY2ATTRIBUTE1 = [];
+		this._LEVEL2CATEGORY3ATTRIBUTE1 = [];
+		this._LEVEL2CATEGORY4ATTRIBUTE1 = [];
+		this.fill_LEVEL2CATEGORY1ATTRIBUTE1();
+		this.fill_LEVEL2CATEGORY2ATTRIBUTE1();
+		this.fill_LEVEL2CATEGORY3ATTRIBUTE1();
+		this.fill_LEVEL2CATEGORY4ATTRIBUTE1();
 		this.createHTML();
 	}
 
 	/**
-	 * Populate array for ATTRIBUTE1
+	 * Populate array for LEVEL2CATEGORY1ATTRIBUTE1
 	 */
-	fill_ATTRIBUTE1() {
+	fill_LEVEL2CATEGORY1ATTRIBUTE1() {
 		let self = this;
-		this.printouts["ATTRIBUTE1"].forEach(function (obj) {
-			self._ATTRIBUTE1.push(obj.fulltext);
+		this.printouts["LEVEL2CATEGORY1ATTRIBUTE1"].forEach(function (obj) {
+			self._LEVEL2CATEGORY1ATTRIBUTE1.push(obj.fulltext);
 		});
 	}
 
 	/**
-	 * Populate array for ATTRIBUTE2
+	 * Populate array for LEVEL2CATEGORY2ATTRIBUTE1
 	 */
-	fill_ATTRIBUTE2() {
+	fill_LEVEL2CATEGORY2ATTRIBUTE1() {
 		let self = this;
-		this.printouts["ATTRIBUTE2"].forEach(function (obj) {
-			self._ATTRIBUTE2.push(obj.fulltext);
+		this.printouts["LEVEL2CATEGORY2ATTRIBUTE1"].forEach(function (obj) {
+			self._LEVEL2CATEGORY2ATTRIBUTE1.push(obj.fulltext);
 		});
 	}
 
 	/**
-	 * Populate array for ATTRIBUTE3
+	 * Populate array for LEVEL2CATEGORY3ATTRIBUTE1
 	 */
-	fill_ATTRIBUTE3() {
+	fill_LEVEL2CATEGORY3ATTRIBUTE1() {
 		let self = this;
-		this.printouts["ATTRIBUTE3"].forEach(function (obj) {
-			self._ATTRIBUTE3.push(obj.fulltext);
+		this.printouts["LEVEL2CATEGORY3ATTRIBUTE1"].forEach(function (obj) {
+			self._LEVEL2CATEGORY3ATTRIBUTE1.push(obj.fulltext);
 		});
 	}
 
 	/**
-	 * Populate array for ATTRIBUTE4
+	 * Populate array for LEVEL2CATEGORY4ATTRIBUTE1
 	 */
-	fill_ATTRIBUTE4() {
+	fill_LEVEL2CATEGORY4ATTRIBUTE1() {
 		let self = this;
-		this.printouts["ATTRIBUTE4"].forEach(function (obj) {
-			self._ATTRIBUTE4.push(obj.fulltext);
+		this.printouts["LEVEL2CATEGORY4ATTRIBUTE1"].forEach(function (obj) {
+			self._LEVEL2CATEGORY4ATTRIBUTE1.push(obj.fulltext);
 		});
 	}
 
@@ -74,24 +74,28 @@ class Annotation {
 	 * @returns {*}
 	 */
 	fill_header(header) {
+
+		/**
+		 * An attribute in annotations can be a list, exemplary here for ATTRIBUTE1 and ATTRIBUTE3
+		 */
+
 		let self = this;
 		switch (this.cat_intern) {
 			case 'LEVEL2CATEGORY1':
-			case 'LEVEL2CATEGORY2':
-				self.ATTRIBUTE1.forEach(function (topic) {
-					header.append($('<p class="headerElement">' + topic + '</p>'));
+				self.LEVEL2CATEGORY1ATTRIBUTE1.forEach(function (LEVEL2CATEGORY1ATTRIBUTE1) {
+					header.append($('<p class="headerElement">' + LEVEL2CATEGORY1ATTRIBUTE1 + '</p>'));
 				});
+				break;
+			case 'LEVEL2CATEGORY2':
+				header.append($('<p class="headerElement">' + self.LEVEL2CATEGORY2ATTRIBUTE1 + '</p>'));
 				break;
 			case 'LEVEL2CATEGORY3':
-				header.append($('<p class="headerElement">' + self.ATTRIBUTE3 + '</p>'));
-				break;
-			case 'LEVEL2CATEGORY4':
-				self.ATTRIBUTE2.forEach(function (innovationtype) {
-					header.append($('<p class="headerElement">' + innovationtype + '</p>'));
+				self.LEVEL2CATEGORY3ATTRIBUTE1.forEach(function (LEVEL2CATEGORY3ATTRIBUTE1) {
+					header.append($('<p class="headerElement">' + LEVEL2CATEGORY3ATTRIBUTE1 + '</p>'));
 				});
 				break;
-			case 'LEVEL2CATEGORY5':
-				header.append($('<p class="headerElement">' + self.ATTRIBUTE4 + '</p>'));
+			case 'LEVEL2CATEGORY4':
+				header.append($('<p class="headerElement">' + self.LEVEL2CATEGORY4ATTRIBUTE1 + '</p>'));
 				break;
 			default:
 			// do nothing when other categories occur
@@ -157,13 +161,13 @@ class Annotation {
 
 	get printouts() { return this._printouts; }
 
-	get ATTRIBUTE1() { return this._ATTRIBUTE1; }
+	get LEVEL2CATEGORY1ATTRIBUTE1() { return this._LEVEL2CATEGORY1ATTRIBUTE1; }
 
-	get ATTRIBUTE2() { return this._ATTRIBUTE2; }
+	get LEVEL2CATEGORY2ATTRIBUTE1() { return this._LEVEL2CATEGORY2ATTRIBUTE1; }
 
-	get ATTRIBUTE3() { return this._ATTRIBUTE3; }
+	get LEVEL2CATEGORY3ATTRIBUTE1() { return this._LEVEL2CATEGORY3ATTRIBUTE1; }
 
-	get ATTRIBUTE4() { return this._ATTRIBUTE4; }
+	get LEVEL2CATEGORY4ATTRIBUTE1() { return this._LEVEL2CATEGORY4ATTRIBUTE1; }
 
 	get element() { return this._html; }
 
