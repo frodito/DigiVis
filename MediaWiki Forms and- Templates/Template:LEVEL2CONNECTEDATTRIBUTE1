@@ -1,0 +1,30 @@
+<noinclude>
+This is the "LEVEL2CONNECTEDATTRIBUTE1" template.
+It should be called in the following format:
+<pre>
+{{LEVEL2CONNECTEDATTRIBUTE1
+|field_text_autocomplete=LEVEL2CONNECTEDATTRIBUTE1
+|target_LEVEL2CONNECTEDATTRIBUTE1=PageID der Annotation, auf die sich bezogen wird
+|argument_relation=Relation
+}}
+</pre>
+Edit the page to see the template text.
+</noinclude><includeonly>{| class="wikitable"
+! LEVEL2CONNECTEDATTRIBUTE1
+| [[LEVEL2CONNECTEDATTRIBUTE1::{{{field_text_autocomplete}}}]]
+|-
+! Bezieht sich auf LEVEL2CONNECTEDATTRIBUTE1:
+| {{#arraymap:{{{target_LEVEL2CONNECTEDATTRIBUTE1|}}}|@|x|[[target_LEVEL2CONNECTEDATTRIBUTE1::x]]}}
+|-
+! Relation:
+| [[besitzt Relation::{{{argument_relation}}}]]
+|}
+
+{{#subobject:
+ | Thema={{{field_text_autocomplete}}}
+ | Bezug={{{target_argumentation|}}}
+ | Relation={{{argument_relation}}}
+}}
+
+[[Category:Themen]]
+</includeonly>

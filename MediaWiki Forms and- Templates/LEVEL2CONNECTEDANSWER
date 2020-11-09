@@ -1,0 +1,53 @@
+<noinclude>
+This is the "LEVEL2CONNECTEDANSWER" form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+{{#forminput:form=LEVEL2CONNECTEDANSWER}}
+
+{{#subobject:SemanticTextAnnotator
+|Form Type=SemanticTextAnnotator
+|SA Category Name=AntwortGlasersfeld
+|SA Category Color=red
+}}
+</noinclude><includeonly>
+<div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{for template|LEVEL2CONNECTEDANSWER}}}
+{| class="formtable"
+|}
+{{{end template}}}
+
+{{{for template|TextAnnotation}}}
+{| class="formtable"
+! AnnotationOf:
+| {{{field|AnnotationOf|hidden}}}
+|-
+! AnnotationComment:
+| {{{field|AnnotationComment|hidden}}}
+|-
+! LastModificationDate:
+| {{{field|LastModificationDate|hidden}}}
+|-
+! LastModificationUser:
+| {{{field|LastModificationUser|hidden}}}
+|-
+! AnnotationMetadata:
+| {{{field|AnnotationMetadata|hidden}}}
+|}
+{{{end template}}}
+
+{{{for template|LEVEL2CONNECTEDANSWERATTRIBUTE1|multiple|add button text=Neuen Eintrag hinzufügen}}}
+{| class="formtable"
+! LEVEL2CONNECTEDANSWERATTRIBUTE1:
+| {{{field|field_text_autocomplete|input type=combobox|property=LEVEL2CATEGORY1ATTRIBUTE1|values from property=LEVEL2CATEGORY1ATTRIBUTE1}}}
+|-
+! Bezieht sich auf LEVEL2CONNECTED:
+| {{{field|target_LEVEL2CONNECTED|delimiter=@}}}
+|-
+!Relation:
+| {{{field|LEVEL2CONNECTEDANSWER_relation|input type=radiobutton|mandatory|default=ergänzend|values=ergänzend, verträglich, unterstützend, widerstreitend, alternativ,infrage stellend}}}
+|}
+{{{end template}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+</includeonly>

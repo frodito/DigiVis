@@ -97,7 +97,7 @@ class DigiVisDataExportAPI extends ApiBase
         if ($content === 'annotations' || $content === 'all') {
             list($result_json, $result_csv) = $this->getAnnotations();
             $filename_csv = $this->dir . 'annotation_extract.csv';
-            $header = "page_id,annotation_id,category,quote,offsetBegin,offsetEnd,comment,METADATA_ATTRIBUTE1,METADATA_ATTRIBUTE2,METADATA_ATTRIBUTE3,METADATA_ATTRIBUTE4,persons,orgs,locs\r\n";
+            $header = "page_id,annotation_id,category,quote,offsetBegin,offsetEnd,comment,METADATA_ATTRIBUTE1,METADATA_ATTRIBUTE2,METADATA_ATTRIBUTE3,METADATA_ATTRIBUTE4,persons,orgs,locs,LEVEL2CONNECTED,LEVEL2CONNECTEDANSWER\r\n";
             if ($form === 'text') {
                 $this->writeCSV($filename_csv, $result_csv, $header);
             }
@@ -181,7 +181,7 @@ class DigiVisDataExportAPI extends ApiBase
     private function translateFile($text)
     {
         // put the URL to your MediaWiki installation's specialpage to convert the filename to a static URL
-        $url_prefix = "https://<YOUR-DOMAIN>/<YOUR-WEB-PATH-TO-MEDIAWIKI>/index.php?title=Special:Redirect/file/";
+        $url_prefix = "https://YOUR-DOMAIN/YOUR-WEB-PATH-TO-MEDIAWIKI/index.php?title=Special:Redirect/file/";
         $pattern_file = '/\[\[([^\[]*)\]\]/';
 
         // instead of center sometimes there is thumb and for some the rest after center is missing
@@ -564,6 +564,16 @@ class DigiVisDataExportAPI extends ApiBase
                     $namedEntities = $this->getNamedEntitiesSingleAnnotation($element['fulltext']);
                 }
 
+                $LEVEL2CONNECTED = "";
+                if ($metadata->category === 'LEVEL2CONNECTED') {
+                    $LEVEL2CONNECTED = $this->getRelations($element['fulltext']);
+                }
+
+                $LEVEL2CONNECTEDANSWER = "";
+                if ($metadata->category === 'LEVEL2CONNECTEDANSWER') {
+                    $LEVEL2CONNECTEDANSWER = $this->getRelations($element['fulltext']);
+                }
+
                 /**
                  * For CSV format, arrays in the data are translated to a single string, where the individual values are
                  * seprated by the given symbol. This is not wanted for JSON format, hence two different arrays are created
@@ -582,7 +592,9 @@ class DigiVisDataExportAPI extends ApiBase
                     'LEVEL2CATEGORY4ATTRIBUTE1' => isset($annotation['ATTRIBUTE4'][0]['fulltext']) ? $annotation['LEVEL2CATEGORY4ATTRIBUTE1'][0]['fulltext'] : "",
                     'persons' => isset($namedEntities['persons']) ? $this->getFulltextArrayAsString($namedEntities['persons'], ";") : "",
                     'orgs' => isset($namedEntities['orgs']) ? $this->getFulltextArrayAsString($namedEntities['orgs'], ";") : "",
-                    'locs' => isset($namedEntities['locs']) ? $this->getFulltextArrayAsString($namedEntities['locs'], ";") : ""
+                    'locs' => isset($namedEntities['locs']) ? $this->getFulltextArrayAsString($namedEntities['locs'], ";") : "",
+                    'LEVEL2CONNECTED' => $LEVEL2CONNECTED,
+                    'LEVEL2CONNECTEDANSWER' => $LEVEL2CONNECTEDANSWER
                 ));
 
                 array_push($result_json, array(
@@ -599,7 +611,10 @@ class DigiVisDataExportAPI extends ApiBase
                     'LEVEL2CATEGORY4ATTRIBUTE1' => isset($annotation['ATTRIBUTE4'][0]['fulltext']) ? $annotation['LEVEL2CATEGORY4ATTRIBUTE1'][0]['fulltext'] : "",
                     'persons' => isset($namedEntities['persons']) ? $this->getFulltextArrayAsArray($namedEntities['persons']) : [],
                     'orgs' => isset($namedEntities['orgs']) ? $this->getFulltextArrayAsArray($namedEntities['orgs']) : [],
-                    'locs' => isset($namedEntities['locs']) ? $this->getFulltextArrayAsArray($namedEntities['locs']) : []
+                    'locs' => isset($namedEntities['locs']) ? $this->getFulltextArrayAsArray($namedEntities['locs']) : [],
+                    'LEVEL2CONNECTED' => $LEVEL2CONNECTED,
+                    'LEVEL2CONNECTEDANSWER' => $LEVEL2CONNECTEDANSWER
+
                 ));
 
 
@@ -636,21 +651,17 @@ class DigiVisDataExportAPI extends ApiBase
     private function checkPriority($category)
     {
         switch ($category) {
-            case "LEVEL 2 CATEGORY 1":
+            case "LEVEL2CATEGORY1":
                 return 0;
-                break;
-            case "LEVEL 2 CATEGORY 2":
-            case "LEVEL 2 CATEGORY 3":
-            case "LEVEL 2 CATEGORY 4":
-            case "LEVEL 2 CATEGORY 5":
+            case "LEVEL2CATEGORY2":
+            case "LEVEL2CATEGORY3":
+            case "LEVEL2CONNECTED":
+            case "LEVEL2CONNECTEDANSWER":
                 return 1;
-                break;
-            case "LEVEL 3 CATEGORY 1":
+            case "LEVEL3CATEGORY1":
                 return 2;
-                break;
-            case "LEVEL 3 CATEGORY 2":
+            case "LEVEL3CATEGORY2":
                 return 3;
-                break;
             default:
                 return 4;
         }

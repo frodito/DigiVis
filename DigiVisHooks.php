@@ -22,7 +22,9 @@ class DigiVisHooks {
 		"LEVEL2CATEGORY4" => "annotator-hl-yellow",
 		"LEVEL3CATEGORY1" => "annotator-hl-blueviolet",
 		"LEVEL3CATEGORY2" => "annotator-hl-orange",
-		"LEVEL3CATEGORY3" => "annotator-hl-cyan"
+		"LEVEL3CATEGORY3" => "annotator-hl-cyan",
+        "LEVEL2CONNECTED" => "annotator-hl-chocolate",
+        "LEVEL2CONNECTEDANSWER" => "annotator-hl-red"
 	);
 
 	public static function onCanonicalNamespaces(array &$namespaces) {
@@ -622,7 +624,7 @@ class DigiVisHooks {
 
 
 			if (!$balanced) {
-			    echo 'Error on processing annotation '
+			    echo 'Error on processing annotation ';
 			}
 
 			// store calculated values for further processing, use index + start-offset for sorting

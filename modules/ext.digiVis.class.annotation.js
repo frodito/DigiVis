@@ -82,6 +82,7 @@ class Annotation {
 		let self = this;
 		switch (this.cat_intern) {
 			case 'LEVEL2CATEGORY1':
+			case 'LEVEL2CONNECTED':
 				self.LEVEL2CATEGORY1ATTRIBUTE1.forEach(function (LEVEL2CATEGORY1ATTRIBUTE1) {
 					header.append($('<p class="headerElement">' + LEVEL2CATEGORY1ATTRIBUTE1 + '</p>'));
 				});
@@ -199,6 +200,8 @@ Annotation.prototype.catToColor = {
 	"LEVEL3CATEGORY1": "#8A2BE2",
 	"LEVEL3CATEGORY2": "#FFA500",
 	"LEVEL3CATEGORY3": "#00FFFF",
+	"LEVEL2CONNECTED": "#D2691E",
+	"LEVEL2CONNECTEDANSWER": "#FFCFBF"
 };
 
 Annotation.prototype.mappingNameToKey = {};
