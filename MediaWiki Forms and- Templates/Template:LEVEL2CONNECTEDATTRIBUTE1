@@ -13,17 +13,17 @@ Edit the page to see the template text.
 ! LEVEL2CONNECTEDATTRIBUTE1
 | [[LEVEL2CONNECTEDATTRIBUTE1::{{{field_text_autocomplete}}}]]
 |-
-! Bezieht sich auf LEVEL2CONNECTEDATTRIBUTE1:
-| {{#arraymap:{{{target_LEVEL2CONNECTEDATTRIBUTE1|}}}|@|x|[[target_LEVEL2CONNECTEDATTRIBUTE1::x]]}}
+! Bezieht sich auf LEVEL2CONNECTED:
+| {{#arraymap:{{{target_LEVEL2CONNECTED|}}}|@|x|[[target_LEVEL2CONNECTED::x]]}}
 |-
 ! Relation:
-| [[besitzt Relation::{{{argument_relation}}}]]
+| [[besitzt Relation::{{{LEVEL2CONNECTED_relation}}}]]
 |}
 
 {{#subobject:
- | Thema={{{field_text_autocomplete}}}
- | Bezug={{{target_argumentation|}}}
- | Relation={{{argument_relation}}}
+ | LEVEL2CATEGORY1ATTRIBUTE1={{{field_text_autocomplete}}}
+ | LEVEL2CONNECTED={{{target_LEVEL2CONNECTED|}}}
+ | LEVEL2CONNECTED_relation={{{LEVEL2CONNECTED_relation}}}
 }}
 
 [[Category:Themen]]
