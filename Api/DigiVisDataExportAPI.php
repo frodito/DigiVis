@@ -76,6 +76,7 @@ class DigiVisDataExportAPI extends ApiBase
             }
         }
 
+        // EDIT1
         // collect metadata from specified pages and store as CSV on server if specified in the API call
         list($result_json, $result_csv, $this->texts) = $this->getMetadata();
         if ($content === 'metadata' || $content === 'all') {
@@ -83,7 +84,7 @@ class DigiVisDataExportAPI extends ApiBase
 
             // specify which fields of the meta are used in the CSV file,
             // e.g., $header = "title,author,location,publication date,publication media,length\r\n";
-            $header = "\r\n";
+            $header = "title,author,location,publication date,publication media,length\r\n";
 
             if ($form === 'text') {
                 $this->writeCSV($filename_csv, $result_csv, $header);
@@ -93,11 +94,12 @@ class DigiVisDataExportAPI extends ApiBase
             ));
         }
 
+        // EDIT2
         // process annotations
         if ($content === 'annotations' || $content === 'all') {
             list($result_json, $result_csv) = $this->getAnnotations();
             $filename_csv = $this->dir . 'annotation_extract.csv';
-            $header = "page_id,annotation_id,category,quote,offsetBegin,offsetEnd,comment,METADATA_ATTRIBUTE1,METADATA_ATTRIBUTE2,METADATA_ATTRIBUTE3,METADATA_ATTRIBUTE4,persons,orgs,locs,LEVEL2CONNECTED,LEVEL2CONNECTEDANSWER\r\n";
+            $header = "page_id,annotation_id,category,quote,offsetBegin,offsetEnd,comment,LEVEL2CATEGORY1ATTRIBUTE1,LEVEL2CATEGORY2ATTRIBUTE1,LEVEL2CATEGORY3ATTRIBUTE1,LEVEL2CATEGORY4ATTRIBUTE1,persons,orgs,locs,LEVEL2CONNECTED,LEVEL2CONNECTEDANSWER\r\n";
             if ($form === 'text') {
                 $this->writeCSV($filename_csv, $result_csv, $header);
             }
@@ -712,8 +714,8 @@ class DigiVisDataExportAPI extends ApiBase
                     $cat2 = array_keys($categories)[1];
 
                     // combination of CATEGORY1 and CATEGORY2 allowed
-                    if (($cat1 === 'CATEGORY1' && $cat2 === 'CATEGORY2') ||
-                        ($cat1 === 'CATEGORY2' && $cat2 === 'CATEGORY1')) {
+                    if (($cat1 === 'LEVEL2CATEGORY1' && $cat2 === 'LEVEL2CATEGORY2') ||
+                        ($cat1 === 'LEVEL2CATEGORY2' && $cat2 === 'LEVEL2CATEGORY1')) {
                         foreach ($categories as $category => $val_annotation_id) {
                             $result[$val_annotation_id[0]] = $annotations[$val_annotation_id[0]];
                         }
