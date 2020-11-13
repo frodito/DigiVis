@@ -1,0 +1,241 @@
+@import "global";
+
+body {
+  overflow-x: hidden;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+#schreibtischVideo, #overlay {
+  max-width: 1080px;
+}
+
+#content {
+  min-height: 75%;
+}
+
+.no-background {
+  background-color: transparent !important;
+  overflow: hidden !important;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+#blumen {
+  width: 13%;
+  left: 26.5%;
+  bottom: 49%;
+
+  &:hover {
+    transform: scale(1.3);
+    transition: transform .5s ease;
+  }
+
+}
+
+.hoverableText{
+  font-size: 1.05em;
+  height: auto;
+  z-index: 2002 !important;
+
+  &.blumenText {
+    width: 67%;
+    left: 1%;
+    top: 51%;
+  }
+
+  &.glasText {
+    width: 67%;
+    left: 2%;
+    top: 62%;
+  }
+
+  &.briefText {
+    width: 61%;
+    left: 36%;
+    top: 33%;
+  }
+
+  &.rahmenText {
+    width: 72%;
+    left: 14%;
+    top: 59%;
+  }
+
+  &.uhrText {
+    width: 78%;
+    left: 2%;
+    top: 54%;
+  }
+
+  &.stiftText {
+    width: 61%;
+    left: 2%;
+    top: 89%;
+  }
+
+}
+
+.discover-text{
+  font-size: 1.3em;
+}
+
+#glas {
+  width: 9%;
+  left: 62.3%;
+  bottom: 41.5%;
+
+  &:hover {
+    transform: scale(1.3);
+    transition: transform .5s ease;
+  }
+
+}
+
+
+#brief {
+  width: 21%;
+  top: 38.5%;
+  left: 9%;
+  transform: rotate(-23deg);
+
+  &:hover {
+    transform: scale(1.3) rotate(-23deg);
+    transition: transform .5s ease;
+  }
+
+}
+
+#rahmen {
+  width: 13%;
+  top: 21%;
+  left: 45%;
+  transform: rotate(7deg);
+
+  &:hover {
+    transform: scale(1.3);
+    transition: transform .5s ease;
+  }
+
+}
+
+#uhr {
+  width: 5.5%;
+  top: 38.5%;
+  left: 36%;
+
+  &:hover {
+    transform: scale(1.3);
+    transition: transform .5s ease;
+  }
+
+
+}
+
+#stift {
+  width: 2.3%;
+  top: 67.6%;
+  left: 57.6%;
+  transform: rotate(44deg);
+
+  &:hover {
+    transform: scale(1.3) rotate(44deg);
+    transition: transform .5s ease;
+  }
+
+}
+
+
+/* zitat + text */
+
+.zitatText {
+  position: absolute;
+  display: inline-block;
+  background-color: white;
+  color: #000;
+  border: 5px solid black;
+  padding: 5px;
+  margin: 5px;
+  z-index: 1;
+
+  &:before {
+    content: ' ';
+    width: 0;
+    height: 0;
+  }
+
+  &:after {
+    content: ' ';
+    width: 0;
+    height: 0;
+  }
+}
+
+
+/* arrows of speech bubbles (zitate) */
+.arrowTopLeft:after {
+  left: 0px;
+  top: -20px;
+  border: 10px solid;
+  border-color: transparent transparent #fff #fff;
+  position: absolute;
+}
+
+
+.arrowTopCenter:after {
+  left: 50%;
+  top: -20px;
+  border: 15px solid;
+  border-color: transparent transparent #fff #fff;
+  position: absolute;
+}
+
+.arrowTopRight:after {
+  right: 15px;
+  top: -20px;
+  border: 15px solid;
+  border-color: transparent #fff #fff transparent;
+  position: absolute;
+}
+
+.arrowLeftCenter:after {
+  left: -25px;
+  top: 105px;
+  border: 15px solid;
+  border-color: transparent #fff #fff transparent;
+  position: absolute;
+}
+
+.arrowBottomLeft:after {
+  left: 15px;
+  bottom: -29px;
+  border: 15px solid;
+  border-color: #fff transparent transparent #fff;
+  position: absolute;
+}
+
+.arrowBottomRight:after {
+  right: 15px;
+  bottom: -29px;
+  border: 15px solid;
+  border-color: #fff #fff transparent transparent;
+  position: absolute;
+}
+
+@media screen and (max-width: 640px){
+  .hoverableText, .discover-text{
+    font-size: 0.8em;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 812px) {
+  .discover-text {
+    font-size: 40px;
+  }
+}

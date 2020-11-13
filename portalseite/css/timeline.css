@@ -1,0 +1,16 @@
+body {
+  background-color: #00151e;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#knightlabtimeline {
+  width: 96vw;
+  height: 96vh;
+}
+
+/*# sourceMappingURL=timeline.css.map */

@@ -1,0 +1,335 @@
+body {
+  font-family: Helvetica, sans-serif !important;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 18px;
+  color: #ffffff !important;
+  background-color: #00151e !important;
+  height: 100%;
+  min-height: 100%;
+}
+
+footer {
+  height: fit-content;
+  margin-top: -45px;
+  padding: 0 30px;
+  position: relative !important;
+  bottom: -45px !important;
+  width: 100%;
+  font-family: Helvetica, sans-serif !important;
+}
+
+img, video {
+  max-width: 1920px;
+}
+
+img, video, .rounded-borders {
+  -webkit-border-radius: 15px 15px 15px 15px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+button {
+  cursor: pointer !important;
+}
+
+.noborder {
+  border: none !important;
+}
+
+a {
+  color: aqua;
+}
+
+nav {
+  font-weight: 700;
+}
+nav button {
+  color: #ffffff !important;
+}
+
+.pageTitle {
+  font-family: Garamond !important;
+  font-weight: 700;
+  color: #ffffff !important;
+}
+
+.collapseContainer button {
+  background: #343a40 !important;
+  border: none !important;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 100%;
+  color: #ffffff !important;
+  text-align: left;
+}
+.collapseContainer button:hover {
+  border: none;
+}
+.collapseContainer .card-body {
+  background: transparent !important;
+  color: #ffffff !important;
+  pointer-events: none !important;
+}
+
+#content {
+  margin-bottom: 150px;
+}
+
+.externalLink {
+  font-size: 1.5em !important;
+  fill: #ffffff !important;
+}
+
+.dropdown-item, .menuTopItem {
+  padding: 0.7em;
+}
+
+.error {
+  color: red;
+  text-shadow: 0 0 15px black;
+  font-size: 0.9em;
+  float: left;
+  margin: 5px;
+  display: contents;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 2em;
+  }
+}
+@media (orientation: portrait) and (min-width: 812px) {
+  body, #collapseToggler, .dropdown-item, .menuTopItem {
+    font-size: 40px !important;
+  }
+
+  h2 {
+    font-size: 70px !important;
+  }
+
+  h3 {
+    font-size: 50px !important;
+  }
+
+  #logo {
+    width: 80px !important;
+    margin: auto 1em !important;
+  }
+}
+body {
+  overflow-x: hidden;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+#schreibtischVideo, #overlay {
+  max-width: 1080px;
+}
+
+#content {
+  min-height: 75%;
+}
+
+.no-background {
+  background-color: transparent !important;
+  overflow: hidden !important;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+#blumen {
+  width: 13%;
+  left: 26.5%;
+  bottom: 49%;
+}
+#blumen:hover {
+  transform: scale(1.3);
+  transition: transform 0.5s ease;
+}
+
+.hoverableText {
+  font-size: 1.05em;
+  height: auto;
+  z-index: 2002 !important;
+}
+.hoverableText.blumenText {
+  width: 67%;
+  left: 1%;
+  top: 51%;
+}
+.hoverableText.glasText {
+  width: 67%;
+  left: 2%;
+  top: 62%;
+}
+.hoverableText.briefText {
+  width: 61%;
+  left: 36%;
+  top: 33%;
+}
+.hoverableText.rahmenText {
+  width: 72%;
+  left: 14%;
+  top: 59%;
+}
+.hoverableText.uhrText {
+  width: 78%;
+  left: 2%;
+  top: 54%;
+}
+.hoverableText.stiftText {
+  width: 61%;
+  left: 2%;
+  top: 89%;
+}
+
+.discover-text {
+  font-size: 1.3em;
+}
+
+#glas {
+  width: 9%;
+  left: 62.3%;
+  bottom: 41.5%;
+}
+#glas:hover {
+  transform: scale(1.3);
+  transition: transform 0.5s ease;
+}
+
+#brief {
+  width: 21%;
+  top: 38.5%;
+  left: 9%;
+  transform: rotate(-23deg);
+}
+#brief:hover {
+  transform: scale(1.3) rotate(-23deg);
+  transition: transform 0.5s ease;
+}
+
+#rahmen {
+  width: 13%;
+  top: 21%;
+  left: 45%;
+  transform: rotate(7deg);
+}
+#rahmen:hover {
+  transform: scale(1.3);
+  transition: transform 0.5s ease;
+}
+
+#uhr {
+  width: 5.5%;
+  top: 38.5%;
+  left: 36%;
+}
+#uhr:hover {
+  transform: scale(1.3);
+  transition: transform 0.5s ease;
+}
+
+#stift {
+  width: 2.3%;
+  top: 67.6%;
+  left: 57.6%;
+  transform: rotate(44deg);
+}
+#stift:hover {
+  transform: scale(1.3) rotate(44deg);
+  transition: transform 0.5s ease;
+}
+
+/* zitat + text */
+.zitatText {
+  position: absolute;
+  display: inline-block;
+  background-color: white;
+  color: #000;
+  border: 5px solid black;
+  padding: 5px;
+  margin: 5px;
+  z-index: 1;
+}
+.zitatText:before {
+  content: " ";
+  width: 0;
+  height: 0;
+}
+.zitatText:after {
+  content: " ";
+  width: 0;
+  height: 0;
+}
+
+/* arrows of speech bubbles (zitate) */
+.arrowTopLeft:after {
+  left: 0px;
+  top: -20px;
+  border: 10px solid;
+  border-color: transparent transparent #fff #fff;
+  position: absolute;
+}
+
+.arrowTopCenter:after {
+  left: 50%;
+  top: -20px;
+  border: 15px solid;
+  border-color: transparent transparent #fff #fff;
+  position: absolute;
+}
+
+.arrowTopRight:after {
+  right: 15px;
+  top: -20px;
+  border: 15px solid;
+  border-color: transparent #fff #fff transparent;
+  position: absolute;
+}
+
+.arrowLeftCenter:after {
+  left: -25px;
+  top: 105px;
+  border: 15px solid;
+  border-color: transparent #fff #fff transparent;
+  position: absolute;
+}
+
+.arrowBottomLeft:after {
+  left: 15px;
+  bottom: -29px;
+  border: 15px solid;
+  border-color: #fff transparent transparent #fff;
+  position: absolute;
+}
+
+.arrowBottomRight:after {
+  right: 15px;
+  bottom: -29px;
+  border: 15px solid;
+  border-color: #fff #fff transparent transparent;
+  position: absolute;
+}
+
+@media screen and (max-width: 640px) {
+  .hoverableText, .discover-text {
+    font-size: 0.8em;
+  }
+}
+@media (orientation: portrait) and (min-width: 812px) {
+  .discover-text {
+    font-size: 40px;
+  }
+}
+
+/*# sourceMappingURL=identitaetsSchreibtisch.css.map */

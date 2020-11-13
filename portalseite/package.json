@@ -1,0 +1,18 @@
+{
+  "name": "Portalseite",
+  "version": "2.0.0",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "d3": "3.5.17",
+    "d3-cloud": "^1.2.5",
+    "d3-path": "^1.0.9",
+    "d3-shape": "^1.3.7",
+    "d3-color": "^1.4.1",
+    "file-system": "^2.2.2",
+    "jquery": "^3.5.1",
+    "jquery-mobile": "^1.4.1",
+    "php": "1.0.1",
+    "require": "^2.4.20",
+    "requirejs": "^2.3.6"
+  }
+}

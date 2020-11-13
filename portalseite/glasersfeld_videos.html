@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glasersfeld Videos</title>
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/glasersfeld_lectures.css">
+    <link rel="icon" href="media/logo.svg"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-browser/0.1.0/jquery.browser.min.js"></script>
+    <script src="node_modules/d3/d3.js" type="text/javascript"></script>
+    <script src="node_modules/d3-cloud/build/d3.layout.cloud.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div id="content" class="">
+    <div class="row w-100 justify-content-center mt-4">
+        <div class="col d-none d-lg-block filler"></div>
+        <div id="div_video" class="col-lg-5 col-11 p-4 text-center" style="min-height: 400px"> </div>
+        <div class="col d-none d-lg-block filler"></div>
+        <div id="div_description" class="col-lg-5 col-11 p-4 align-items-center">
+            <p id="descriptionContent"></p>
+        </div>
+        <div class="col d-none d-lg-block filler"></div>
+    </div>
+    <div class="col-12"></div>
+    <div class="row w-100 h-50 justify-content-center my-3 align-items-center">
+        <div class="col d-none d-lg-block filler"></div>
+        <div id="div_wordcloud" class="col-lg-5 col-11 mr-4 mh-100"></div>
+        <div class="col d-none d-lg-block filler"></div>
+        <div id="div_selectarea" class="col-lg-5 col-11 d-flex align-items-center mh-100"></div>
+        <div class="col d-none d-lg-block filler"></div>
+    </div>
+</div>
+
+<script src="scripts/browserCompatibility.js"></script>
+
+<script src="scripts/global_scripts.js"></script>
+<script src="scripts/global_constants.js"></script>
+<script src="scripts/global_pagebuild.js"></script>
+
+<script src="scripts/glasersfeld_lectures/constants.js"></script>
+<script src="scripts/glasersfeld_lectures/scripts.js"></script>
+<script src="scripts/glasersfeld_lectures/pagebuild.js"></script>
+</body>
+</html>

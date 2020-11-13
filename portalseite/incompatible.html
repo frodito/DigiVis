@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Portal EvG</title>
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+    <link href="css/incompatible.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="media/logo.svg"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-browser/0.1.0/jquery.browser.min.js"></script>
+
+</head>
+
+<body>
+
+<script>
+    var ua = window.navigator.userAgent;
+    var old_ie = ua.indexOf('MSIE ');
+    var new_ie = ua.indexOf('Trident/');
+    var isIE = (old_ie > -1) || (new_ie > -1);
+    var isEdge = ua.indexOf("Edge/") > -1;
+    console.log(isIE && !isEdge);
+
+    var ua = window.navigator.userAgent;
+    var safari = ua.indexOf('Safari');
+    var chrome = ua.indexOf('Chrome');
+    var isChrome = chrome == -1;
+    var isSafari = safari > -1 && isChrome;
+    console.log("safari", isSafari);
+
+    var isWindows = navigator.platform.indexOf('Win') > -1;
+    console.log(isWindows);
+
+    console.log((isIE && !isEdge) || (isWindows && isSafari))
+</script>
+
+<div id="content-incompatible">
+
+    <div class="incompatible justify-content-center py-5">
+        <div class="mt-sm-5 pt-sm-5">
+            <img src="media/evg_portraits/glasersfeld_0.jpg" style=" ">
+        </div>
+        <h1>Ernst von Glasersfeld</h1>
+        <div id="compatibleVersions" class="col-12 justify-content-center text-center">
+            <div id="ger">
+                <h3>Leider ist ihr Browser nicht kompatibel mit dem Inhalt dieser Seite.</h3>
+                <span>
+                    Bitte wechseln Sie auf einen anderen Browser, oder auf eine neuere Version.<br/>
+                    Kompatible Versionen:
+               </span>
+                <ul>
+                    <li>Google Chrome (auch für Android) ab v49</li>
+                    <li>Mozilla Firefox ab v45</li>
+                    <li>Microsoft Edge ab v13</li>
+                    <li>Opera ab v60 / Opera für Android ab v36</li>
+                    <li>Safari ab v9</li>
+                </ul>
+            </div>
+            <div id="eng">
+                <h3>Unfortunately, your browser is not compatible with the content of this website. <br/></h3>
+                <span>
+                    Please switch to another browser or to a newer version<br/>
+                    Compatible versions:
+                </span>
+                <ul>
+                    <li>Google Chrome (also for Android) since v49</li>
+                    <li>Mozilla Firefox since v45</li>
+                    <li>Microsoft Edge since v13</li>
+                    <li>Opera since v60 / Opera for Android since v36</li>
+                    <li>Safari (also Mobile) since v9</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

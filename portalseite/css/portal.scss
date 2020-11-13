@@ -1,0 +1,122 @@
+@import "global.scss";
+
+html, body {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  font-family: Garamond !important;
+  font-weight: 700;
+}
+
+.background-portrait{
+  background: no-repeat center top url("../media/background5.jpg") !important;
+  background-size: cover !important;
+}
+
+svg {
+  left: -.1%;
+  width: 100%;
+  height: 98%;
+}
+
+footer {
+  position: absolute;
+  bottom: 60px;
+
+  .footerContent {
+    width: 100%;
+  }
+}
+
+.portrait-layout {
+  bottom: 120px !important;
+
+  .footerContent {
+    background-color: rgba(0, 21, 30, .8);
+    padding: 15px;
+    width: 109% !important;
+    margin-left: -30px;
+  }
+}
+
+.menu {
+  .menuItem {
+    float: left;
+    margin: 0 auto;
+    color: $primaryTextColor;
+    text-anchor: middle;
+    border: none;
+    padding: 0 15px;
+    font-size: 120%;
+  }
+
+  .menuItemHome:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+  }
+
+  .menuText {
+    fill: white;
+    font-size: 1.6em;
+    text-anchor: middle;
+  }
+}
+
+
+.glasersfeldTitle {
+  font-size: 2.3em;
+  fill: $primaryTextColor;
+  text-anchor: middle;
+}
+
+.glasersfeldSubTitle {
+  font-size: 1.6em;
+  fill: $primaryTextColor;
+  text-anchor: middle;
+}
+
+.clickText {
+  font-size: 1.3em;
+  fill: $primaryTextColor;
+  text-anchor: middle;
+  z-index: -1000 !important;
+}
+.helvetica {
+  font-family: Helvetica, sans-serif !important;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
+
+.info-slider {
+
+  .info-text {
+    width: 0;
+    position: fixed;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin-right: -3px;
+  }
+
+  .info-collapse-bar {
+    border-radius: 0 100% 100% 0;
+    transition: margin-left .5s;
+
+    a {
+      font-size: 2em !important;
+
+      i {
+        transition: transform .8s ease-in-out;
+      }
+    }
+
+  }
+
+}
+

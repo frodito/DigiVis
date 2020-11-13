@@ -1,0 +1,25 @@
+
+.navArrow {
+  margin: 0 5px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+
+  &:hover {
+    color: grey;
+  }
+}
+
+.mediaDiv {
+  padding: 15px;
+  text-align: center;
+
+  img, video, iframe{
+    width: auto;
+    max-width: 100%;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+
+  }
+}

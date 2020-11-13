@@ -1,0 +1,144 @@
+.main-button {
+  margin: 50px 0;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  padding: 20px 20px 10px 20px;
+}
+.main-button.startButton {
+  box-shadow: inset 0px 1px 0px 0px #caefab;
+  background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+  background-color: #77d42a;
+  border: 1px solid #268a16;
+  color: #306108;
+  text-shadow: 0px 1px 0px #aade7c;
+}
+.main-button.startButton:hover {
+  background: linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+  background-color: #5cb811;
+}
+.main-button.startButton:active {
+  position: relative;
+  top: 1px;
+}
+.main-button.startPlayer1 {
+  box-shadow: inset 0px 1px 0px 0px #f5978e;
+  background: linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+  background-color: #f24537;
+  border: 1px solid #d02718;
+  color: #ffffff;
+  text-shadow: 0px 1px 0px #810e05;
+}
+.main-button.startPlayer1:hover {
+  background: linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+  background-color: #c62d1f;
+}
+.main-button.startPlayer1:active {
+  position: relative;
+  top: 1px;
+}
+.main-button.startPlayer2 {
+  box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+  background-color: #3d94f6;
+  border: 1px solid #337fed;
+  color: #ffffff;
+  text-shadow: 0px 1px 0px #1570cd;
+}
+.main-button.startPlayer2:hover {
+  background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+  background-color: #1e62d0;
+}
+.main-button.startPlayer2:active {
+  position: relative;
+  top: 1px;
+}
+
+.instructorButton {
+  margin: 50px;
+  box-shadow: inset 0px 1px 0px 0px #caefab;
+  background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+  background-color: #77d42a;
+  border-radius: 6px;
+  border: 1px solid #268a16;
+  display: inline-block;
+  cursor: pointer;
+  color: #306108;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #aade7c;
+}
+.instructorButton:hover {
+  background: linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+  background-color: #5cb811;
+}
+.instructorButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.studentButton {
+  margin: 50px;
+  box-shadow: inset 0px 1px 0px 0px #caefab;
+  background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+  background-color: #77d42a;
+  border-radius: 6px;
+  border: 1px solid #268a16;
+  display: inline-block;
+  cursor: pointer;
+  color: #306108;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #aade7c;
+}
+.studentButton:hover {
+  background: linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+  background-color: #5cb811;
+}
+.studentButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.defaultGradientButton {
+  margin: 50px;
+  box-shadow: inset 0px 1px 0px 0px #caefab;
+  background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+  background-color: #77d42a;
+  border-radius: 6px;
+  border: 1px solid #268a16;
+  display: inline-block;
+  cursor: pointer;
+  color: #306108;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #aade7c;
+}
+.defaultGradientButton:hover {
+  background: linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+  background-color: #5cb811;
+}
+.defaultGradientButton:active {
+  position: relative;
+  top: 1px;
+}
+
+#publishSessionNameButton {
+  clear: right;
+}
+
+/*# sourceMappingURL=buttons.css.map */

@@ -1,0 +1,32 @@
+@import "global";
+@import "popup";
+
+body {
+  overflow: auto;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.popup {
+  position: absolute;
+  overflow: hidden !important;
+  min-height: 100%;
+  .popup-content {
+    background-color: transparent !important;
+    width: 100% !important;
+    border: none !important;
+    height: 100% !important;
+  }
+  .close {
+    margin-right: 1em;
+    font-size: 3em;
+    color: #fff;
+
+    &.close:hover, &.close:focus {
+      color: #aaaaaa;
+    }
+  }
+}

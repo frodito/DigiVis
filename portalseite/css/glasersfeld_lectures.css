@@ -1,0 +1,197 @@
+body {
+  font-family: Helvetica, sans-serif !important;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 18px;
+  color: #ffffff !important;
+  background-color: #00151e !important;
+  height: 100%;
+  min-height: 100%;
+}
+
+footer {
+  height: fit-content;
+  margin-top: -45px;
+  padding: 0 30px;
+  position: relative !important;
+  bottom: -45px !important;
+  width: 100%;
+  font-family: Helvetica, sans-serif !important;
+}
+
+img, video {
+  max-width: 1920px;
+}
+
+img, video, .rounded-borders {
+  -webkit-border-radius: 15px 15px 15px 15px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+button {
+  cursor: pointer !important;
+}
+
+.noborder {
+  border: none !important;
+}
+
+a {
+  color: aqua;
+}
+
+nav {
+  font-weight: 700;
+}
+nav button {
+  color: #ffffff !important;
+}
+
+.pageTitle {
+  font-family: Garamond !important;
+  font-weight: 700;
+  color: #ffffff !important;
+}
+
+.collapseContainer button {
+  background: #343a40 !important;
+  border: none !important;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 100%;
+  color: #ffffff !important;
+  text-align: left;
+}
+.collapseContainer button:hover {
+  border: none;
+}
+.collapseContainer .card-body {
+  background: transparent !important;
+  color: #ffffff !important;
+  pointer-events: none !important;
+}
+
+#content {
+  margin-bottom: 150px;
+}
+
+.externalLink {
+  font-size: 1.5em !important;
+  fill: #ffffff !important;
+}
+
+.dropdown-item, .menuTopItem {
+  padding: 0.7em;
+}
+
+.error {
+  color: red;
+  text-shadow: 0 0 15px black;
+  font-size: 0.9em;
+  float: left;
+  margin: 5px;
+  display: contents;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 2em;
+  }
+}
+@media (orientation: portrait) and (min-width: 812px) {
+  body, #collapseToggler, .dropdown-item, .menuTopItem {
+    font-size: 40px !important;
+  }
+
+  h2 {
+    font-size: 70px !important;
+  }
+
+  h3 {
+    font-size: 50px !important;
+  }
+
+  #logo {
+    width: 80px !important;
+    margin: auto 1em !important;
+  }
+}
+body {
+  overflow-y: auto;
+  overflow-x: hidden !important;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+ul li {
+  list-style-type: none;
+}
+
+text {
+  transition: all 0.1s;
+}
+text:hover {
+  /*font-weight: bold;*/
+  cursor: pointer;
+}
+
+.li_video {
+  display: flex;
+}
+
+.li_sub {
+  float: left;
+}
+
+#div_video {
+  margin: 2px;
+}
+
+#div_wordcloud {
+  border-radius: 25px;
+  margin: 2px;
+}
+
+#div_selectarea {
+  overflow: auto;
+  min-height: 600px;
+  border-radius: 25px;
+  margin: 2px;
+}
+
+.div_listitem {
+  padding: 5px;
+  margin: 2px;
+  border: 1px solid #05f0d0;
+  border-radius: 13px;
+  cursor: pointer;
+  /*background-color: white;*/
+  color: #05f0d0;
+  flex-grow: 100;
+}
+.div_listitem .movie {
+  flex-grow: 100%;
+}
+.div_listitem:hover {
+  /*background-color: #DDDDDD;*/
+}
+
+.movie {
+  text-align: center;
+}
+
+.playarrow {
+  float: left;
+  color: #05f0d0;
+}
+
+.video_title {
+  font-size: 1.2em;
+}
+
+/*# sourceMappingURL=glasersfeld_lectures.css.map */
