@@ -173,3 +173,7 @@ fabric.properties
 /package-lock.json
 /package.json
 /composer.json
+
+# media-files
+/portalseite/media/
+/portalseite/fontawesome/
