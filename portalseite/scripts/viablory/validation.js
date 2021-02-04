@@ -1,3 +1,7 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
 
 function validateInputPlayerNames(){
     var playerNameFormAlert = document.getElementById("playerNameFormAlert");

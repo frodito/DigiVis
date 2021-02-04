@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 function loadViabloryImages() {
     let run = true;
     let cmcontinue = '';

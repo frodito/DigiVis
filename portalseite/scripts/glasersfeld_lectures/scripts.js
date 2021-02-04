@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 
 function processOccurences(topics, histogram, video_topic, movie, url, $ul_sub) {
 	// accumulate occurences of each topic and add occurrences to list

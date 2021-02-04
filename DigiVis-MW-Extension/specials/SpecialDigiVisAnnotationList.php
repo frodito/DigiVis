@@ -1,3 +1,7 @@
+/*
+authors:  Caroline Haller
+Manfred Moosleitner
+*/
 <?php
 
 /**

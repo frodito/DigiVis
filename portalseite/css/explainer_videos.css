@@ -1,3 +1,11 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
 body {
   font-family: Helvetica, sans-serif !important;
   margin: 0 auto;
@@ -120,6 +128,10 @@ nav button {
     margin: auto 1em !important;
   }
 }
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
 .popup {
   display: none;
   position: fixed;

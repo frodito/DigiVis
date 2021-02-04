@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 /**
  * Displays the filterable and searchable overview over all annotations.
  */

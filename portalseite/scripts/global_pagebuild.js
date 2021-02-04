@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 function createContent() {
     if (!$('#content').length) {
         $('body').append('<div id="content"></div>');

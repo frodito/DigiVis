@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 function getJsonFileAsObject(jsonFilePath) {
     var json = null;
     $.ajax({

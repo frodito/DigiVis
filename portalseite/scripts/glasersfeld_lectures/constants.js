@@ -1,3 +1,9 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
+
 const constantTextsGerman = Object.freeze({
     title: 'Glasersfeld Videos',
     description: '<h3>Erkunde die Glasersfeld Lectures</h3>' +

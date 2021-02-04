@@ -1,3 +1,7 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
 
 $(document).on("swiperight", function () {
     var backButton = document.getElementById("backButton");

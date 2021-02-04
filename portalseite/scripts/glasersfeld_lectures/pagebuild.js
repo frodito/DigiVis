@@ -1,3 +1,9 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
+
 (function () {
     buildPage();
 })();

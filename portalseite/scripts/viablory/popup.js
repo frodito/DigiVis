@@ -1,4 +1,7 @@
-
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
 function buildPopups(){
     buildDetailPopup();
     buildDecicionPopup();

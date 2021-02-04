@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 /**
  * @class Class represents our view on annotation, created with Semantic Text Annotator, for the purpose of using it in
  * visualizations. Here the annotations are display in form of cards, displaying the text of the annotations and using

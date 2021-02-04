@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 /**
  * @class Station represents a station for the DigiVis Walks application.
  */

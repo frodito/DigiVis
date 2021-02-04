@@ -1,3 +1,7 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
 const Language = Object.freeze({
     eng: "en",
     ger: "de"

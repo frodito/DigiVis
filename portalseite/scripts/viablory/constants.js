@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 const constantTextsGerman = Object.freeze({
     playerNeutral: "Spieler*in",
     player1First: "Spieler*in 1 zuerst",

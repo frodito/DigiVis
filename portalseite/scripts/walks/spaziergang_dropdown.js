@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 /**
  * Populate page with dropdown menu, button to load a selected walk and a div to put the json into
  */

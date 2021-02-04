@@ -1,3 +1,8 @@
+/*
+authors:  Caroline Haller
+Manfred Moosleitner
+*/
+
 <?php
 /**
  * Class represents the API functionality of running named entity recognition on the text of annotations created with

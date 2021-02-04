@@ -1,5 +1,3 @@
-// tree-view with checkboxes: https://codepen.io/fsbdev/pen/nILhu
-
 /**
  * Methods used to create the tree-view with checkboxes to filter the annotations displayed.
  * Based on the code found here https://codepen.io/fsbdev/pen/nILhu

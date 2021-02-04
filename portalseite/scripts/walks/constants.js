@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 //const jsonFilePath = "json/input.json";
 var json = null;
 var stations;

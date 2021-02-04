@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 function showOverlay() {
     $('#videoContainer').hide();
     $('#overlay').show();

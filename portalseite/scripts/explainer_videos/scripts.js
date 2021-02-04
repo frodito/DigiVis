@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 $(document).keydown(function(e) {
     if (e.keyCode == KEYCODE_ESC) {
         closeOverlay();

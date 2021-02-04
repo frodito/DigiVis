@@ -1,5 +1,6 @@
 # Code for DigiVis NER
-
+# authors: Caroline Haller,
+#          Manfred Moosleitner
 import os
 import spacy
 from datetime import datetime

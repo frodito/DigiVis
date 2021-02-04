@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 var letterAndFrame;
 const quotations = Object.freeze({
     glass:

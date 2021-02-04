@@ -1,3 +1,8 @@
+/*
+authors:  Caroline Haller
+Manfred Moosleitner
+*/
+
 <?php
 /**
  * Aliases for special pages in the DigiVis extension.

@@ -1,3 +1,7 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
 
 const videoPopup = "videoPopup";
 const videoBasePath = "media/explainer_videos/";

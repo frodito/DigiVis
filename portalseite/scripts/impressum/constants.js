@@ -1,3 +1,9 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
+
 const constantTextsGerman = Object.freeze({
     impressumText:
         "<h2>Offenlegung nach § 25 MedienG</h2>" +

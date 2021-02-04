@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 const delay = 600;
 const url = 'http://' + location.hostname + '/mediawiki/api.php';
 const params = 'action=ask&format=json';

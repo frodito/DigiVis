@@ -1,3 +1,8 @@
+/*
+authors:  Caroline Haller
+Manfred Moosleitner
+*/
+
 <?php
 
 if (isset($_POST['tablename'])) {

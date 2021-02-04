@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 var ua = window.navigator.userAgent;
 
 window.onload = function () {

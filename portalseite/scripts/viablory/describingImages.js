@@ -1,3 +1,8 @@
+/*
+  authors:  Caroline Haller
+            Manfred Moosleitner
+ */
+
 // function populateViabloryImages(player) {
 //     $('#content').append('<div class="viabloryImages" id="viabloryImages"></div>');
 //     let $container = $('#viabloryImages');
