@@ -34,8 +34,10 @@ The names and descriptions are also generalized, corresponding to the names in c
 
 
 ### folder `portalseite` 
-To display the prototypical use case of the [Ernst von Glasersfeld Archive](https://www.evg-archive.net), the access to the outcome of the project was bundled in a web page, which can be found [here](https://dbis-digivis.uibk.ac.at/portal/portal_evg.html).
-This folder holds the code for that pages, which is not generalized but as it is deployed on the web server of the project.
+To display the prototypical use case of the [Ernst von Glasersfeld Archive](https://www.evg-archive.net), the access to the outcomes of the project were bundled in a web page, which can be found [here](https://dbis-digivis.uibk.ac.at/portal/portal_evg.html).
+This folder holds the code for that pages.
+The code is not generalized but as it is deployed on the web server of the project.
+Not included in this folder are two subfolders, one for [Font Awesome](https://fontawesome.com/) and a second with the use case specific media files.
 
 
 <a name="footnote1">1<a>: Currently only available in German.
