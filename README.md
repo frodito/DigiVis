@@ -27,3 +27,5 @@ This folders contains the code of functionalities bundled in a custom MW-extensi
 ### Folder `portalseite`
 
 
+## Structure
+
